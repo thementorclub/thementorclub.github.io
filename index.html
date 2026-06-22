@@ -3,15 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>MENTOR CLUB · Cuerpo, palabra y conciencia</title>
-  <meta name="description" content="Mentor Club reúne prácticas de atención para cultivar presencia, claridad y transformación a través del cuerpo y la palabra.">
+  <title>THE MENTOR CLUB · Cuerpo, palabra y conciencia</title>
+  <meta name="description" content="The Mentor Club reúne prácticas de atención para cultivar presencia, claridad y transformación a través del cuerpo y la palabra.">
 
   <style>
     :root{
       --ink:#111426;
       --night:#171827;
       --paper:#fff8eb;
-      --paper2:#f5ead9;
       --gold:#c59b4b;
       --gold2:#947023;
       --soft:rgba(17,20,38,.68);
@@ -50,7 +49,7 @@
       text-decoration:none;
     }
 
-    button{
+    button,input,textarea{
       font:inherit;
     }
 
@@ -84,6 +83,36 @@
     p{
       margin:.45rem 0 1rem;
       font-size:1.06rem;
+    }
+
+    label{
+      display:block;
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      font-size:.82rem;
+      margin:.85rem 0 .35rem;
+      color:var(--ink);
+    }
+
+    input,textarea{
+      width:100%;
+      border:1px solid rgba(17,20,38,.16);
+      background:rgba(255,255,255,.82);
+      color:var(--ink);
+      border-radius:18px;
+      padding:.9rem 1rem;
+      outline:none;
+    }
+
+    textarea{
+      min-height:130px;
+      resize:vertical;
+      line-height:1.5;
+    }
+
+    input:focus,textarea:focus{
+      border-color:rgba(197,155,75,.72);
+      box-shadow:0 0 0 4px rgba(197,155,75,.12);
     }
 
     .wrap{
@@ -162,8 +191,8 @@
 
     .brand-logo,
     .footer-logo{
-      width:52px;
-      height:52px;
+      width:56px;
+      height:56px;
       border-radius:50%;
       object-fit:cover;
       object-position:center;
@@ -321,6 +350,13 @@
       align-items:stretch;
     }
 
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+      align-items:stretch;
+    }
+
     .mentor-path-card{
       min-height:290px;
       display:flex;
@@ -473,6 +509,38 @@
       color:#f0d991;
     }
 
+    .price-card{
+      padding:1.35rem;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:230px;
+    }
+
+    .price{
+      font-size:2.8rem;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-.045em;
+      color:var(--gold2);
+      margin:.7rem 0;
+    }
+
+    .price small{
+      font-family:Arial,sans-serif;
+      font-size:.9rem;
+      color:var(--soft);
+      letter-spacing:0;
+      font-weight:900;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:1rem;
+      align-items:stretch;
+    }
+
     .mentor-showcase{
       display:grid;
       grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
@@ -567,6 +635,10 @@
       .principles{
         grid-template-columns:repeat(3,1fr);
       }
+
+      .grid3{
+        grid-template-columns:1fr 1fr;
+      }
     }
 
     @media(max-width:1020px){
@@ -575,7 +647,8 @@
       }
 
       .hero-grid,
-      .grid2{
+      .grid2,
+      .contact-grid{
         grid-template-columns:1fr;
       }
 
@@ -627,8 +700,8 @@
 
       .brand-logo,
       .footer-logo{
-        width:42px;
-        height:42px;
+        width:46px;
+        height:46px;
       }
 
       .brand strong{
@@ -737,7 +810,8 @@
         aspect-ratio:1 / 1;
       }
 
-      .principles{
+      .principles,
+      .grid3{
         grid-template-columns:1fr;
       }
 
@@ -781,10 +855,10 @@
 <body>
   <header>
     <div class="wrap topbar">
-      <a class="brand" href="#inicio" aria-label="MENTOR CLUB">
-        <img class="brand-logo" src="assets/img/logo-tmc.png?v=mentorclub-002" alt="Logo Mentor Club">
+      <a class="brand" href="#inicio" aria-label="THE MENTOR CLUB">
+        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-004" alt="Logo The Mentor Club">
         <div>
-          <strong>MENTOR CLUB</strong>
+          <strong>THE MENTOR CLUB</strong>
           <small data-i18n="brand_sub">Cuerpo, palabra y conciencia</small>
         </div>
       </a>
@@ -792,9 +866,9 @@
       <nav>
         <a href="#clubes" data-i18n="nav_clubs">Dos clubes</a>
         <a href="#homero" data-i18n="nav_homero">HOMERO CLUB</a>
+        <a href="#precios" data-i18n="nav_prices">Precios</a>
+        <a href="#contacto" data-i18n="nav_contact">Contacto</a>
         <a href="#taichi" data-i18n="nav_taichi">TAI CHI CLUB</a>
-        <a href="#app" data-i18n="nav_app">APP 21 días</a>
-        <a href="#escuela" data-i18n="nav_school">Escuela</a>
 
         <div class="lang">
           <button type="button" data-lang-btn="es" onclick="setLang('es')">ES</button>
@@ -809,18 +883,18 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="hero_eyebrow">Cuerpo, palabra y conciencia</p>
-          <h1 data-i18n-html="hero_title">MENTOR CLUB<br>Cuerpo, palabra y conciencia.</h1>
-          <p class="lead" data-i18n="hero_lead">Mentor Club reúne prácticas de atención para cultivar presencia, claridad y transformación a través del cuerpo y la palabra.</p>
+          <h1 data-i18n-html="hero_title">THE MENTOR CLUB<br>Cuerpo, palabra y conciencia.</h1>
+          <p class="lead" data-i18n="hero_lead">The Mentor Club reúne prácticas de atención para cultivar presencia, claridad y transformación a través del cuerpo y la palabra.</p>
 
           <div class="actions">
-            <a class="btn primary" href="#homero" data-i18n="btn_homero_hero">Entrar en HOMERO CLUB</a>
-            <a class="btn secondary" href="#taichi" data-i18n="btn_taichi_hero">Ver TAI CHI CLUB</a>
-            <a class="btn dark" href="#" onclick="openApp();return false;" data-i18n="btn_app">Entrar en la APP</a>
+            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_app_homero">APP HOMERO CLUB</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_school_homero">ESCUELA HOMERO CLUB</a>
+            <a class="btn dark" href="#precios" data-i18n="btn_prices">Ver precios</a>
           </div>
         </div>
 
         <div class="hero-frame">
-          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=mentorclub-002" alt="Mentor Club · umbral de autoconocimiento">
+          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-004" alt="The Mentor Club · umbral de autoconocimiento">
           <div class="hero-note">
             <p data-i18n="hero_quote">Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.</p>
           </div>
@@ -831,9 +905,9 @@
     <section id="clubes">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">MENTOR CLUB</p>
+          <p class="eyebrow">THE MENTOR CLUB</p>
           <h2 data-i18n="clubs_title">Dos clubes, una misma atención</h2>
-          <p class="muted" data-i18n="clubs_text">Mentor Club reúne dos caminos complementarios: Homero Club, la vía de la palabra; Tai Chi Club, la vía del cuerpo.</p>
+          <p class="muted" data-i18n="clubs_text">The Mentor Club reúne dos caminos complementarios: Homero Club, la vía de la palabra; Tai Chi Club, la vía del cuerpo.</p>
         </div>
 
         <div class="grid2">
@@ -844,7 +918,8 @@
               <p class="muted" data-i18n="homero_card_text">Escritura, contemplación y autoconocimiento.</p>
             </div>
             <div class="actions">
-              <a class="btn primary" href="#homero" data-i18n="btn_homero">Explorar HOMERO CLUB</a>
+              <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_app_homero_2">APP HOMERO CLUB</a>
+              <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_school_homero_2">ESCUELA HOMERO CLUB</a>
             </div>
           </article>
 
@@ -876,13 +951,13 @@
         <div class="section-head">
           <p class="eyebrow">HOMERO CLUB</p>
           <h2 data-i18n="homero_title">Escritura, contemplación y autoconocimiento</h2>
-          <p class="muted" data-i18n="homero_text">Homero Club es la escuela de escritura consciente de Mentor Club: un espacio para contemplar el mundo, observar la experiencia y transformar la existencia en palabras.</p>
+          <p class="muted" data-i18n="homero_text">Homero Club es la escuela de escritura consciente de The Mentor Club: un espacio para contemplar el mundo, observar la experiencia y transformar la existencia en palabras.</p>
         </div>
 
         <div class="grid2">
           <article class="card path-card">
             <div class="path-img">
-              <img src="assets/img/imagen-haiku-contemplacion.webp?v=mentorclub-002" alt="Haiku y contemplación">
+              <img src="assets/img/imagen-haiku-contemplacion.webp?v=thementorclub-004" alt="Haiku y contemplación">
             </div>
             <div class="pad">
               <span class="num">1</span>
@@ -894,7 +969,7 @@
 
           <article class="card path-card">
             <div class="path-img">
-              <img src="assets/img/imagen-koan-grieta.webp?v=mentorclub-002" alt="Haibun · prosa y haiku">
+              <img src="assets/img/imagen-koan-grieta.webp?v=thementorclub-004" alt="Haibun · prosa y haiku">
             </div>
             <div class="pad">
               <span class="num">2</span>
@@ -921,6 +996,78 @@
             <span class="status-label" data-i18n="status_preparing_2">En preparación</span>
             <h3 data-i18n="symbolic_title">Escritura simbólica de autoconocimiento</h3>
             <p class="muted" data-i18n="symbolic_text">Convertir patrones interiores en imágenes de comprensión.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="precios">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="prices_eyebrow">Precios y acceso</p>
+          <h2 data-i18n="prices_title">Elige tu vía de entrada</h2>
+          <p class="muted" data-i18n="prices_text">Todos los accesos tienen una duración de 6 meses desde el alta.</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card price-card">
+            <div>
+              <p class="eyebrow" data-i18n="price_app_label">APP HOMERO CLUB</p>
+              <h3 data-i18n="price_app_title">APP 21 días</h3>
+              <div class="price">30€</div>
+              <p class="muted" data-i18n="price_app_text">Práctica breve y sostenida para crear hábito de escritura consciente.</p>
+            </div>
+            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="price_app_btn">Entrar en la APP</a>
+          </article>
+
+          <article class="card price-card">
+            <div>
+              <p class="eyebrow" data-i18n="price_haiku_label">ESCUELA HOMERO CLUB</p>
+              <h3 data-i18n="price_haiku_title">Escuela de Haiku</h3>
+              <div class="price">60€</div>
+              <p class="muted" data-i18n="price_haiku_text">Taller de contemplación, instante, kigo, kire, ma, aware y poda.</p>
+            </div>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="price_school_btn">Acceder a la escuela</a>
+          </article>
+
+          <article class="card price-card">
+            <div>
+              <p class="eyebrow" data-i18n="price_haibun_label">ESCUELA HOMERO CLUB</p>
+              <h3 data-i18n="price_haibun_title">Escuela de Haibun</h3>
+              <div class="price">60€</div>
+              <p class="muted" data-i18n="price_haibun_text">Prosa breve, observación, viaje interior y cierre en haiku.</p>
+            </div>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="price_school_btn_2">Acceder a la escuela</a>
+          </article>
+
+          <article class="card price-card">
+            <div>
+              <p class="eyebrow" data-i18n="price_other_label">Próximamente</p>
+              <h3 data-i18n="price_other_title">Otros talleres</h3>
+              <div class="price">60€</div>
+              <p class="muted" data-i18n="price_other_text">Microrrelato consciente y escritura simbólica de autoconocimiento mantendrán este precio.</p>
+            </div>
+            <a class="btn secondary" href="#contacto" data-i18n="price_contact_btn">Consultar</a>
+          </article>
+
+          <article class="card price-card">
+            <div>
+              <p class="eyebrow" data-i18n="price_pack_label">Pack completo</p>
+              <h3 data-i18n="price_pack_title">Pack Homero Club Completo</h3>
+              <div class="price">99€</div>
+              <p class="muted" data-i18n="price_pack_text">Acceso integrado a la vía completa de escritura consciente disponible en Homero Club.</p>
+            </div>
+            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="price_pack_btn">Acceder al pack</a>
+          </article>
+
+          <article class="card price-card">
+            <div>
+              <p class="eyebrow" data-i18n="price_duration_label">Duración</p>
+              <h3 data-i18n="price_duration_title">Acceso durante 6 meses</h3>
+              <div class="price"><small>6 meses</small></div>
+              <p class="muted" data-i18n="price_duration_text">Tiempo suficiente para practicar, revisar, volver a los materiales y consolidar una escritura más consciente.</p>
+            </div>
+            <a class="btn secondary" href="#contacto" data-i18n="price_duration_btn">Resolver dudas</a>
           </article>
         </div>
       </div>
@@ -961,8 +1108,8 @@
             </div>
 
             <div class="actions">
-              <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_open_app">Abrir APP</a>
-              <a class="btn secondary" href="#" onclick="openForm();return false;" data-i18n="btn_request">Solicitar acceso</a>
+              <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_app_homero_3">APP HOMERO CLUB</a>
+              <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_school_homero_3">ESCUELA HOMERO CLUB</a>
             </div>
           </div>
         </div>
@@ -985,7 +1132,7 @@
         </div>
 
         <div class="actions">
-          <a class="btn primary" href="#" onclick="openForm();return false;" data-i18n="btn_enrol">Solicitar inscripción</a>
+          <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_school_homero_4">ESCUELA HOMERO CLUB</a>
         </div>
       </div>
     </section>
@@ -1003,8 +1150,37 @@
           </div>
 
           <div class="mentor-image">
-            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=mentorclub-002" alt="Tai Chi Club · Mentor Club">
+            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-004" alt="Tai Chi Club · The Mentor Club">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="card pad">
+            <p class="eyebrow" data-i18n="contact_eyebrow">Contacto</p>
+            <h2 data-i18n="contact_title">Dudas sobre el acceso</h2>
+            <p class="muted" data-i18n="contact_text">Escribe tu consulta y se abrirá un correo dirigido a The Mentor Club.</p>
+            <p><strong>thementorclub@proton.me</strong></p>
+          </div>
+
+          <form class="card pad" onsubmit="sendContact(event)">
+            <label for="contactName" data-i18n="contact_name_label">Nombre</label>
+            <input id="contactName" type="text" placeholder="Tu nombre">
+
+            <label for="contactEmail" data-i18n="contact_email_label">Correo</label>
+            <input id="contactEmail" type="email" placeholder="tu@email.com">
+
+            <label for="contactMessage" data-i18n="contact_message_label">Mensaje</label>
+            <textarea id="contactMessage" placeholder="Escribe aquí tu duda..."></textarea>
+
+            <div class="actions">
+              <button class="btn primary" type="submit" data-i18n="contact_btn">Enviar consulta</button>
+              <a class="btn secondary" href="mailto:thementorclub@proton.me">thementorclub@proton.me</a>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -1012,13 +1188,13 @@
     <section class="cta">
       <div class="wrap">
         <div class="card">
-          <p class="eyebrow" data-i18n="cta_eyebrow">Mentor Club</p>
+          <p class="eyebrow" data-i18n="cta_eyebrow">The Mentor Club</p>
           <h2 data-i18n="cta_title">Un camino interior hacia la conciencia, la libertad y el autoconocimiento.</h2>
           <p class="muted" data-i18n="cta_text">Cuerpo, palabra y conciencia: dos caminos de práctica para volver a una presencia más clara.</p>
 
           <div class="actions" style="justify-content:center">
-            <a class="btn primary" href="#" onclick="openForm();return false;" data-i18n="btn_access_2">Solicitar acceso</a>
-            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_app_2">Entrar en la APP</a>
+            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_app_homero_5">APP HOMERO CLUB</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_school_homero_5">ESCUELA HOMERO CLUB</a>
           </div>
         </div>
       </div>
@@ -1028,9 +1204,9 @@
   <footer>
     <div class="wrap">
       <div class="footer-brand">
-        <img class="footer-logo" src="assets/img/logo-tmc.png?v=mentorclub-002" alt="Logo Mentor Club">
+        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-004" alt="Logo The Mentor Club">
         <div>
-          <strong>MENTOR CLUB</strong>
+          <strong>THE MENTOR CLUB</strong>
         </div>
       </div>
       <small data-i18n="footer_text">Cuerpo, palabra y conciencia · HOMERO CLUB · TAI CHI CLUB.</small>
@@ -1042,6 +1218,7 @@
     const FORM_URL_EN = "AQUI_PEGA_EL_FORMULARIO_INGLES";
     const APP_URL = "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec";
     const MENTOR_URL = "#";
+    const CONTACT_EMAIL = "thementorclub@proton.me";
 
     let currentLang = localStorage.getItem("homero_lang") || "es";
 
@@ -1050,32 +1227,39 @@
         brand_sub:"Cuerpo, palabra y conciencia",
         nav_clubs:"Dos clubes",
         nav_homero:"HOMERO CLUB",
+        nav_prices:"Precios",
+        nav_contact:"Contacto",
         nav_taichi:"TAI CHI CLUB",
-        nav_app:"APP 21 días",
-        nav_school:"Escuela",
 
         hero_eyebrow:"Cuerpo, palabra y conciencia",
-        hero_title:"MENTOR CLUB<br>Cuerpo, palabra y conciencia.",
-        hero_lead:"Mentor Club reúne prácticas de atención para cultivar presencia, claridad y transformación a través del cuerpo y la palabra.",
+        hero_title:"THE MENTOR CLUB<br>Cuerpo, palabra y conciencia.",
+        hero_lead:"The Mentor Club reúne prácticas de atención para cultivar presencia, claridad y transformación a través del cuerpo y la palabra.",
         hero_quote:"Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.",
-        btn_homero_hero:"Entrar en HOMERO CLUB",
-        btn_taichi_hero:"Ver TAI CHI CLUB",
-        btn_app:"Entrar en la APP",
+
+        btn_app_homero:"APP HOMERO CLUB",
+        btn_school_homero:"ESCUELA HOMERO CLUB",
+        btn_app_homero_2:"APP HOMERO CLUB",
+        btn_school_homero_2:"ESCUELA HOMERO CLUB",
+        btn_app_homero_3:"APP HOMERO CLUB",
+        btn_school_homero_3:"ESCUELA HOMERO CLUB",
+        btn_school_homero_4:"ESCUELA HOMERO CLUB",
+        btn_app_homero_5:"APP HOMERO CLUB",
+        btn_school_homero_5:"ESCUELA HOMERO CLUB",
+        btn_prices:"Ver precios",
 
         clubs_title:"Dos clubes, una misma atención",
-        clubs_text:"Mentor Club reúne dos caminos complementarios: Homero Club, la vía de la palabra; Tai Chi Club, la vía del cuerpo.",
+        clubs_text:"The Mentor Club reúne dos caminos complementarios: Homero Club, la vía de la palabra; Tai Chi Club, la vía del cuerpo.",
         homero_card_title:"La vía de la palabra",
         homero_card_text:"Escritura, contemplación y autoconocimiento.",
         taichi_card_title:"La vía del cuerpo",
         taichi_card_text:"Movimiento, respiración y conciencia corporal.",
-        btn_homero:"Explorar HOMERO CLUB",
         btn_taichi:"Ver TAI CHI CLUB",
 
         central_quote:"La escritura, como espejo del interior, libera; como simple adorno, engaña.",
         central_text:"No escribimos para adornar la identidad. Escribimos para verla.",
 
         homero_title:"Escritura, contemplación y autoconocimiento",
-        homero_text:"Homero Club es la escuela de escritura consciente de Mentor Club: un espacio para contemplar el mundo, observar la experiencia y transformar la existencia en palabras.",
+        homero_text:"Homero Club es la escuela de escritura consciente de The Mentor Club: un espacio para contemplar el mundo, observar la experiencia y transformar la existencia en palabras.",
 
         haiku_title:"Escribir sin apropiarse del mundo.",
         haiku_text:"Un taller para entrenar la atención, el silencio y la percepción del instante. El haiku enseña a reflejar la esencia del mundo, no a imponer, falsear ni inventar aspectos ilusorios del ser humano.",
@@ -1091,6 +1275,34 @@
         micro_text:"La intensidad narrativa en su forma más breve.",
         symbolic_title:"Escritura simbólica de autoconocimiento",
         symbolic_text:"Convertir patrones interiores en imágenes de comprensión.",
+
+        prices_eyebrow:"Precios y acceso",
+        prices_title:"Elige tu vía de entrada",
+        prices_text:"Todos los accesos tienen una duración de 6 meses desde el alta.",
+        price_app_label:"APP HOMERO CLUB",
+        price_app_title:"APP 21 días",
+        price_app_text:"Práctica breve y sostenida para crear hábito de escritura consciente.",
+        price_app_btn:"Entrar en la APP",
+        price_haiku_label:"ESCUELA HOMERO CLUB",
+        price_haiku_title:"Escuela de Haiku",
+        price_haiku_text:"Taller de contemplación, instante, kigo, kire, ma, aware y poda.",
+        price_school_btn:"Acceder a la escuela",
+        price_haibun_label:"ESCUELA HOMERO CLUB",
+        price_haibun_title:"Escuela de Haibun",
+        price_haibun_text:"Prosa breve, observación, viaje interior y cierre en haiku.",
+        price_school_btn_2:"Acceder a la escuela",
+        price_other_label:"Próximamente",
+        price_other_title:"Otros talleres",
+        price_other_text:"Microrrelato consciente y escritura simbólica de autoconocimiento mantendrán este precio.",
+        price_contact_btn:"Consultar",
+        price_pack_label:"Pack completo",
+        price_pack_title:"Pack Homero Club Completo",
+        price_pack_text:"Acceso integrado a la vía completa de escritura consciente disponible en Homero Club.",
+        price_pack_btn:"Acceder al pack",
+        price_duration_label:"Duración",
+        price_duration_title:"Acceso durante 6 meses",
+        price_duration_text:"Tiempo suficiente para practicar, revisar, volver a los materiales y consolidar una escritura más consciente.",
+        price_duration_btn:"Resolver dudas",
 
         method_eyebrow:"Método HOMERO CLUB",
         method_title:"Escribir para ver",
@@ -1122,8 +1334,6 @@
         days_3:"Días 15–21",
         days_3_title:"Integración consciente",
         days_3_text:"Transformar atención, experiencia y palabra en una práctica propia.",
-        btn_open_app:"Abrir APP",
-        btn_request:"Solicitar acceso",
 
         school_eyebrow:"Escuela HOMERO CLUB",
         school_title:"Talleres de escritura consciente",
@@ -1136,17 +1346,22 @@
         school_micro_text:"En preparación.",
         school_symbolic:"Escritura simbólica de autoconocimiento",
         school_symbolic_text:"En preparación.",
-        btn_enrol:"Solicitar inscripción",
 
         taichi_title:"La vía del cuerpo",
         taichi_text:"Tai Chi Club trabaja el cuerpo como camino de atención: enraizamiento, relajación, movimiento, respiración y presencia para volver a una conciencia más serena y encarnada.",
         btn_mentor:"Descubrir TAI CHI CLUB",
 
-        cta_eyebrow:"Mentor Club",
+        contact_eyebrow:"Contacto",
+        contact_title:"Dudas sobre el acceso",
+        contact_text:"Escribe tu consulta y se abrirá un correo dirigido a The Mentor Club.",
+        contact_name_label:"Nombre",
+        contact_email_label:"Correo",
+        contact_message_label:"Mensaje",
+        contact_btn:"Enviar consulta",
+
+        cta_eyebrow:"The Mentor Club",
         cta_title:"Un camino interior hacia la conciencia, la libertad y el autoconocimiento.",
         cta_text:"Cuerpo, palabra y conciencia: dos caminos de práctica para volver a una presencia más clara.",
-        btn_access_2:"Solicitar acceso",
-        btn_app_2:"Entrar en la APP",
         footer_text:"Cuerpo, palabra y conciencia · HOMERO CLUB · TAI CHI CLUB."
       },
 
@@ -1154,32 +1369,39 @@
         brand_sub:"Body, word and consciousness",
         nav_clubs:"Two clubs",
         nav_homero:"HOMERO CLUB",
+        nav_prices:"Prices",
+        nav_contact:"Contact",
         nav_taichi:"TAI CHI CLUB",
-        nav_app:"21-day APP",
-        nav_school:"School",
 
         hero_eyebrow:"Body, word and consciousness",
-        hero_title:"MENTOR CLUB<br>Body, word and consciousness.",
-        hero_lead:"Mentor Club brings together practices of attention to cultivate presence, clarity and transformation through the body and the word.",
+        hero_title:"THE MENTOR CLUB<br>Body, word and consciousness.",
+        hero_lead:"The Mentor Club brings together practices of attention to cultivate presence, clarity and transformation through the body and the word.",
         hero_quote:"A space where the body learns to listen and the word learns to reveal.",
-        btn_homero_hero:"Enter HOMERO CLUB",
-        btn_taichi_hero:"View TAI CHI CLUB",
-        btn_app:"Enter the APP",
+
+        btn_app_homero:"HOMERO CLUB APP",
+        btn_school_homero:"HOMERO CLUB SCHOOL",
+        btn_app_homero_2:"HOMERO CLUB APP",
+        btn_school_homero_2:"HOMERO CLUB SCHOOL",
+        btn_app_homero_3:"HOMERO CLUB APP",
+        btn_school_homero_3:"HOMERO CLUB SCHOOL",
+        btn_school_homero_4:"HOMERO CLUB SCHOOL",
+        btn_app_homero_5:"HOMERO CLUB APP",
+        btn_school_homero_5:"HOMERO CLUB SCHOOL",
+        btn_prices:"View prices",
 
         clubs_title:"Two clubs, one attention",
-        clubs_text:"Mentor Club brings together two complementary paths: Homero Club, the path of the word; Tai Chi Club, the path of the body.",
+        clubs_text:"The Mentor Club brings together two complementary paths: Homero Club, the path of the word; Tai Chi Club, the path of the body.",
         homero_card_title:"The path of the word",
         homero_card_text:"Writing, contemplation and self-knowledge.",
         taichi_card_title:"The path of the body",
         taichi_card_text:"Movement, breathing and embodied awareness.",
-        btn_homero:"Explore HOMERO CLUB",
         btn_taichi:"View TAI CHI CLUB",
 
         central_quote:"Writing, as a mirror of the inner life, liberates; as mere ornament, it deceives.",
         central_text:"We do not write to decorate identity. We write to see it.",
 
         homero_title:"Writing, contemplation and self-knowledge",
-        homero_text:"Homero Club is Mentor Club’s school of conscious writing: a space to contemplate the world, observe experience and transform existence into words.",
+        homero_text:"Homero Club is The Mentor Club’s school of conscious writing: a space to contemplate the world, observe experience and transform existence into words.",
 
         haiku_title:"Writing without possessing the world.",
         haiku_text:"A workshop to train attention, silence and the perception of the instant. Haiku teaches us to reflect the essence of the world, not to impose, falsify or invent illusory aspects of the human being.",
@@ -1195,6 +1417,34 @@
         micro_text:"Narrative intensity in its briefest form.",
         symbolic_title:"Symbolic writing for self-knowledge",
         symbolic_text:"Turning inner patterns into images of understanding.",
+
+        prices_eyebrow:"Prices and access",
+        prices_title:"Choose your path of entry",
+        prices_text:"All accesses remain active for 6 months from enrolment.",
+        price_app_label:"HOMERO CLUB APP",
+        price_app_title:"21-day APP",
+        price_app_text:"A brief and sustained practice to build a habit of conscious writing.",
+        price_app_btn:"Enter the APP",
+        price_haiku_label:"HOMERO CLUB SCHOOL",
+        price_haiku_title:"Haiku School",
+        price_haiku_text:"Contemplation, instant, kigo, kire, ma, aware and revision by elimination.",
+        price_school_btn:"Enter the school",
+        price_haibun_label:"HOMERO CLUB SCHOOL",
+        price_haibun_title:"Haibun School",
+        price_haibun_text:"Brief prose, observation, inner journey and closing haiku.",
+        price_school_btn_2:"Enter the school",
+        price_other_label:"Coming soon",
+        price_other_title:"Other workshops",
+        price_other_text:"Conscious microfiction and symbolic writing for self-knowledge will keep this price.",
+        price_contact_btn:"Ask",
+        price_pack_label:"Complete pack",
+        price_pack_title:"Complete Homero Club Pack",
+        price_pack_text:"Integrated access to the full conscious writing path available in Homero Club.",
+        price_pack_btn:"Access the pack",
+        price_duration_label:"Duration",
+        price_duration_title:"6-month access",
+        price_duration_text:"Enough time to practice, revise, return to the materials and consolidate a more conscious writing practice.",
+        price_duration_btn:"Ask a question",
 
         method_eyebrow:"HOMERO CLUB Method",
         method_title:"Writing to see",
@@ -1226,8 +1476,6 @@
         days_3:"Days 15–21",
         days_3_title:"Conscious integration",
         days_3_text:"Turning attention, experience and word into a personal practice.",
-        btn_open_app:"Open APP",
-        btn_request:"Request access",
 
         school_eyebrow:"HOMERO CLUB School",
         school_title:"Conscious writing workshops",
@@ -1240,17 +1488,22 @@
         school_micro_text:"In preparation.",
         school_symbolic:"Symbolic writing for self-knowledge",
         school_symbolic_text:"In preparation.",
-        btn_enrol:"Request enrolment",
 
         taichi_title:"The path of the body",
         taichi_text:"Tai Chi Club works with the body as a path of attention: rooting, relaxation, movement, breathing and presence in order to return to a more serene and embodied consciousness.",
         btn_mentor:"Discover TAI CHI CLUB",
 
-        cta_eyebrow:"Mentor Club",
+        contact_eyebrow:"Contact",
+        contact_title:"Questions about access",
+        contact_text:"Write your question and an email addressed to The Mentor Club will open.",
+        contact_name_label:"Name",
+        contact_email_label:"Email",
+        contact_message_label:"Message",
+        contact_btn:"Send question",
+
+        cta_eyebrow:"The Mentor Club",
         cta_title:"An inner path toward consciousness, freedom and self-knowledge.",
         cta_text:"Body, word and consciousness: two paths of practice for returning to a clearer presence.",
-        btn_access_2:"Request access",
-        btn_app_2:"Enter the APP",
         footer_text:"Body, word and consciousness · HOMERO CLUB · TAI CHI CLUB."
       }
     };
@@ -1279,17 +1532,6 @@
       });
     }
 
-    function openForm(){
-      const url = currentLang === "en" ? FORM_URL_EN : FORM_URL_ES;
-      if(!url || url === "AQUI_PEGA_EL_FORMULARIO_INGLES"){
-        alert(currentLang === "en"
-          ? "The English enrolment form is not connected yet."
-          : "El formulario inglés todavía no está conectado.");
-        return;
-      }
-      window.open(url, "_blank");
-    }
-
     function openApp(){
       window.open(APP_URL, "_blank");
     }
@@ -1302,6 +1544,23 @@
         return;
       }
       window.open(MENTOR_URL, "_blank");
+    }
+
+    function sendContact(event){
+      event.preventDefault();
+
+      const name = document.getElementById("contactName").value.trim();
+      const email = document.getElementById("contactEmail").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+
+      const subject = encodeURIComponent("Consulta · The Mentor Club");
+      const body = encodeURIComponent(
+        "Nombre: " + name + "\n" +
+        "Correo: " + email + "\n\n" +
+        "Mensaje:\n" + message
+      );
+
+      window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
     }
 
     setLang(currentLang);
