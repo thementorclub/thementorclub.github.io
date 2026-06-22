@@ -1,1 +1,1317 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MENTOR CLUB · Cuerpo, palabra y conciencia</title>
+  <meta name="description" content="Mentor Club reúne prácticas de atención para cultivar presencia, claridad y transformación a través del cuerpo y la palabra.">
 
+  <style>
+    :root{
+      --ink:#111426;
+      --night:#171827;
+      --paper:#fff8eb;
+      --paper2:#f5ead9;
+      --gold:#c59b4b;
+      --gold2:#947023;
+      --soft:rgba(17,20,38,.68);
+      --line:rgba(17,20,38,.13);
+      --card:rgba(255,252,246,.96);
+      --shadow:0 24px 70px rgba(17,20,38,.12);
+      --radius:28px;
+    }
+
+    *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+      overflow-x:hidden;
+    }
+
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:Georgia,"Times New Roman",serif;
+      line-height:1.58;
+      background:
+        radial-gradient(circle at 8% 6%, rgba(197,155,75,.14), transparent 25%),
+        radial-gradient(circle at 88% 14%, rgba(23,24,39,.08), transparent 30%),
+        linear-gradient(180deg,#fffaf0,#f4e7d3 48%,#fffaf0);
+      overflow-x:hidden;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    h1,h2,h3,p,a,small,strong{
+      text-wrap:pretty;
+    }
+
+    h1,h2,h3{
+      margin:.2rem 0 .9rem;
+      line-height:1.02;
+      overflow-wrap:normal;
+      word-break:normal;
+    }
+
+    h1{
+      font-size:clamp(3rem,6vw,5.4rem);
+      letter-spacing:-.052em;
+      line-height:.96;
+    }
+
+    h2{
+      font-size:clamp(2.1rem,4.4vw,4rem);
+      letter-spacing:-.042em;
+    }
+
+    h3{
+      font-size:clamp(1.35rem,2vw,1.85rem);
+      letter-spacing:-.02em;
+    }
+
+    p{
+      margin:.45rem 0 1rem;
+      font-size:1.06rem;
+    }
+
+    .wrap{
+      width:min(1180px, calc(100% - 2rem));
+      margin:auto;
+    }
+
+    .eyebrow{
+      font-family:Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.76rem;
+      color:var(--gold2);
+      font-weight:900;
+    }
+
+    .muted{
+      color:var(--soft);
+    }
+
+    .btn{
+      border-radius:999px;
+      padding:.9rem 1.25rem;
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:.18s ease;
+      text-align:center;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:white;
+      box-shadow:0 16px 34px rgba(148,112,35,.25);
+    }
+
+    .secondary{
+      background:rgba(255,252,246,.94);
+      color:var(--ink);
+      border-color:rgba(17,20,38,.14);
+    }
+
+    .dark{
+      background:var(--night);
+      color:white;
+      border-color:var(--night);
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      margin-top:1.3rem;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .pad{
+      padding:clamp(1.25rem,3vw,2.15rem);
+    }
+
+    .brand-logo,
+    .footer-logo{
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:center;
+      flex:0 0 auto;
+      border:1px solid rgba(197,155,75,.42);
+      box-shadow:0 8px 22px rgba(17,20,38,.09);
+      background:#fff8eb;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:99;
+      backdrop-filter:blur(16px);
+      background:rgba(255,248,235,.93);
+      border-bottom:1px solid rgba(17,20,38,.10);
+    }
+
+    .topbar{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      font-family:Arial,sans-serif;
+      font-weight:900;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.85rem;
+      min-width:0;
+    }
+
+    .brand strong{
+      display:block;
+      line-height:1.1;
+    }
+
+    .brand small{
+      display:block;
+      color:var(--soft);
+      font-weight:800;
+      font-size:.78rem;
+      margin-top:.12rem;
+      line-height:1.15;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:.2rem;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    nav a,
+    .lang button{
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      font-size:.86rem;
+      padding:.55rem .72rem;
+      border-radius:999px;
+      background:transparent;
+      border:0;
+      cursor:pointer;
+      color:var(--ink);
+    }
+
+    .lang{
+      display:flex;
+      gap:.25rem;
+      padding:.25rem;
+      border-radius:999px;
+      background:rgba(255,252,246,.9);
+      border:1px solid rgba(197,155,75,.32);
+      margin-left:.35rem;
+      flex:0 0 auto;
+    }
+
+    .lang button.active{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#fff;
+    }
+
+    section{
+      padding:clamp(3rem,6vw,5.2rem) 0;
+    }
+
+    .section-head{
+      max-width:860px;
+      margin-bottom:1.4rem;
+    }
+
+    .hero{
+      padding:clamp(3rem,7vw,6rem) 0 3rem;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:2rem;
+      align-items:center;
+    }
+
+    .hero-copy .lead{
+      font-size:clamp(1.08rem,1.65vw,1.25rem);
+      color:rgba(17,20,38,.78);
+      max-width:660px;
+    }
+
+    .hero-frame{
+      position:relative;
+      aspect-ratio:16 / 10;
+      border-radius:34px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(17,20,38,.12);
+      background:#efe6d5;
+    }
+
+    .hero-frame img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      filter:saturate(1.02) contrast(1.02);
+    }
+
+    .hero-note{
+      position:absolute;
+      left:1rem;
+      right:1rem;
+      bottom:1rem;
+      padding:1.25rem 1.35rem;
+      border-radius:24px;
+      background:linear-gradient(180deg,rgba(255,248,235,.58),rgba(255,248,235,.96));
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,.5);
+      color:var(--ink);
+    }
+
+    .hero-note p{
+      margin:0;
+      max-width:650px;
+      font-size:1rem;
+      font-weight:700;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
+      align-items:stretch;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+    }
+
+    .mentor-path-card{
+      min-height:290px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .quote-band{
+      padding:3.4rem 0;
+    }
+
+    .quote{
+      text-align:center;
+      padding:clamp(2rem,5vw,3.6rem);
+      background:rgba(23,24,39,.96);
+      color:#fff;
+      border-radius:38px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(197,155,75,.28);
+    }
+
+    .quote h2{
+      font-size:clamp(2rem,4vw,3.7rem);
+      max-width:980px;
+      margin:auto;
+    }
+
+    .quote p{
+      color:rgba(255,255,255,.78);
+      max-width:820px;
+      margin:1.3rem auto 0;
+      font-size:1.16rem;
+    }
+
+    .path-card{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+
+    .path-img{
+      width:100%;
+      aspect-ratio:1 / 1;
+      background:#efe6d5;
+      overflow:hidden;
+      border-bottom:1px solid rgba(17,20,38,.08);
+    }
+
+    .path-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      filter:saturate(1.02) contrast(1.03);
+    }
+
+    .path-card .pad{
+      flex:1;
+      background:rgba(255,252,246,.97);
+      padding:1.35rem;
+      min-height:255px;
+    }
+
+    .num{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(197,155,75,.16);
+      color:var(--gold2);
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      margin-bottom:1rem;
+    }
+
+    .status-label{
+      display:inline-flex;
+      align-items:center;
+      border-radius:999px;
+      background:rgba(197,155,75,.14);
+      color:var(--gold2);
+      border:1px solid rgba(197,155,75,.22);
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      font-size:.72rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      padding:.42rem .68rem;
+      margin-bottom:.85rem;
+    }
+
+    .principles{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:.75rem;
+    }
+
+    .principle{
+      padding:1.05rem;
+      border-radius:22px;
+      background:rgba(255,252,246,.78);
+      border:1px solid rgba(17,20,38,.10);
+    }
+
+    .principle strong{
+      display:block;
+      font-size:1.02rem;
+      line-height:1.15;
+      margin-bottom:.45rem;
+    }
+
+    .principle p{
+      font-size:.94rem;
+      color:var(--soft);
+      margin:0;
+    }
+
+    .app-block{
+      background:
+        radial-gradient(circle at 8% 0%,rgba(197,155,75,.22),transparent 25%),
+        linear-gradient(135deg,rgba(23,24,39,.98),rgba(35,35,54,.95));
+      color:#fff;
+      border-radius:38px;
+      overflow:hidden;
+      border:1px solid rgba(197,155,75,.28);
+      box-shadow:var(--shadow);
+    }
+
+    .app-block .muted{
+      color:rgba(255,255,255,.72);
+    }
+
+    .days{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+      margin-top:1.4rem;
+    }
+
+    .day-card{
+      padding:1.2rem;
+      border-radius:24px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+    }
+
+    .day-card .eyebrow{
+      color:#f0d991;
+    }
+
+    .mentor-showcase{
+      display:grid;
+      grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+      gap:1.25rem;
+      align-items:stretch;
+    }
+
+    .mentor-copy,
+    .mentor-image{
+      min-width:0;
+    }
+
+    .mentor-copy{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      background:rgba(255,252,246,.96);
+      border:1px solid var(--line);
+      border-radius:34px;
+      box-shadow:var(--shadow);
+      padding:clamp(1.5rem,4vw,3.3rem);
+      position:relative;
+      z-index:2;
+    }
+
+    .mentor-image{
+      aspect-ratio:16 / 10;
+      border-radius:34px;
+      overflow:hidden;
+      border:1px solid rgba(17,20,38,.12);
+      box-shadow:var(--shadow);
+      background:#efe6d5;
+      position:relative;
+      z-index:1;
+    }
+
+    .mentor-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      filter:saturate(1.02) contrast(1.02);
+    }
+
+    .cta{
+      text-align:center;
+      padding-bottom:5rem;
+    }
+
+    .cta .card{
+      padding:clamp(2rem,5vw,3.6rem);
+      background:
+        radial-gradient(circle at 10% 20%,rgba(197,155,75,.14),transparent 26%),
+        rgba(255,252,246,.96);
+    }
+
+    footer{
+      background:var(--night);
+      color:#fff;
+      padding:2rem 0;
+      font-family:Arial,sans-serif;
+    }
+
+    footer .wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:.85rem;
+      min-width:0;
+    }
+
+    .footer-brand strong{
+      line-height:1.1;
+    }
+
+    footer small{
+      color:rgba(255,255,255,.72);
+      font-weight:700;
+      line-height:1.35;
+      text-align:right;
+      display:block;
+    }
+
+    @media(max-width:1100px){
+      .principles{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+
+    @media(max-width:1020px){
+      nav a{
+        display:none;
+      }
+
+      .hero-grid,
+      .grid2,
+      .grid3{
+        grid-template-columns:1fr;
+      }
+
+      .mentor-showcase{
+        grid-template-columns:1fr;
+      }
+
+      .mentor-copy{
+        order:1;
+      }
+
+      .mentor-image{
+        order:2;
+      }
+
+      .principles{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .days{
+        grid-template-columns:1fr;
+      }
+
+      .path-img{
+        aspect-ratio:16 / 10;
+      }
+
+      .path-card .pad{
+        min-height:auto;
+      }
+    }
+
+    @media(max-width:760px){
+      body{
+        background:#fff8eb;
+      }
+
+      .wrap{
+        width:100%;
+        padding-left:14px;
+        padding-right:14px;
+      }
+
+      .topbar{
+        min-height:auto;
+        padding:.75rem 0;
+        align-items:center;
+      }
+
+      .brand-logo,
+      .footer-logo{
+        width:42px;
+        height:42px;
+      }
+
+      .brand strong{
+        font-size:.95rem;
+      }
+
+      .brand small{
+        font-size:.68rem;
+        max-width:220px;
+        line-height:1.15;
+      }
+
+      .lang button{
+        padding:.45rem .58rem;
+        font-size:.78rem;
+      }
+
+      section{
+        padding:2.4rem 0;
+      }
+
+      .hero{
+        padding-top:1.5rem;
+        padding-bottom:2rem;
+      }
+
+      h1{
+        font-size:clamp(2.25rem,10.8vw,3rem);
+        line-height:1;
+        letter-spacing:-.045em;
+      }
+
+      h2{
+        font-size:clamp(1.85rem,8.2vw,2.45rem);
+        line-height:1.04;
+        letter-spacing:-.035em;
+      }
+
+      h3{
+        font-size:1.32rem;
+        line-height:1.08;
+      }
+
+      p{
+        font-size:.98rem;
+        line-height:1.55;
+      }
+
+      .eyebrow{
+        letter-spacing:.13em;
+        font-size:.68rem;
+      }
+
+      .actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:.65rem;
+      }
+
+      .actions .btn{
+        width:100%;
+      }
+
+      .hero-frame{
+        aspect-ratio:1 / 1;
+        border-radius:24px;
+      }
+
+      .hero-note{
+        left:.75rem;
+        right:.75rem;
+        bottom:.75rem;
+        padding:1rem;
+        border-radius:18px;
+      }
+
+      .hero-note p{
+        font-size:.88rem;
+        line-height:1.35;
+      }
+
+      .quote{
+        padding:1.45rem;
+        border-radius:24px;
+      }
+
+      .quote h2{
+        font-size:1.58rem;
+        line-height:1.08;
+      }
+
+      .card,
+      .path-card,
+      .app-block,
+      .cta .card,
+      .mentor-image,
+      .mentor-copy{
+        border-radius:24px;
+      }
+
+      .pad{
+        padding:1.15rem;
+      }
+
+      .path-img{
+        aspect-ratio:1 / 1;
+      }
+
+      .principles{
+        grid-template-columns:1fr;
+      }
+
+      .mentor-image{
+        aspect-ratio:1 / 1;
+      }
+
+      .mentor-copy{
+        padding:1.3rem;
+      }
+
+      footer .wrap{
+        display:block;
+      }
+
+      .footer-brand{
+        margin-bottom:1rem;
+      }
+
+      footer small{
+        text-align:left;
+      }
+    }
+
+    @media(max-width:420px){
+      .brand small{
+        display:none;
+      }
+
+      h1{
+        font-size:2.15rem;
+      }
+
+      h2{
+        font-size:1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap topbar">
+      <a class="brand" href="#inicio" aria-label="MENTOR CLUB">
+        <img class="brand-logo" src="assets/img/logo-tmr.png?v=mentorclub-001" alt="Logo Mentor Club">
+        <div>
+          <strong>MENTOR CLUB</strong>
+          <small data-i18n="brand_sub">Cuerpo, palabra y conciencia</small>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#clubes" data-i18n="nav_clubs">Dos clubes</a>
+        <a href="#homero" data-i18n="nav_homero">HOMERO CLUB</a>
+        <a href="#taichi" data-i18n="nav_taichi">TAI CHI CLUB</a>
+        <a href="#app" data-i18n="nav_app">APP 21 días</a>
+        <a href="#escuela" data-i18n="nav_school">Escuela</a>
+
+        <div class="lang">
+          <button type="button" data-lang-btn="es" onclick="setLang('es')">ES</button>
+          <button type="button" data-lang-btn="en" onclick="setLang('en')">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Cuerpo, palabra y conciencia</p>
+          <h1 data-i18n-html="hero_title">MENTOR CLUB<br>Cuerpo, palabra y conciencia.</h1>
+          <p class="lead" data-i18n="hero_lead">Mentor Club reúne prácticas de atención para cultivar presencia, claridad y transformación a través del cuerpo y la palabra.</p>
+
+          <div class="actions">
+            <a class="btn primary" href="#homero" data-i18n="btn_homero_hero">Entrar en HOMERO CLUB</a>
+            <a class="btn secondary" href="#taichi" data-i18n="btn_taichi_hero">Ver TAI CHI CLUB</a>
+            <a class="btn dark" href="#" onclick="openApp();return false;" data-i18n="btn_app">Entrar en la APP</a>
+          </div>
+        </div>
+
+        <div class="hero-frame">
+          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=mentorclub-001" alt="Mentor Club · umbral de autoconocimiento">
+          <div class="hero-note">
+            <p data-i18n="hero_quote">Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clubes">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">MENTOR CLUB</p>
+          <h2 data-i18n="clubs_title">Dos clubes, una misma atención</h2>
+          <p class="muted" data-i18n="clubs_text">Mentor Club reúne dos caminos complementarios: Homero Club, la vía de la palabra; Tai Chi Club, la vía del cuerpo.</p>
+        </div>
+
+        <div class="grid2">
+          <article class="card pad mentor-path-card">
+            <div>
+              <p class="eyebrow">HOMERO CLUB</p>
+              <h3 data-i18n="homero_card_title">La vía de la palabra</h3>
+              <p class="muted" data-i18n="homero_card_text">Escritura, contemplación y autoconocimiento.</p>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="#homero" data-i18n="btn_homero">Explorar HOMERO CLUB</a>
+            </div>
+          </article>
+
+          <article class="card pad mentor-path-card">
+            <div>
+              <p class="eyebrow">TAI CHI CLUB</p>
+              <h3 data-i18n="taichi_card_title">La vía del cuerpo</h3>
+              <p class="muted" data-i18n="taichi_card_text">Movimiento, respiración y conciencia corporal.</p>
+            </div>
+            <div class="actions">
+              <a class="btn secondary" href="#taichi" data-i18n="btn_taichi">Ver TAI CHI CLUB</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <div class="wrap">
+        <div class="quote">
+          <h2 data-i18n="central_quote">La escritura, como espejo del interior, libera; como simple adorno, engaña.</h2>
+          <p data-i18n="central_text">No escribimos para adornar la identidad. Escribimos para verla.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="homero">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">HOMERO CLUB</p>
+          <h2 data-i18n="homero_title">Escritura, contemplación y autoconocimiento</h2>
+          <p class="muted" data-i18n="homero_text">Homero Club es la escuela de escritura consciente de Mentor Club: un espacio para contemplar el mundo, observar la experiencia y transformar la existencia en palabras.</p>
+        </div>
+
+        <div class="grid2">
+          <article class="card path-card">
+            <div class="path-img">
+              <img src="assets/img/imagen-haiku-contemplacion.webp?v=mentorclub-001" alt="Haiku y contemplación">
+            </div>
+            <div class="pad">
+              <span class="num">1</span>
+              <p class="eyebrow">HAIKU</p>
+              <h3 data-i18n="haiku_title">Escribir sin apropiarse del mundo.</h3>
+              <p class="muted" data-i18n="haiku_text">Un taller para entrenar la atención, el silencio y la percepción del instante. El haiku enseña a reflejar la esencia del mundo, no a imponer, falsear ni inventar aspectos ilusorios del ser humano.</p>
+            </div>
+          </article>
+
+          <article class="card path-card">
+            <div class="path-img">
+              <img src="assets/img/imagen-koan-grieta.webp?v=mentorclub-001" alt="Haibun · prosa y haiku">
+            </div>
+            <div class="pad">
+              <span class="num">2</span>
+              <p class="eyebrow">HAIBUN</p>
+              <h3 data-i18n="haibun_title">Narrar el instante.</h3>
+              <p class="muted" data-i18n="haibun_text">El haibun es un puente entre la prosa y el haiku. Unas líneas que describen la fuerza de un instante que conmueve al corazón.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-head" style="margin-top:2rem">
+          <p class="eyebrow" data-i18n="preparing_eyebrow">En preparación</p>
+          <h2 data-i18n="preparing_title">Nuevos caminos de escritura consciente</h2>
+        </div>
+
+        <div class="grid2">
+          <article class="card pad">
+            <span class="status-label" data-i18n="status_preparing">En preparación</span>
+            <h3 data-i18n="micro_title">Microrrelato consciente</h3>
+            <p class="muted" data-i18n="micro_text">La intensidad narrativa en su forma más breve.</p>
+          </article>
+
+          <article class="card pad">
+            <span class="status-label" data-i18n="status_preparing_2">En preparación</span>
+            <h3 data-i18n="symbolic_title">Escritura simbólica de autoconocimiento</h3>
+            <p class="muted" data-i18n="symbolic_text">Convertir patrones interiores en imágenes de comprensión.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="method_eyebrow">Método HOMERO CLUB</p>
+          <h2 data-i18n="method_title">Escribir para ver</h2>
+          <p class="muted" data-i18n="method_text">La palabra se convierte en una herramienta de atención: permite separar identidad y patrón, dar forma a lo interior y dejar que el símbolo abra camino.</p>
+        </div>
+
+        <div class="principles">
+          <div class="principle"><strong data-i18n="p1_title">La escritura como herramienta de autoconocimiento</strong><p data-i18n="p1_text">No priorizamos el adorno ni la emoción. Empezamos por la atención.</p></div>
+          <div class="principle"><strong data-i18n="p2_title">El patrón no es la identidad</strong><p data-i18n="p2_text">Una persona no es su miedo, su culpa, su ansiedad, su deseo ni su máscara.</p></div>
+          <div class="principle"><strong data-i18n="p3_title">La literatura no debe alimentar el ego espiritual</strong><p data-i18n="p3_text">No escribimos para parecer profundos. Escribimos para mirar con más honestidad.</p></div>
+          <div class="principle"><strong data-i18n="p4_title">La forma descubre el interior</strong><p data-i18n="p4_text">Toda emoción se expresa en una forma. La forma vuelve visible la experiencia.</p></div>
+          <div class="principle"><strong data-i18n="p5_title">El símbolo es reflejo y camino de liberación</strong><p data-i18n="p5_text">La tarea es crear una imagen viva que enseñe a ver mejor cada elección.</p></div>
+          <div class="principle"><strong data-i18n="p6_title">La brevedad ayuda a ver el mecanismo</strong><p data-i18n="p6_text">Lo breve obliga a elegir. Y elegir revela.</p></div>
+          <div class="principle"><strong data-i18n="p7_title">El silencio también escribe</strong><p data-i18n="p7_text">Lo que el texto calla puede ser más importante que lo que dice.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="app">
+      <div class="wrap">
+        <div class="app-block">
+          <div class="pad">
+            <p class="eyebrow" data-i18n="app_eyebrow">Práctica progresiva</p>
+            <h2 data-i18n="app_title">APP HOMERO · 21 días</h2>
+            <p class="muted" data-i18n="app_text">Una práctica breve y sostenida para crear hábito, afinar la atención y entrar en el método HOMERO CLUB.</p>
+
+            <div class="days">
+              <div class="day-card"><p class="eyebrow" data-i18n="days_1">Días 1–7</p><h3 data-i18n="days_1_title">Haiku y contemplación</h3><p class="muted" data-i18n="days_1_text">Mirar el mundo antes de interpretarlo.</p></div>
+              <div class="day-card"><p class="eyebrow" data-i18n="days_2">Días 8–14</p><h3 data-i18n="days_2_title">Haibun y experiencia</h3><p class="muted" data-i18n="days_2_text">Narrar un instante sin apagar su misterio.</p></div>
+              <div class="day-card"><p class="eyebrow" data-i18n="days_3">Días 15–21</p><h3 data-i18n="days_3_title">Integración consciente</h3><p class="muted" data-i18n="days_3_text">Transformar atención, experiencia y palabra en una práctica propia.</p></div>
+            </div>
+
+            <div class="actions">
+              <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_open_app">Abrir APP</a>
+              <a class="btn secondary" href="#" onclick="openForm();return false;" data-i18n="btn_request">Solicitar acceso</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="escuela">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="school_eyebrow">Escuela HOMERO CLUB</p>
+          <h2 data-i18n="school_title">Talleres de escritura consciente</h2>
+          <p class="muted" data-i18n="school_text">La escuela reúne recorridos para practicar atención, contemplación y palabra.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card pad"><p class="eyebrow">01</p><h3 data-i18n="school_haiku">Taller de Haiku y contemplación</h3><p class="muted" data-i18n="school_haiku_text">Instante, kigo, kire, ma, aware, wabi, sabi, karumi y escritura por eliminación.</p></div>
+          <div class="card pad"><p class="eyebrow">02</p><h3 data-i18n="school_haibun">Taller de Haibun</h3><p class="muted" data-i18n="school_haibun_text">Prosa breve, observación, viaje interior y cierre en haiku.</p></div>
+          <div class="card pad"><p class="eyebrow">03</p><h3 data-i18n="school_micro">Microrrelato consciente</h3><p class="muted" data-i18n="school_micro_text">En preparación.</p></div>
+          <div class="card pad"><p class="eyebrow">04</p><h3 data-i18n="school_symbolic">Escritura simbólica de autoconocimiento</h3><p class="muted" data-i18n="school_symbolic_text">En preparación.</p></div>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="#" onclick="openForm();return false;" data-i18n="btn_enrol">Solicitar inscripción</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="taichi">
+      <div class="wrap">
+        <div class="mentor-showcase">
+          <div class="mentor-copy">
+            <p class="eyebrow">TAI CHI CLUB</p>
+            <h2 data-i18n="taichi_title">La vía del cuerpo</h2>
+            <p class="muted" data-i18n="taichi_text">Tai Chi Club trabaja el cuerpo como camino de atención: enraizamiento, relajación, movimiento, respiración y presencia para volver a una conciencia más serena y encarnada.</p>
+            <div class="actions">
+              <a class="btn primary" href="#" onclick="openMentor();return false;" data-i18n="btn_mentor">Descubrir TAI CHI CLUB</a>
+            </div>
+          </div>
+
+          <div class="mentor-image">
+            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=mentorclub-001" alt="Tai Chi Club · Mentor Club">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="card">
+          <p class="eyebrow" data-i18n="cta_eyebrow">Mentor Club</p>
+          <h2 data-i18n="cta_title">Un camino interior hacia la conciencia, la libertad y el autoconocimiento.</h2>
+          <p class="muted" data-i18n="cta_text">Cuerpo, palabra y conciencia: dos caminos de práctica para volver a una presencia más clara.</p>
+
+          <div class="actions" style="justify-content:center">
+            <a class="btn primary" href="#" onclick="openForm();return false;" data-i18n="btn_access_2">Solicitar acceso</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_app_2">Entrar en la APP</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/img/logo-tmr.png?v=mentorclub-001" alt="Logo Mentor Club">
+        <div>
+          <strong>MENTOR CLUB</strong>
+        </div>
+      </div>
+      <small data-i18n="footer_text">Cuerpo, palabra y conciencia · HOMERO CLUB · TAI CHI CLUB.</small>
+    </div>
+  </footer>
+
+  <script>
+    const FORM_URL_ES = "https://forms.gle/7j6choXxcgBYDCEU6";
+    const FORM_URL_EN = "AQUI_PEGA_EL_FORMULARIO_INGLES";
+    const APP_URL = "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec";
+    const MENTOR_URL = "#";
+
+    let currentLang = localStorage.getItem("homero_lang") || "es";
+
+    const I18N = {
+      es:{
+        brand_sub:"Cuerpo, palabra y conciencia",
+        nav_clubs:"Dos clubes",
+        nav_homero:"HOMERO CLUB",
+        nav_taichi:"TAI CHI CLUB",
+        nav_app:"APP 21 días",
+        nav_school:"Escuela",
+
+        hero_eyebrow:"Cuerpo, palabra y conciencia",
+        hero_title:"MENTOR CLUB<br>Cuerpo, palabra y conciencia.",
+        hero_lead:"Mentor Club reúne prácticas de atención para cultivar presencia, claridad y transformación a través del cuerpo y la palabra.",
+        hero_quote:"Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.",
+        btn_homero_hero:"Entrar en HOMERO CLUB",
+        btn_taichi_hero:"Ver TAI CHI CLUB",
+        btn_app:"Entrar en la APP",
+
+        clubs_title:"Dos clubes, una misma atención",
+        clubs_text:"Mentor Club reúne dos caminos complementarios: Homero Club, la vía de la palabra; Tai Chi Club, la vía del cuerpo.",
+        homero_card_title:"La vía de la palabra",
+        homero_card_text:"Escritura, contemplación y autoconocimiento.",
+        taichi_card_title:"La vía del cuerpo",
+        taichi_card_text:"Movimiento, respiración y conciencia corporal.",
+        btn_homero:"Explorar HOMERO CLUB",
+        btn_taichi:"Ver TAI CHI CLUB",
+
+        central_quote:"La escritura, como espejo del interior, libera; como simple adorno, engaña.",
+        central_text:"No escribimos para adornar la identidad. Escribimos para verla.",
+
+        homero_title:"Escritura, contemplación y autoconocimiento",
+        homero_text:"Homero Club es la escuela de escritura consciente de Mentor Club: un espacio para contemplar el mundo, observar la experiencia y transformar la existencia en palabras.",
+
+        haiku_title:"Escribir sin apropiarse del mundo.",
+        haiku_text:"Un taller para entrenar la atención, el silencio y la percepción del instante. El haiku enseña a reflejar la esencia del mundo, no a imponer, falsear ni inventar aspectos ilusorios del ser humano.",
+
+        haibun_title:"Narrar el instante.",
+        haibun_text:"El haibun es un puente entre la prosa y el haiku. Unas líneas que describen la fuerza de un instante que conmueve al corazón.",
+
+        preparing_eyebrow:"En preparación",
+        preparing_title:"Nuevos caminos de escritura consciente",
+        status_preparing:"En preparación",
+        status_preparing_2:"En preparación",
+        micro_title:"Microrrelato consciente",
+        micro_text:"La intensidad narrativa en su forma más breve.",
+        symbolic_title:"Escritura simbólica de autoconocimiento",
+        symbolic_text:"Convertir patrones interiores en imágenes de comprensión.",
+
+        method_eyebrow:"Método HOMERO CLUB",
+        method_title:"Escribir para ver",
+        method_text:"La palabra se convierte en una herramienta de atención: permite separar identidad y patrón, dar forma a lo interior y dejar que el símbolo abra camino.",
+        p1_title:"La escritura como herramienta de autoconocimiento",
+        p1_text:"No priorizamos el adorno ni la emoción. Empezamos por la atención.",
+        p2_title:"El patrón no es la identidad",
+        p2_text:"Una persona no es su miedo, su culpa, su ansiedad, su deseo ni su máscara.",
+        p3_title:"La literatura no debe alimentar el ego espiritual",
+        p3_text:"No escribimos para parecer profundos. Escribimos para mirar con más honestidad.",
+        p4_title:"La forma descubre el interior",
+        p4_text:"Toda emoción se expresa en una forma. La forma vuelve visible la experiencia.",
+        p5_title:"El símbolo es reflejo y camino de liberación",
+        p5_text:"La tarea es crear una imagen viva que enseñe a ver mejor cada elección.",
+        p6_title:"La brevedad ayuda a ver el mecanismo",
+        p6_text:"Lo breve obliga a elegir. Y elegir revela.",
+        p7_title:"El silencio también escribe",
+        p7_text:"Lo que el texto calla puede ser más importante que lo que dice.",
+
+        app_eyebrow:"Práctica progresiva",
+        app_title:"APP HOMERO · 21 días",
+        app_text:"Una práctica breve y sostenida para crear hábito, afinar la atención y entrar en el método HOMERO CLUB.",
+        days_1:"Días 1–7",
+        days_1_title:"Haiku y contemplación",
+        days_1_text:"Mirar el mundo antes de interpretarlo.",
+        days_2:"Días 8–14",
+        days_2_title:"Haibun y experiencia",
+        days_2_text:"Narrar un instante sin apagar su misterio.",
+        days_3:"Días 15–21",
+        days_3_title:"Integración consciente",
+        days_3_text:"Transformar atención, experiencia y palabra en una práctica propia.",
+        btn_open_app:"Abrir APP",
+        btn_request:"Solicitar acceso",
+
+        school_eyebrow:"Escuela HOMERO CLUB",
+        school_title:"Talleres de escritura consciente",
+        school_text:"La escuela reúne recorridos para practicar atención, contemplación y palabra.",
+        school_haiku:"Taller de Haiku y contemplación",
+        school_haiku_text:"Instante, kigo, kire, ma, aware, wabi, sabi, karumi y escritura por eliminación.",
+        school_haibun:"Taller de Haibun",
+        school_haibun_text:"Prosa breve, observación, viaje interior y cierre en haiku.",
+        school_micro:"Microrrelato consciente",
+        school_micro_text:"En preparación.",
+        school_symbolic:"Escritura simbólica de autoconocimiento",
+        school_symbolic_text:"En preparación.",
+        btn_enrol:"Solicitar inscripción",
+
+        taichi_title:"La vía del cuerpo",
+        taichi_text:"Tai Chi Club trabaja el cuerpo como camino de atención: enraizamiento, relajación, movimiento, respiración y presencia para volver a una conciencia más serena y encarnada.",
+        btn_mentor:"Descubrir TAI CHI CLUB",
+
+        cta_eyebrow:"Mentor Club",
+        cta_title:"Un camino interior hacia la conciencia, la libertad y el autoconocimiento.",
+        cta_text:"Cuerpo, palabra y conciencia: dos caminos de práctica para volver a una presencia más clara.",
+        btn_access_2:"Solicitar acceso",
+        btn_app_2:"Entrar en la APP",
+        footer_text:"Cuerpo, palabra y conciencia · HOMERO CLUB · TAI CHI CLUB."
+      },
+
+      en:{
+        brand_sub:"Body, word and consciousness",
+        nav_clubs:"Two clubs",
+        nav_homero:"HOMERO CLUB",
+        nav_taichi:"TAI CHI CLUB",
+        nav_app:"21-day APP",
+        nav_school:"School",
+
+        hero_eyebrow:"Body, word and consciousness",
+        hero_title:"MENTOR CLUB<br>Body, word and consciousness.",
+        hero_lead:"Mentor Club brings together practices of attention to cultivate presence, clarity and transformation through the body and the word.",
+        hero_quote:"A space where the body learns to listen and the word learns to reveal.",
+        btn_homero_hero:"Enter HOMERO CLUB",
+        btn_taichi_hero:"View TAI CHI CLUB",
+        btn_app:"Enter the APP",
+
+        clubs_title:"Two clubs, one attention",
+        clubs_text:"Mentor Club brings together two complementary paths: Homero Club, the path of the word; Tai Chi Club, the path of the body.",
+        homero_card_title:"The path of the word",
+        homero_card_text:"Writing, contemplation and self-knowledge.",
+        taichi_card_title:"The path of the body",
+        taichi_card_text:"Movement, breathing and embodied awareness.",
+        btn_homero:"Explore HOMERO CLUB",
+        btn_taichi:"View TAI CHI CLUB",
+
+        central_quote:"Writing, as a mirror of the inner life, liberates; as mere ornament, it deceives.",
+        central_text:"We do not write to decorate identity. We write to see it.",
+
+        homero_title:"Writing, contemplation and self-knowledge",
+        homero_text:"Homero Club is Mentor Club’s school of conscious writing: a space to contemplate the world, observe experience and transform existence into words.",
+
+        haiku_title:"Writing without possessing the world.",
+        haiku_text:"A workshop to train attention, silence and the perception of the instant. Haiku teaches us to reflect the essence of the world, not to impose, falsify or invent illusory aspects of the human being.",
+
+        haibun_title:"Narrating the instant.",
+        haibun_text:"Haibun is a bridge between prose and haiku. A few lines that describe the force of an instant that moves the heart.",
+
+        preparing_eyebrow:"In preparation",
+        preparing_title:"New paths of conscious writing",
+        status_preparing:"In preparation",
+        status_preparing_2:"In preparation",
+        micro_title:"Conscious microfiction",
+        micro_text:"Narrative intensity in its briefest form.",
+        symbolic_title:"Symbolic writing for self-knowledge",
+        symbolic_text:"Turning inner patterns into images of understanding.",
+
+        method_eyebrow:"HOMERO CLUB Method",
+        method_title:"Writing to see",
+        method_text:"The word becomes a tool of attention: it helps separate identity from pattern, give form to the inner life and allow the symbol to open a path.",
+        p1_title:"Writing as a tool for self-knowledge",
+        p1_text:"We do not prioritize ornament or emotion. We begin with attention.",
+        p2_title:"The pattern is not identity",
+        p2_text:"A person is not their fear, guilt, anxiety, desire or mask.",
+        p3_title:"Literature must not feed the spiritual ego",
+        p3_text:"We do not write to appear profound. We write to look more honestly.",
+        p4_title:"Form reveals the inner life",
+        p4_text:"Every emotion expresses itself in a form. Form makes experience visible.",
+        p5_title:"The symbol is reflection and path of liberation",
+        p5_text:"The task is to create a living image that teaches us to see each choice more clearly.",
+        p6_title:"Brevity helps reveal the mechanism",
+        p6_text:"The brief form forces us to choose. And choosing reveals.",
+        p7_title:"Silence also writes",
+        p7_text:"What the text leaves unsaid may matter more than what it says.",
+
+        app_eyebrow:"Progressive practice",
+        app_title:"HOMERO APP · 21 days",
+        app_text:"A brief and sustained practice to build habit, refine attention and enter the HOMERO CLUB method.",
+        days_1:"Days 1–7",
+        days_1_title:"Haiku and contemplation",
+        days_1_text:"Looking at the world before interpreting it.",
+        days_2:"Days 8–14",
+        days_2_title:"Haibun and experience",
+        days_2_text:"Narrating an instant without extinguishing its mystery.",
+        days_3:"Days 15–21",
+        days_3_title:"Conscious integration",
+        days_3_text:"Turning attention, experience and word into a personal practice.",
+        btn_open_app:"Open APP",
+        btn_request:"Request access",
+
+        school_eyebrow:"HOMERO CLUB School",
+        school_title:"Conscious writing workshops",
+        school_text:"The school brings together paths for practicing attention, contemplation and word.",
+        school_haiku:"Haiku and Contemplation Workshop",
+        school_haiku_text:"Instant, kigo, kire, ma, aware, wabi, sabi, karumi and revision by elimination.",
+        school_haibun:"Haibun Workshop",
+        school_haibun_text:"Brief prose, observation, inner journey and closing haiku.",
+        school_micro:"Conscious microfiction",
+        school_micro_text:"In preparation.",
+        school_symbolic:"Symbolic writing for self-knowledge",
+        school_symbolic_text:"In preparation.",
+        btn_enrol:"Request enrolment",
+
+        taichi_title:"The path of the body",
+        taichi_text:"Tai Chi Club works with the body as a path of attention: rooting, relaxation, movement, breathing and presence in order to return to a more serene and embodied consciousness.",
+        btn_mentor:"Discover TAI CHI CLUB",
+
+        cta_eyebrow:"Mentor Club",
+        cta_title:"An inner path toward consciousness, freedom and self-knowledge.",
+        cta_text:"Body, word and consciousness: two paths of practice for returning to a clearer presence.",
+        btn_access_2:"Request access",
+        btn_app_2:"Enter the APP",
+        footer_text:"Body, word and consciousness · HOMERO CLUB · TAI CHI CLUB."
+      }
+    };
+
+    function setLang(lang){
+      currentLang = lang;
+      localStorage.setItem("homero_lang", lang);
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-lang-btn]").forEach(function(btn){
+        btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
+      });
+
+      document.querySelectorAll("[data-i18n]").forEach(function(el){
+        const key = el.getAttribute("data-i18n");
+        if(I18N[lang] && I18N[lang][key]){
+          el.textContent = I18N[lang][key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+        const key = el.getAttribute("data-i18n-html");
+        if(I18N[lang] && I18N[lang][key]){
+          el.innerHTML = I18N[lang][key];
+        }
+      });
+    }
+
+    function openForm(){
+      const url = currentLang === "en" ? FORM_URL_EN : FORM_URL_ES;
+      if(!url || url === "AQUI_PEGA_EL_FORMULARIO_INGLES"){
+        alert(currentLang === "en"
+          ? "The English enrolment form is not connected yet."
+          : "El formulario inglés todavía no está conectado.");
+        return;
+      }
+      window.open(url, "_blank");
+    }
+
+    function openApp(){
+      window.open(APP_URL, "_blank");
+    }
+
+    function openMentor(){
+      if(!MENTOR_URL || MENTOR_URL === "#"){
+        alert(currentLang === "en"
+          ? "The Tai Chi Club page will be connected soon."
+          : "La página de Tai Chi Club se conectará próximamente.");
+        return;
+      }
+      window.open(MENTOR_URL, "_blank");
+    }
+
+    setLang(currentLang);
+  </script>
+</body>
+</html>
