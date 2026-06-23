@@ -21,7 +21,11 @@
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;overflow-x:hidden}
+
+    html{
+      scroll-behavior:smooth;
+      overflow-x:hidden;
+    }
 
     body{
       margin:0;
@@ -35,11 +39,23 @@
       overflow-x:hidden;
     }
 
-    img{display:block;max-width:100%}
-    a{color:inherit;text-decoration:none}
-    button,input,textarea,select{font:inherit}
+    img{
+      display:block;
+      max-width:100%;
+    }
 
-    h1,h2,h3,p,a,small,strong{text-wrap:pretty}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button,input,textarea,select{
+      font:inherit;
+    }
+
+    h1,h2,h3,p,a,small,strong{
+      text-wrap:pretty;
+    }
 
     h1,h2,h3{
       margin:.2rem 0 .9rem;
@@ -113,7 +129,9 @@
       font-weight:900;
     }
 
-    .muted{color:var(--soft)}
+    .muted{
+      color:var(--soft);
+    }
 
     .btn{
       border-radius:999px;
@@ -128,9 +146,12 @@
       cursor:pointer;
       transition:.18s ease;
       text-align:center;
+      white-space:normal;
     }
 
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
     .primary{
       background:linear-gradient(135deg,var(--gold),var(--gold2));
@@ -166,7 +187,9 @@
       overflow:hidden;
     }
 
-    .pad{padding:clamp(1.25rem,3vw,2.15rem)}
+    .pad{
+      padding:clamp(1.25rem,3vw,2.15rem);
+    }
 
     .brand-logo,
     .footer-logo{
@@ -207,7 +230,10 @@
       min-width:0;
     }
 
-    .brand strong{display:block;line-height:1.1}
+    .brand strong{
+      display:block;
+      line-height:1.1;
+    }
 
     .brand small{
       display:block;
@@ -255,14 +281,18 @@
       color:#fff;
     }
 
-    section{padding:clamp(3rem,6vw,5.2rem) 0}
+    section{
+      padding:clamp(3rem,6vw,5.2rem) 0;
+    }
 
     .section-head{
-      max-width:880px;
+      max-width:900px;
       margin-bottom:1.4rem;
     }
 
-    .hero{padding:clamp(3rem,7vw,6rem) 0 3rem}
+    .hero{
+      padding:clamp(3rem,7vw,6rem) 0 3rem;
+    }
 
     .hero-grid{
       display:grid;
@@ -329,7 +359,9 @@
       align-items:stretch;
     }
 
-    .quote-band{padding:3.4rem 0}
+    .quote-band{
+      padding:3.4rem 0;
+    }
 
     .quote{
       text-align:center;
@@ -349,9 +381,29 @@
 
     .quote p{
       color:rgba(255,255,255,.78);
-      max-width:840px;
+      max-width:880px;
       margin:1.3rem auto 0;
       font-size:1.16rem;
+    }
+
+    .door{
+      background:
+        radial-gradient(circle at 8% 0%,rgba(197,155,75,.20),transparent 25%),
+        linear-gradient(135deg,rgba(255,252,246,.97),rgba(245,234,217,.94));
+    }
+
+    .choice-card{
+      min-height:260px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .latin{
+      font-style:italic;
+      color:var(--gold2);
+      font-size:1.18rem;
+      margin-top:.6rem;
     }
 
     .path-card{
@@ -360,16 +412,39 @@
       min-height:100%;
     }
 
-    .path-gallery{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      min-height:260px;
+    .slider{
+      position:relative;
+      min-height:340px;
+      overflow:hidden;
+      background:#fffaf0;
       border-bottom:1px solid rgba(17,20,38,.08);
     }
 
+    .slide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transform:translateX(18px);
+      transition:opacity .35s ease, transform .35s ease;
+      padding:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .slide.active{
+      opacity:1;
+      transform:translateX(0);
+      z-index:2;
+    }
+
     .workshop-logo{
+      width:100%;
+      height:100%;
+      min-height:285px;
+      border-radius:24px;
       background:
-        radial-gradient(circle at 50% 35%, rgba(197,155,75,.20), transparent 30%),
+        radial-gradient(circle at 50% 32%, rgba(197,155,75,.22), transparent 28%),
         linear-gradient(135deg,#171827,#2b2c3e);
       color:white;
       display:flex;
@@ -377,14 +452,13 @@
       justify-content:center;
       text-align:center;
       padding:1.5rem;
-      min-height:260px;
     }
 
     .workshop-logo-inner{
-      width:170px;
-      height:170px;
+      width:190px;
+      height:190px;
       border-radius:50%;
-      border:1px solid rgba(197,155,75,.65);
+      border:1px solid rgba(197,155,75,.72);
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -405,19 +479,22 @@
       margin-top:.45rem;
       color:rgba(255,255,255,.75);
       font-size:.82rem;
-      max-width:130px;
+      max-width:145px;
       line-height:1.3;
     }
 
     .course-panel{
+      width:100%;
+      min-height:285px;
+      border-radius:24px;
       background:
         radial-gradient(circle at 90% 10%, rgba(197,155,75,.12), transparent 30%),
         rgba(255,252,246,.96);
-      padding:1.25rem;
-      min-height:260px;
+      padding:1.35rem;
       display:flex;
       flex-direction:column;
       justify-content:center;
+      border:1px solid rgba(17,20,38,.09);
     }
 
     .course-panel ul{
@@ -426,6 +503,55 @@
       color:var(--soft);
       font-size:.94rem;
       line-height:1.45;
+    }
+
+    .slider-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:4;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      border:1px solid rgba(197,155,75,.35);
+      background:rgba(255,252,246,.92);
+      color:var(--ink);
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 12px 24px rgba(17,20,38,.10);
+    }
+
+    .slider-arrow.prev{
+      left:.75rem;
+    }
+
+    .slider-arrow.next{
+      right:.75rem;
+    }
+
+    .slider-dots{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:.8rem;
+      z-index:5;
+      display:flex;
+      justify-content:center;
+      gap:.4rem;
+    }
+
+    .slider-dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      border:0;
+      background:rgba(17,20,38,.22);
+      cursor:pointer;
+    }
+
+    .slider-dot.active{
+      background:var(--gold2);
     }
 
     .path-card .pad{
@@ -472,24 +598,20 @@
       margin:.55rem 0 .2rem;
     }
 
-    .door{
-      background:
-        radial-gradient(circle at 8% 0%,rgba(197,155,75,.20),transparent 25%),
-        linear-gradient(135deg,rgba(255,252,246,.97),rgba(245,234,217,.94));
+    .principles{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
     }
 
-    .choice-card{
-      min-height:260px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+    .list-card ul{
+      margin:.8rem 0 0;
+      padding-left:1.2rem;
+      color:var(--soft);
     }
 
-    .latin{
-      font-style:italic;
-      color:var(--gold2);
-      font-size:1.18rem;
-      margin-top:.6rem;
+    .list-card li{
+      margin:.35rem 0;
     }
 
     .price-card{
@@ -517,31 +639,18 @@
       font-weight:900;
     }
 
-    .principles{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:1rem;
+    .taichi-section{
+      padding-top:4rem;
     }
 
-    .list-card ul{
-      margin:.8rem 0 0;
-      padding-left:1.2rem;
-      color:var(--soft);
-    }
-
-    .list-card li{margin:.35rem 0}
-
-    .mentor-showcase{
+    .taichi-block{
       display:grid;
-      grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+      grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
       gap:1.25rem;
       align-items:stretch;
     }
 
-    .mentor-copy,
-    .mentor-image{min-width:0}
-
-    .mentor-copy{
+    .taichi-copy{
       display:flex;
       flex-direction:column;
       justify-content:center;
@@ -550,22 +659,52 @@
       border-radius:34px;
       box-shadow:var(--shadow);
       padding:clamp(1.5rem,4vw,3.3rem);
-      position:relative;
-      z-index:2;
+      min-width:0;
+      overflow:hidden;
     }
 
-    .mentor-image{
+    .taichi-copy h2{
+      font-size:clamp(2rem,4vw,3.7rem);
+      line-height:1.02;
+      letter-spacing:-.045em;
+    }
+
+    .taichi-offers{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:.85rem;
+      margin-top:1rem;
+    }
+
+    .taichi-offer{
+      border-radius:22px;
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(17,20,38,.10);
+      padding:1rem;
+      min-width:0;
+    }
+
+    .taichi-offer h3{
+      font-size:clamp(1.2rem,2vw,1.55rem);
+      line-height:1.05;
+      letter-spacing:-.025em;
+    }
+
+    .taichi-offer p{
+      font-size:.96rem;
+    }
+
+    .taichi-image{
       aspect-ratio:16 / 10;
       border-radius:34px;
       overflow:hidden;
       border:1px solid rgba(17,20,38,.12);
       box-shadow:var(--shadow);
       background:#efe6d5;
-      position:relative;
-      z-index:1;
+      min-width:0;
     }
 
-    .mentor-image img{
+    .taichi-image img{
       width:100%;
       height:100%;
       object-fit:cover;
@@ -620,7 +759,9 @@
       min-width:0;
     }
 
-    .footer-brand strong{line-height:1.1}
+    .footer-brand strong{
+      line-height:1.1;
+    }
 
     footer small{
       color:rgba(255,255,255,.72);
@@ -630,19 +771,46 @@
       display:block;
     }
 
-    @media(max-width:1100px){
-      .grid3{grid-template-columns:1fr 1fr}
+    @media(max-width:1180px){
+      .grid3{
+        grid-template-columns:1fr;
+      }
+
+      .slider{
+        min-height:320px;
+      }
+
+      .workshop-logo,
+      .course-panel{
+        min-height:270px;
+      }
     }
 
     @media(max-width:1020px){
-      nav a{display:none}
-      .hero-grid,.grid2,.mentor-showcase,.principles{grid-template-columns:1fr}
-      .mentor-copy{order:1}
-      .mentor-image{order:2}
+      nav a{
+        display:none;
+      }
+
+      .hero-grid,
+      .grid2,
+      .principles,
+      .taichi-block{
+        grid-template-columns:1fr;
+      }
+
+      .taichi-copy{
+        order:1;
+      }
+
+      .taichi-image{
+        order:2;
+      }
     }
 
     @media(max-width:760px){
-      body{background:#fff8eb}
+      body{
+        background:#fff8eb;
+      }
 
       .wrap{
         width:100%;
@@ -662,7 +830,9 @@
         height:46px;
       }
 
-      .brand strong{font-size:.95rem}
+      .brand strong{
+        font-size:.95rem;
+      }
 
       .brand small{
         font-size:.68rem;
@@ -675,8 +845,14 @@
         font-size:.78rem;
       }
 
-      section{padding:2.4rem 0}
-      .hero{padding-top:1.5rem;padding-bottom:2rem}
+      section{
+        padding:2.4rem 0;
+      }
+
+      .hero{
+        padding-top:1.5rem;
+        padding-bottom:2rem;
+      }
 
       h1{
         font-size:clamp(2.25rem,10.8vw,3rem);
@@ -711,7 +887,9 @@
         gap:.65rem;
       }
 
-      .actions .btn{width:100%}
+      .actions .btn{
+        width:100%;
+      }
 
       .hero-frame{
         aspect-ratio:1 / 1;
@@ -744,25 +922,76 @@
       .card,
       .path-card,
       .cta .card,
-      .mentor-image,
-      .mentor-copy{border-radius:24px}
+      .taichi-image,
+      .taichi-copy{
+        border-radius:24px;
+      }
 
-      .pad{padding:1.15rem}
-      .grid3{grid-template-columns:1fr}
-      .path-gallery{grid-template-columns:1fr}
-      .workshop-logo,.course-panel{min-height:220px}
-      .mentor-image{aspect-ratio:1 / 1}
-      .mentor-copy{padding:1.3rem}
+      .pad{
+        padding:1.15rem;
+      }
 
-      footer .wrap{display:block}
-      .footer-brand{margin-bottom:1rem}
-      footer small{text-align:left}
+      .grid3,
+      .taichi-offers{
+        grid-template-columns:1fr;
+      }
+
+      .slider{
+        min-height:330px;
+      }
+
+      .slide{
+        padding:.9rem;
+      }
+
+      .workshop-logo,
+      .course-panel{
+        min-height:285px;
+      }
+
+      .workshop-logo-inner{
+        width:170px;
+        height:170px;
+      }
+
+      .slider-arrow{
+        width:36px;
+        height:36px;
+      }
+
+      .taichi-image{
+        aspect-ratio:1 / 1;
+      }
+
+      .taichi-copy{
+        padding:1.3rem;
+      }
+
+      footer .wrap{
+        display:block;
+      }
+
+      .footer-brand{
+        margin-bottom:1rem;
+      }
+
+      footer small{
+        text-align:left;
+      }
     }
 
     @media(max-width:420px){
-      .brand small{display:none}
-      h1{font-size:2.15rem}
-      h2{font-size:1.8rem}
+      .brand small{
+        display:none;
+      }
+
+      h1{
+        font-size:2.15rem;
+      }
+
+      h2{
+        font-size:1.8rem;
+      }
     }
   </style>
 </head>
@@ -771,7 +1000,7 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#inicio" aria-label="THE MENTOR CLUB">
-        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-006" alt="Logo The Mentor Club">
+        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-007" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
           <small>Cuerpo, palabra y conciencia</small>
@@ -809,7 +1038,7 @@
         </div>
 
         <div class="hero-frame">
-          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-006" alt="The Mentor Club · umbral de autoconocimiento">
+          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-007" alt="The Mentor Club · umbral de autoconocimiento">
           <div class="hero-note">
             <p>Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.</p>
           </div>
@@ -902,26 +1131,38 @@
 
         <div class="grid3">
           <article class="card path-card">
-            <div class="path-gallery">
-              <div class="workshop-logo">
-                <div class="workshop-logo-inner">
-                  <strong>HAIKU</strong>
-                  <small>Contemplación · Naturaleza · Silencio</small>
+            <div class="slider" data-slider>
+              <div class="slide active">
+                <div class="workshop-logo">
+                  <div class="workshop-logo-inner">
+                    <strong>HAIKU</strong>
+                    <small>Contemplación · Naturaleza · Silencio</small>
+                  </div>
                 </div>
               </div>
-              <div class="course-panel">
-                <p class="eyebrow">Dentro del taller</p>
-                <ul>
-                  <li>Qué es haiku.</li>
-                  <li>Qué no es haiku.</li>
-                  <li>Contemplación y Naturaleza.</li>
-                  <li>Conceptos del género: kigo, kire, ma, aware, yūgen, wabi, sabi, karumi, shasei..., entre otros.</li>
-                  <li>Errores frecuentes.</li>
-                  <li>Lectura de maestros.</li>
-                  <li>Ejercicios.</li>
-                  <li>Rúbrica.</li>
-                  <li>Proceso de revisión.</li>
-                </ul>
+
+              <div class="slide">
+                <div class="course-panel">
+                  <p class="eyebrow">Dentro del taller</p>
+                  <ul>
+                    <li>Qué es haiku.</li>
+                    <li>Qué no es haiku.</li>
+                    <li>Contemplación y Naturaleza.</li>
+                    <li>Conceptos del género: kigo, kire, ma, aware, yūgen, wabi, sabi, karumi, shasei..., entre otros.</li>
+                    <li>Errores frecuentes.</li>
+                    <li>Lectura de maestros.</li>
+                    <li>Ejercicios.</li>
+                    <li>Rúbrica.</li>
+                    <li>Proceso de revisión.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <button class="slider-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="slider-arrow next" type="button" aria-label="Imagen siguiente">›</button>
+              <div class="slider-dots">
+                <button class="slider-dot active" type="button" aria-label="Logo Haiku"></button>
+                <button class="slider-dot" type="button" aria-label="Descripción Haiku"></button>
               </div>
             </div>
 
@@ -932,61 +1173,52 @@
               <p class="muted">El haiku es una práctica de atención. No busca explicar lo que sentimos, sino abrir una percepción ante la sacralidad del mundo. Su fuerza nace del instante, de la naturaleza cercana, del silencio y de una imagen que no necesita ser interpretada.</p>
 
               <div class="faq">
-                <details>
-                  <summary>¿Qué compro?</summary>
-                  <p>Compras acceso al Taller de Haiku de HOMERO CLUB, un recorrido de escritura consciente centrado en la contemplación, el instante y la precisión verbal.</p>
-                </details>
-                <details>
-                  <summary>¿Qué recibo exactamente?</summary>
-                  <p>Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de observación, propuestas de escritura, rúbrica de revisión y una guía para corregir tus propios haikus.</p>
-                </details>
-                <details>
-                  <summary>¿Cuánto dura?</summary>
-                  <p>El acceso dura 6 meses. Puedes avanzar de forma progresiva y volver a los materiales siempre que lo necesites durante ese periodo.</p>
-                </details>
-                <details>
-                  <summary>¿Qué pasa cuando entro?</summary>
-                  <p>Encuentras el recorrido organizado por materiales y prácticas. Primero comprendes qué es y qué no es haiku; después lees modelos, realizas ejercicios de observación y escribes tus propias piezas.</p>
-                </details>
-                <details>
-                  <summary>¿Hay corrección?</summary>
-                  <p>El taller incluye criterios de revisión y rúbrica. La corrección se orienta hacia la precisión, la eliminación de explicación emocional, el uso del silencio, la imagen concreta y la resonancia del instante.</p>
-                </details>
-                <details>
-                  <summary>¿Es autónomo o acompañado?</summary>
-                  <p>Es un taller principalmente autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p>
-                </details>
-                <details>
-                  <summary>¿Por qué elegir este método?</summary>
-                  <p>Porque aquí el haiku no se enseña como una fórmula decorativa, sino como una práctica de atención. No se trata de escribir algo “bonito”, sino de aprender a mirar, callar, podar y dejar que el mundo aparezca sin apropiárselo.</p>
-                </details>
+                <details><summary>¿Qué compro?</summary><p>Compras acceso al Taller de Haiku de HOMERO CLUB, un recorrido de escritura consciente centrado en la contemplación, el instante y la precisión verbal.</p></details>
+                <details><summary>¿Qué recibo exactamente?</summary><p>Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de observación, propuestas de escritura, rúbrica de revisión y una guía para corregir tus propios haikus.</p></details>
+                <details><summary>¿Cuánto dura?</summary><p>El acceso dura 6 meses. Puedes avanzar de forma progresiva y volver a los materiales siempre que lo necesites durante ese periodo.</p></details>
+                <details><summary>¿Qué pasa cuando entro?</summary><p>Encuentras el recorrido organizado por materiales y prácticas. Primero comprendes qué es y qué no es haiku; después lees modelos, realizas ejercicios de observación y escribes tus propias piezas.</p></details>
+                <details><summary>¿Hay corrección?</summary><p>El taller incluye criterios de revisión y rúbrica. La corrección se orienta hacia la precisión, la eliminación de explicación emocional, el uso del silencio, la imagen concreta y la resonancia del instante.</p></details>
+                <details><summary>¿Es autónomo o acompañado?</summary><p>Es un taller principalmente autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
+                <details><summary>¿Por qué elegir este método?</summary><p>Porque aquí el haiku no se enseña como una fórmula decorativa, sino como una práctica de atención. No se trata de escribir algo “bonito”, sino de aprender a mirar, callar, podar y dejar que el mundo aparezca sin apropiárselo.</p></details>
               </div>
             </div>
           </article>
 
           <article class="card path-card">
-            <div class="path-gallery">
-              <div class="workshop-logo">
-                <div class="workshop-logo-inner">
-                  <strong>HAIBUN</strong>
-                  <small>Viaje · Profundidad · Resonancia</small>
+            <div class="slider" data-slider>
+              <div class="slide active">
+                <div class="workshop-logo">
+                  <div class="workshop-logo-inner">
+                    <strong>HAIBUN</strong>
+                    <small>Viaje · Profundidad · Resonancia</small>
+                  </div>
                 </div>
               </div>
-              <div class="course-panel">
-                <p class="eyebrow">Dentro del taller</p>
-                <ul>
-                  <li>Qué es haibun.</li>
-                  <li>Qué no es haibun.</li>
-                  <li>Relación entre prosa y haiku.</li>
-                  <li>Escena, viaje y experiencia.</li>
-                  <li>Observación y memoria.</li>
-                  <li>Elipsis y sugerencia.</li>
-                  <li>El cierre en haiku.</li>
-                  <li>Lectura de modelos.</li>
-                  <li>Ejercicios de prosa breve.</li>
-                  <li>Rúbrica.</li>
-                  <li>Proceso de integración.</li>
-                </ul>
+
+              <div class="slide">
+                <div class="course-panel">
+                  <p class="eyebrow">Dentro del taller</p>
+                  <ul>
+                    <li>Qué es haibun.</li>
+                    <li>Qué no es haibun.</li>
+                    <li>Relación entre prosa y haiku.</li>
+                    <li>Escena, viaje y experiencia.</li>
+                    <li>Observación y memoria.</li>
+                    <li>Elipsis y sugerencia.</li>
+                    <li>El cierre en haiku.</li>
+                    <li>Lectura de modelos.</li>
+                    <li>Ejercicios de prosa breve.</li>
+                    <li>Rúbrica.</li>
+                    <li>Proceso de integración.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <button class="slider-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="slider-arrow next" type="button" aria-label="Imagen siguiente">›</button>
+              <div class="slider-dots">
+                <button class="slider-dot active" type="button" aria-label="Logo Haibun"></button>
+                <button class="slider-dot" type="button" aria-label="Descripción Haibun"></button>
               </div>
             </div>
 
@@ -997,62 +1229,53 @@
               <p class="muted">El haibun une prosa breve y haiku. No es una simple anécdota con un poema al final: es una forma de narrar una experiencia sin cerrarla, dejando que el instante conserve su misterio.</p>
 
               <div class="faq">
-                <details>
-                  <summary>¿Qué compro?</summary>
-                  <p>Compras acceso al Taller de Haibun de HOMERO CLUB, un recorrido dedicado a transformar una experiencia vivida en una pieza breve donde la prosa y el haiku dialogan.</p>
-                </details>
-                <details>
-                  <summary>¿Qué recibo exactamente?</summary>
-                  <p>Acceso al aula digital durante 6 meses, materiales de estudio, modelos comentados, ejercicios de observación y memoria, propuestas de escritura, rúbrica de revisión y una guía para construir haibun completos.</p>
-                </details>
-                <details>
-                  <summary>¿Cuánto dura?</summary>
-                  <p>El acceso dura 6 meses. Puedes realizar el taller de manera autónoma, con tiempo suficiente para escribir, dejar reposar, revisar y volver a tus textos.</p>
-                </details>
-                <details>
-                  <summary>¿Qué pasa cuando entro?</summary>
-                  <p>El recorrido te lleva desde la comprensión de la forma hasta la escritura de tus propios haibun. Aprendes a construir una prosa breve, evitar la explicación excesiva y cerrar con un haiku que no repita, sino que abra.</p>
-                </details>
-                <details>
-                  <summary>¿Hay corrección?</summary>
-                  <p>El taller incluye criterios de revisión y rúbrica. La corrección observa la relación entre prosa y haiku, la economía verbal, el tono, la escena, el silencio, la elipsis y la resonancia final.</p>
-                </details>
-                <details>
-                  <summary>¿Es autónomo o acompañado?</summary>
-                  <p>Es un taller autónomo y guiado. La estructura está diseñada para que puedas avanzar con claridad, revisar tus textos y reconocer qué necesita cada pieza. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p>
-                </details>
-                <details>
-                  <summary>¿Por qué elegir este método?</summary>
-                  <p>Porque el haibun se trabaja aquí como una forma de contemplación narrativa. No se busca contar demasiado, sino encontrar la forma justa para que una experiencia respire y deje una huella.</p>
-                </details>
+                <details><summary>¿Qué compro?</summary><p>Compras acceso al Taller de Haibun de HOMERO CLUB, un recorrido dedicado a transformar una experiencia vivida en una pieza breve donde la prosa y el haiku dialogan.</p></details>
+                <details><summary>¿Qué recibo exactamente?</summary><p>Acceso al aula digital durante 6 meses, materiales de estudio, modelos comentados, ejercicios de observación y memoria, propuestas de escritura, rúbrica de revisión y una guía para construir haibun completos.</p></details>
+                <details><summary>¿Cuánto dura?</summary><p>El acceso dura 6 meses. Puedes realizar el taller de manera autónoma, con tiempo suficiente para escribir, dejar reposar, revisar y volver a tus textos.</p></details>
+                <details><summary>¿Qué pasa cuando entro?</summary><p>El recorrido te lleva desde la comprensión de la forma hasta la escritura de tus propios haibun. Aprendes a construir una prosa breve, evitar la explicación excesiva y cerrar con un haiku que no repita, sino que abra.</p></details>
+                <details><summary>¿Hay corrección?</summary><p>El taller incluye criterios de revisión y rúbrica. La corrección observa la relación entre prosa y haiku, la economía verbal, el tono, la escena, el silencio, la elipsis y la resonancia final.</p></details>
+                <details><summary>¿Es autónomo o acompañado?</summary><p>Es un taller autónomo y guiado. La estructura está diseñada para que puedas avanzar con claridad, revisar tus textos y reconocer qué necesita cada pieza. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
+                <details><summary>¿Por qué elegir este método?</summary><p>Porque el haibun se trabaja aquí como una forma de contemplación narrativa. No se busca contar demasiado, sino encontrar la forma justa para que una experiencia respire y deje una huella.</p></details>
               </div>
             </div>
           </article>
 
           <article class="card path-card">
-            <div class="path-gallery">
-              <div class="workshop-logo">
-                <div class="workshop-logo-inner">
-                  <strong>MICRO</strong>
-                  <small>Elipsis · Intensidad · Revelación</small>
+            <div class="slider" data-slider>
+              <div class="slide active">
+                <div class="workshop-logo">
+                  <div class="workshop-logo-inner">
+                    <strong>MICRO</strong>
+                    <small>Elipsis · Intensidad · Revelación</small>
+                  </div>
                 </div>
               </div>
-              <div class="course-panel">
-                <p class="eyebrow">Dentro del taller</p>
-                <ul>
-                  <li>Qué es microrrelato.</li>
-                  <li>Qué no es microrrelato.</li>
-                  <li>Brevedad significativa.</li>
-                  <li>Título activo.</li>
-                  <li>Elipsis narrativa.</li>
-                  <li>Tensión y conflicto.</li>
-                  <li>Giro y resonancia.</li>
-                  <li>Final abierto o revelador.</li>
-                  <li>Lectura de modelos.</li>
-                  <li>Ejercicios de condensación.</li>
-                  <li>Rúbrica.</li>
-                  <li>Proceso de poda verbal.</li>
-                </ul>
+
+              <div class="slide">
+                <div class="course-panel">
+                  <p class="eyebrow">Dentro del taller</p>
+                  <ul>
+                    <li>Qué es microrrelato.</li>
+                    <li>Qué no es microrrelato.</li>
+                    <li>Brevedad significativa.</li>
+                    <li>Título activo.</li>
+                    <li>Elipsis narrativa.</li>
+                    <li>Tensión y conflicto.</li>
+                    <li>Giro y resonancia.</li>
+                    <li>Final abierto o revelador.</li>
+                    <li>Lectura de modelos.</li>
+                    <li>Ejercicios de condensación.</li>
+                    <li>Rúbrica.</li>
+                    <li>Proceso de poda verbal.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <button class="slider-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="slider-arrow next" type="button" aria-label="Imagen siguiente">›</button>
+              <div class="slider-dots">
+                <button class="slider-dot active" type="button" aria-label="Logo Microrrelato"></button>
+                <button class="slider-dot" type="button" aria-label="Descripción Microrrelato"></button>
               </div>
             </div>
 
@@ -1063,34 +1286,13 @@
               <p class="muted">El microrrelato no es un cuento pequeño. Es una forma narrativa de alta concentración: tensión, elipsis, precisión y un final que no explica, sino que expande.</p>
 
               <div class="faq">
-                <details>
-                  <summary>¿Qué compro?</summary>
-                  <p>Compras acceso al Taller de Microrrelato de HOMERO CLUB, un recorrido centrado en la intensidad narrativa, la síntesis y la construcción de textos breves con potencia literaria.</p>
-                </details>
-                <details>
-                  <summary>¿Qué recibo exactamente?</summary>
-                  <p>Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de condensación, propuestas de escritura, rúbrica de revisión y una guía para trabajar título, tensión, elipsis y final.</p>
-                </details>
-                <details>
-                  <summary>¿Cuánto dura?</summary>
-                  <p>El acceso dura 6 meses. El taller puede realizarse a tu ritmo, con tiempo para escribir varias versiones y comprender cómo cambia un texto cuando se poda con intención.</p>
-                </details>
-                <details>
-                  <summary>¿Qué pasa cuando entro?</summary>
-                  <p>Encuentras un recorrido organizado para pasar de la idea inicial a una forma breve y eficaz. Aprendes a detectar lo que sobra, activar el título, construir tensión y cerrar sin explicar demasiado.</p>
-                </details>
-                <details>
-                  <summary>¿Hay corrección?</summary>
-                  <p>El taller incluye criterios de revisión y rúbrica. La corrección atiende a estructura, precisión verbal, conflicto, economía, elipsis, ritmo, final y resonancia.</p>
-                </details>
-                <details>
-                  <summary>¿Es autónomo o acompañado?</summary>
-                  <p>Es un taller autónomo y guiado. El alumno avanza con materiales, modelos, ejercicios y herramientas de revisión para mejorar cada versión de su texto. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p>
-                </details>
-                <details>
-                  <summary>¿Por qué elegir este método?</summary>
-                  <p>Porque aquí el microrrelato no se trabaja como ocurrencia breve, sino como forma literaria exigente. Aprendes a concentrar sentido, crear tensión y dejar que lo no dicho participe en la historia.</p>
-                </details>
+                <details><summary>¿Qué compro?</summary><p>Compras acceso al Taller de Microrrelato de HOMERO CLUB, un recorrido centrado en la intensidad narrativa, la síntesis y la construcción de textos breves con potencia literaria.</p></details>
+                <details><summary>¿Qué recibo exactamente?</summary><p>Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de condensación, propuestas de escritura, rúbrica de revisión y una guía para trabajar título, tensión, elipsis y final.</p></details>
+                <details><summary>¿Cuánto dura?</summary><p>El acceso dura 6 meses. El taller puede realizarse a tu ritmo, con tiempo para escribir varias versiones y comprender cómo cambia un texto cuando se poda con intención.</p></details>
+                <details><summary>¿Qué pasa cuando entro?</summary><p>Encuentras un recorrido organizado para pasar de la idea inicial a una forma breve y eficaz. Aprendes a detectar lo que sobra, activar el título, construir tensión y cerrar sin explicar demasiado.</p></details>
+                <details><summary>¿Hay corrección?</summary><p>El taller incluye criterios de revisión y rúbrica. La corrección atiende a estructura, precisión verbal, conflicto, economía, elipsis, ritmo, final y resonancia.</p></details>
+                <details><summary>¿Es autónomo o acompañado?</summary><p>Es un taller autónomo y guiado. El alumno avanza con materiales, modelos, ejercicios y herramientas de revisión para mejorar cada versión de su texto. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
+                <details><summary>¿Por qué elegir este método?</summary><p>Porque aquí el microrrelato no se trabaja como ocurrencia breve, sino como forma literaria exigente. Aprendes a concentrar sentido, crear tensión y dejar que lo no dicho participe en la historia.</p></details>
               </div>
             </div>
           </article>
@@ -1102,7 +1304,7 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">Filtro de entrada</p>
-          <h2>Para quién es / para quién no es</h2>
+          <h2>Para quiénes / para quién no es</h2>
         </div>
 
         <div class="principles">
@@ -1203,37 +1405,37 @@
       </div>
     </section>
 
-    <section id="taichi">
+    <section id="taichi" class="taichi-section">
       <div class="wrap">
-        <div class="mentor-showcase">
-          <div class="mentor-copy">
+        <div class="taichi-block">
+          <div class="taichi-copy">
             <p class="eyebrow">TAI CHI CLUB</p>
             <h2>Tai Chi presencial en Cancelada–Estepona</h2>
             <p class="muted">Tai Chi Club es la vía corporal de The Mentor Club: una práctica presencial para cultivar arraigo, respiración, movimiento y presencia.</p>
             <p class="muted">Trabajamos Wuji, Song Gong, Formas Wudang y Formas Estilo Yang.</p>
 
-            <div class="grid2" style="margin-top:1rem">
-              <div class="card pad">
+            <div class="taichi-offers">
+              <div class="taichi-offer">
                 <p class="eyebrow">Clases grupales</p>
                 <h3>60€ al mes</h3>
                 <p class="muted">Martes y jueves.</p>
               </div>
 
-              <div class="card pad">
-                <p class="eyebrow">Clases particulares</p>
+              <div class="taichi-offer">
+                <p class="eyebrow">Clases privadas</p>
                 <h3>Consultar disponibilidad</h3>
                 <p class="muted">Puedes proponer días y horarios. No es una reserva automática: la confirmación dependerá de la disponibilidad de agenda.</p>
               </div>
             </div>
 
             <div class="actions">
-              <a class="btn primary" href="#contacto-tai-chi">Consultar clases privadas</a>
+              <a class="btn primary" href="#contacto-tai-chi">Solicitar clase privada</a>
               <a class="btn secondary" href="#contacto">Contacto general</a>
             </div>
           </div>
 
-          <div class="mentor-image">
-            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-006" alt="Tai Chi Club · The Mentor Club">
+          <div class="taichi-image">
+            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-007" alt="Tai Chi Club · The Mentor Club">
           </div>
         </div>
       </div>
@@ -1243,7 +1445,7 @@
       <div class="wrap">
         <form class="card pad contact-card" onsubmit="sendTaiChi(event)">
           <p class="eyebrow">Consulta Tai Chi Club</p>
-          <h2>Propuesta de clase particular</h2>
+          <h2>Solicitud de clase privada</h2>
           <p class="muted">Indica tus preferencias. Esta solicitud no supone una reserva automática; la confirmación dependerá de la disponibilidad de agenda.</p>
 
           <label for="taiName">Nombre</label>
@@ -1325,7 +1527,7 @@
   <footer>
     <div class="wrap">
       <div class="footer-brand">
-        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-006" alt="Logo The Mentor Club">
+        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-007" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
         </div>
@@ -1368,7 +1570,7 @@
       const time = document.getElementById("taiTime").value;
       const message = document.getElementById("taiMessage").value.trim();
 
-      const subject = encodeURIComponent("Consulta clase particular · Tai Chi Club");
+      const subject = encodeURIComponent("Solicitud de clase privada · Tai Chi Club");
       const body = encodeURIComponent(
         "Nombre: " + name + "\n" +
         "Correo: " + email + "\n" +
@@ -1380,6 +1582,40 @@
 
       window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
     }
+
+    document.querySelectorAll("[data-slider]").forEach(function(slider){
+      const slides = Array.from(slider.querySelectorAll(".slide"));
+      const dots = Array.from(slider.querySelectorAll(".slider-dot"));
+      const prev = slider.querySelector(".prev");
+      const next = slider.querySelector(".next");
+      let index = 0;
+
+      function showSlide(nextIndex){
+        index = (nextIndex + slides.length) % slides.length;
+
+        slides.forEach(function(slide, i){
+          slide.classList.toggle("active", i === index);
+        });
+
+        dots.forEach(function(dot, i){
+          dot.classList.toggle("active", i === index);
+        });
+      }
+
+      prev.addEventListener("click", function(){
+        showSlide(index - 1);
+      });
+
+      next.addEventListener("click", function(){
+        showSlide(index + 1);
+      });
+
+      dots.forEach(function(dot, i){
+        dot.addEventListener("click", function(){
+          showSlide(i);
+        });
+      });
+    });
   </script>
 </body>
 </html>
