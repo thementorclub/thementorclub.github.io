@@ -452,14 +452,24 @@
       justify-content:center;
       text-align:center;
       padding:1.5rem;
+      overflow:hidden;
     }
 
-    .workshop-logo-inner{
+    .workshop-img{
+      width:min(230px,72%);
+      height:auto;
+      max-height:230px;
+      object-fit:contain;
+      border-radius:50%;
+      filter:drop-shadow(0 16px 28px rgba(0,0,0,.18));
+    }
+
+    .fallback-logo{
       width:190px;
       height:190px;
       border-radius:50%;
       border:1px solid rgba(197,155,75,.72);
-      display:flex;
+      display:none;
       flex-direction:column;
       align-items:center;
       justify-content:center;
@@ -467,14 +477,14 @@
       box-shadow:inset 0 0 0 10px rgba(255,255,255,.03);
     }
 
-    .workshop-logo strong{
+    .fallback-logo strong{
       display:block;
       font-size:1.35rem;
       letter-spacing:.1em;
       font-family:Arial,sans-serif;
     }
 
-    .workshop-logo small{
+    .fallback-logo small{
       display:block;
       margin-top:.45rem;
       color:rgba(255,255,255,.75);
@@ -645,7 +655,7 @@
 
     .taichi-block{
       display:grid;
-      grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
       gap:1.25rem;
       align-items:stretch;
     }
@@ -658,15 +668,16 @@
       border:1px solid var(--line);
       border-radius:34px;
       box-shadow:var(--shadow);
-      padding:clamp(1.5rem,4vw,3.3rem);
+      padding:clamp(1.5rem,4vw,3.2rem);
       min-width:0;
       overflow:hidden;
     }
 
     .taichi-copy h2{
-      font-size:clamp(2rem,4vw,3.7rem);
+      font-size:clamp(2rem,3.8vw,3.35rem);
       line-height:1.02;
       letter-spacing:-.045em;
+      max-width:100%;
     }
 
     .taichi-offers{
@@ -678,20 +689,25 @@
 
     .taichi-offer{
       border-radius:22px;
-      background:rgba(255,255,255,.68);
+      background:rgba(255,255,255,.72);
       border:1px solid rgba(17,20,38,.10);
       padding:1rem;
       min-width:0;
+      overflow:hidden;
     }
 
     .taichi-offer h3{
-      font-size:clamp(1.2rem,2vw,1.55rem);
-      line-height:1.05;
-      letter-spacing:-.025em;
+      font-size:clamp(1.12rem,1.7vw,1.45rem);
+      line-height:1.08;
+      letter-spacing:-.02em;
+      overflow-wrap:break-word;
+      word-break:normal;
+      hyphens:auto;
     }
 
     .taichi-offer p{
-      font-size:.96rem;
+      font-size:.94rem;
+      overflow-wrap:break-word;
     }
 
     .taichi-image{
@@ -700,14 +716,18 @@
       overflow:hidden;
       border:1px solid rgba(17,20,38,.12);
       box-shadow:var(--shadow);
-      background:#efe6d5;
+      background:#f4ead8;
       min-width:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:1.2rem;
     }
 
     .taichi-image img{
       width:100%;
       height:100%;
-      object-fit:cover;
+      object-fit:contain;
       object-position:center;
       filter:saturate(1.02) contrast(1.02);
     }
@@ -949,9 +969,14 @@
         min-height:285px;
       }
 
-      .workshop-logo-inner{
+      .fallback-logo{
         width:170px;
         height:170px;
+      }
+
+      .workshop-img{
+        width:min(220px,76%);
+        max-height:220px;
       }
 
       .slider-arrow{
@@ -961,6 +986,7 @@
 
       .taichi-image{
         aspect-ratio:1 / 1;
+        padding:.75rem;
       }
 
       .taichi-copy{
@@ -1000,7 +1026,7 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#inicio" aria-label="THE MENTOR CLUB">
-        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-007" alt="Logo The Mentor Club">
+        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-008" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
           <small>Cuerpo, palabra y conciencia</small>
@@ -1038,7 +1064,7 @@
         </div>
 
         <div class="hero-frame">
-          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-007" alt="The Mentor Club · umbral de autoconocimiento">
+          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-008" alt="The Mentor Club · umbral de autoconocimiento">
           <div class="hero-note">
             <p>Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.</p>
           </div>
@@ -1134,7 +1160,8 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <div class="workshop-logo-inner">
+                  <img class="workshop-img" src="assets/img/logo-haiku.png?v=thementorclub-008" alt="Logo taller Haiku" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <div class="fallback-logo">
                     <strong>HAIKU</strong>
                     <small>Contemplación · Naturaleza · Silencio</small>
                   </div>
@@ -1188,7 +1215,8 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <div class="workshop-logo-inner">
+                  <img class="workshop-img" src="assets/img/logo-haibun.png?v=thementorclub-008" alt="Logo taller Haibun" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <div class="fallback-logo">
                     <strong>HAIBUN</strong>
                     <small>Viaje · Profundidad · Resonancia</small>
                   </div>
@@ -1244,7 +1272,8 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <div class="workshop-logo-inner">
+                  <img class="workshop-img" src="assets/img/logo-microrrelato.png?v=thementorclub-008" alt="Logo taller Microrrelato" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <div class="fallback-logo">
                     <strong>MICRO</strong>
                     <small>Elipsis · Intensidad · Revelación</small>
                   </div>
@@ -1435,7 +1464,7 @@
           </div>
 
           <div class="taichi-image">
-            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-007" alt="Tai Chi Club · The Mentor Club">
+            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-008" alt="Tai Chi Club · The Mentor Club">
           </div>
         </div>
       </div>
@@ -1527,7 +1556,7 @@
   <footer>
     <div class="wrap">
       <div class="footer-brand">
-        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-007" alt="Logo The Mentor Club">
+        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-008" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
         </div>
