@@ -456,11 +456,11 @@
     }
 
     .workshop-img{
-      width:min(230px,72%);
+      width:min(260px,82%);
       height:auto;
-      max-height:230px;
+      max-height:260px;
       object-fit:contain;
-      border-radius:50%;
+      border-radius:22px;
       filter:drop-shadow(0 16px 28px rgba(0,0,0,.18));
     }
 
@@ -608,10 +608,27 @@
       margin:.55rem 0 .2rem;
     }
 
-    .principles{
+    .audience-title{
+      max-width:900px;
+      margin-bottom:1.6rem;
+    }
+
+    .audience-title h2{
+      max-width:780px;
+    }
+
+    .audience-grid{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:1rem;
+    }
+
+    .audience-card{
+      min-height:100%;
+    }
+
+    .audience-card h3{
+      margin-top:.35rem;
     }
 
     .list-card ul{
@@ -655,7 +672,7 @@
 
     .taichi-block{
       display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
       gap:1.25rem;
       align-items:stretch;
     }
@@ -674,7 +691,7 @@
     }
 
     .taichi-copy h2{
-      font-size:clamp(2rem,3.8vw,3.35rem);
+      font-size:clamp(2rem,3.6vw,3.35rem);
       line-height:1.02;
       letter-spacing:-.045em;
       max-width:100%;
@@ -721,14 +738,15 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:1.2rem;
+      padding:1.25rem;
     }
 
     .taichi-image img{
-      width:100%;
-      height:100%;
+      width:92%;
+      height:92%;
       object-fit:contain;
-      object-position:center;
+      object-position:center center;
+      display:block;
       filter:saturate(1.02) contrast(1.02);
     }
 
@@ -813,7 +831,7 @@
 
       .hero-grid,
       .grid2,
-      .principles,
+      .audience-grid,
       .taichi-block{
         grid-template-columns:1fr;
       }
@@ -975,8 +993,8 @@
       }
 
       .workshop-img{
-        width:min(220px,76%);
-        max-height:220px;
+        width:min(240px,82%);
+        max-height:240px;
       }
 
       .slider-arrow{
@@ -986,7 +1004,12 @@
 
       .taichi-image{
         aspect-ratio:1 / 1;
-        padding:.75rem;
+        padding:.85rem;
+      }
+
+      .taichi-image img{
+        width:96%;
+        height:96%;
       }
 
       .taichi-copy{
@@ -1026,7 +1049,7 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#inicio" aria-label="THE MENTOR CLUB">
-        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-008" alt="Logo The Mentor Club">
+        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-009" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
           <small>Cuerpo, palabra y conciencia</small>
@@ -1064,7 +1087,7 @@
         </div>
 
         <div class="hero-frame">
-          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-008" alt="The Mentor Club · umbral de autoconocimiento">
+          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-009" alt="The Mentor Club · umbral de autoconocimiento">
           <div class="hero-note">
             <p>Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.</p>
           </div>
@@ -1160,7 +1183,7 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <img class="workshop-img" src="assets/img/logo-haiku.png?v=thementorclub-008" alt="Logo taller Haiku" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <img class="workshop-img" src="assets/img/logo-haiku.png?v=thementorclub-009" alt="Logo taller Haiku" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <div class="fallback-logo">
                     <strong>HAIKU</strong>
                     <small>Contemplación · Naturaleza · Silencio</small>
@@ -1215,7 +1238,7 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <img class="workshop-img" src="assets/img/logo-haibun.png?v=thementorclub-008" alt="Logo taller Haibun" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <img class="workshop-img" src="assets/img/logo-haibun.png?v=thementorclub-009" alt="Logo taller Haibun" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <div class="fallback-logo">
                     <strong>HAIBUN</strong>
                     <small>Viaje · Profundidad · Resonancia</small>
@@ -1272,7 +1295,7 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <img class="workshop-img" src="assets/img/logo-microrrelato.png?v=thementorclub-008" alt="Logo taller Microrrelato" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <img class="workshop-img" src="assets/img/logo-microrrelato.png?v=thementorclub-009" alt="Logo taller Microrrelato" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <div class="fallback-logo">
                     <strong>MICRO</strong>
                     <small>Elipsis · Intensidad · Revelación</small>
@@ -1331,14 +1354,16 @@
 
     <section id="para-quien">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head audience-title">
           <p class="eyebrow">Filtro de entrada</p>
-          <h2>Para quiénes / para quién no es</h2>
+          <h2>Para quiénes es HOMERO CLUB</h2>
+          <p class="muted">Y para quiénes no es este camino de escritura consciente.</p>
         </div>
 
-        <div class="principles">
-          <article class="card pad list-card">
+        <div class="audience-grid">
+          <article class="card pad list-card audience-card">
             <p class="eyebrow">HOMERO CLUB es para ti si…</p>
+            <h3>Buscas una escritura con atención y profundidad.</h3>
             <ul>
               <li>Buscas escribir con atención y profundidad.</li>
               <li>Sientes que el verdadero viaje es interior.</li>
@@ -1348,8 +1373,9 @@
             </ul>
           </article>
 
-          <article class="card pad list-card">
+          <article class="card pad list-card audience-card">
             <p class="eyebrow">HOMERO CLUB no es para ti si…</p>
+            <h3>Buscas fórmulas rápidas sin trabajo interior.</h3>
             <ul>
               <li>Buscas fórmulas rápidas.</li>
               <li>Quieres escritura automática sin revisión.</li>
@@ -1440,7 +1466,9 @@
           <div class="taichi-copy">
             <p class="eyebrow">TAI CHI CLUB</p>
             <h2>Tai Chi presencial en Cancelada–Estepona</h2>
+
             <p class="muted">Tai Chi Club es la vía corporal de The Mentor Club: una práctica presencial para cultivar arraigo, respiración, movimiento y presencia.</p>
+
             <p class="muted">Trabajamos Wuji, Song Gong, Formas Wudang y Formas Estilo Yang.</p>
 
             <div class="taichi-offers">
@@ -1464,7 +1492,7 @@
           </div>
 
           <div class="taichi-image">
-            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-008" alt="Tai Chi Club · The Mentor Club">
+            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-009" alt="Tai Chi Club · The Mentor Club">
           </div>
         </div>
       </div>
@@ -1556,7 +1584,7 @@
   <footer>
     <div class="wrap">
       <div class="footer-brand">
-        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-008" alt="Logo The Mentor Club">
+        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-009" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
         </div>
