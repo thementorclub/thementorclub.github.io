@@ -39,23 +39,11 @@
       overflow-x:hidden;
     }
 
-    img{
-      display:block;
-      max-width:100%;
-    }
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
 
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    button,input,textarea,select{
-      font:inherit;
-    }
-
-    h1,h2,h3,p,a,small,strong{
-      text-wrap:pretty;
-    }
+    h1,h2,h3,p,a,small,strong{text-wrap:pretty}
 
     h1,h2,h3{
       margin:.2rem 0 .9rem;
@@ -129,9 +117,7 @@
       font-weight:900;
     }
 
-    .muted{
-      color:var(--soft);
-    }
+    .muted{color:var(--soft)}
 
     .btn{
       border-radius:999px;
@@ -149,9 +135,7 @@
       white-space:normal;
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+    .btn:hover{transform:translateY(-1px)}
 
     .primary{
       background:linear-gradient(135deg,var(--gold),var(--gold2));
@@ -187,9 +171,7 @@
       overflow:hidden;
     }
 
-    .pad{
-      padding:clamp(1.25rem,3vw,2.15rem);
-    }
+    .pad{padding:clamp(1.25rem,3vw,2.15rem)}
 
     .brand-logo,
     .footer-logo{
@@ -230,10 +212,7 @@
       min-width:0;
     }
 
-    .brand strong{
-      display:block;
-      line-height:1.1;
-    }
+    .brand strong{display:block;line-height:1.1}
 
     .brand small{
       display:block;
@@ -281,18 +260,14 @@
       color:#fff;
     }
 
-    section{
-      padding:clamp(3rem,6vw,5.2rem) 0;
-    }
+    section{padding:clamp(3rem,6vw,5.2rem) 0}
 
     .section-head{
       max-width:900px;
       margin-bottom:1.4rem;
     }
 
-    .hero{
-      padding:clamp(3rem,7vw,6rem) 0 3rem;
-    }
+    .hero{padding:clamp(3rem,7vw,6rem) 0 3rem}
 
     .hero-grid{
       display:grid;
@@ -359,9 +334,7 @@
       align-items:stretch;
     }
 
-    .quote-band{
-      padding:3.4rem 0;
-    }
+    .quote-band{padding:3.4rem 0}
 
     .quote{
       text-align:center;
@@ -532,13 +505,8 @@
       box-shadow:0 12px 24px rgba(17,20,38,.10);
     }
 
-    .slider-arrow.prev{
-      left:.75rem;
-    }
-
-    .slider-arrow.next{
-      right:.75rem;
-    }
+    .slider-arrow.prev{left:.75rem}
+    .slider-arrow.next{right:.75rem}
 
     .slider-dots{
       position:absolute;
@@ -560,9 +528,7 @@
       cursor:pointer;
     }
 
-    .slider-dot.active{
-      background:var(--gold2);
-    }
+    .slider-dot.active{background:var(--gold2)}
 
     .path-card .pad{
       flex:1;
@@ -613,9 +579,7 @@
       margin-bottom:1.6rem;
     }
 
-    .audience-title h2{
-      max-width:780px;
-    }
+    .audience-title h2{max-width:780px}
 
     .audience-grid{
       display:grid;
@@ -623,13 +587,8 @@
       gap:1rem;
     }
 
-    .audience-card{
-      min-height:100%;
-    }
-
-    .audience-card h3{
-      margin-top:.35rem;
-    }
+    .audience-card{min-height:100%}
+    .audience-card h3{margin-top:.35rem}
 
     .list-card ul{
       margin:.8rem 0 0;
@@ -637,9 +596,7 @@
       color:var(--soft);
     }
 
-    .list-card li{
-      margin:.35rem 0;
-    }
+    .list-card li{margin:.35rem 0}
 
     .price-card{
       padding:1.35rem;
@@ -666,9 +623,7 @@
       font-weight:900;
     }
 
-    .taichi-section{
-      padding-top:4rem;
-    }
+    .taichi-section{padding-top:4rem}
 
     .taichi-block{
       display:grid;
@@ -733,17 +688,19 @@
       overflow:hidden;
       border:1px solid rgba(17,20,38,.12);
       box-shadow:var(--shadow);
-      background:#f4ead8;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(197,155,75,.10), transparent 42%),
+        #f4ead8;
       min-width:0;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:1.25rem;
+      padding:2.4rem;
     }
 
     .taichi-image img{
-      width:92%;
-      height:92%;
+      width:78%;
+      height:78%;
       object-fit:contain;
       object-position:center center;
       display:block;
@@ -797,9 +754,7 @@
       min-width:0;
     }
 
-    .footer-brand strong{
-      line-height:1.1;
-    }
+    .footer-brand strong{line-height:1.1}
 
     footer small{
       color:rgba(255,255,255,.72);
@@ -810,24 +765,13 @@
     }
 
     @media(max-width:1180px){
-      .grid3{
-        grid-template-columns:1fr;
-      }
-
-      .slider{
-        min-height:320px;
-      }
-
-      .workshop-logo,
-      .course-panel{
-        min-height:270px;
-      }
+      .grid3{grid-template-columns:1fr}
+      .slider{min-height:320px}
+      .workshop-logo,.course-panel{min-height:270px}
     }
 
     @media(max-width:1020px){
-      nav a{
-        display:none;
-      }
+      nav a{display:none}
 
       .hero-grid,
       .grid2,
@@ -836,19 +780,12 @@
         grid-template-columns:1fr;
       }
 
-      .taichi-copy{
-        order:1;
-      }
-
-      .taichi-image{
-        order:2;
-      }
+      .taichi-copy{order:1}
+      .taichi-image{order:2}
     }
 
     @media(max-width:760px){
-      body{
-        background:#fff8eb;
-      }
+      body{background:#fff8eb}
 
       .wrap{
         width:100%;
@@ -868,9 +805,7 @@
         height:46px;
       }
 
-      .brand strong{
-        font-size:.95rem;
-      }
+      .brand strong{font-size:.95rem}
 
       .brand small{
         font-size:.68rem;
@@ -883,14 +818,8 @@
         font-size:.78rem;
       }
 
-      section{
-        padding:2.4rem 0;
-      }
-
-      .hero{
-        padding-top:1.5rem;
-        padding-bottom:2rem;
-      }
+      section{padding:2.4rem 0}
+      .hero{padding-top:1.5rem;padding-bottom:2rem}
 
       h1{
         font-size:clamp(2.25rem,10.8vw,3rem);
@@ -925,9 +854,7 @@
         gap:.65rem;
       }
 
-      .actions .btn{
-        width:100%;
-      }
+      .actions .btn{width:100%}
 
       .hero-frame{
         aspect-ratio:1 / 1;
@@ -965,22 +892,15 @@
         border-radius:24px;
       }
 
-      .pad{
-        padding:1.15rem;
-      }
+      .pad{padding:1.15rem}
 
       .grid3,
       .taichi-offers{
         grid-template-columns:1fr;
       }
 
-      .slider{
-        min-height:330px;
-      }
-
-      .slide{
-        padding:.9rem;
-      }
+      .slider{min-height:330px}
+      .slide{padding:.9rem}
 
       .workshop-logo,
       .course-panel{
@@ -1004,43 +924,25 @@
 
       .taichi-image{
         aspect-ratio:1 / 1;
-        padding:.85rem;
+        padding:1.5rem;
       }
 
       .taichi-image img{
-        width:96%;
-        height:96%;
+        width:88%;
+        height:88%;
       }
 
-      .taichi-copy{
-        padding:1.3rem;
-      }
+      .taichi-copy{padding:1.3rem}
 
-      footer .wrap{
-        display:block;
-      }
-
-      .footer-brand{
-        margin-bottom:1rem;
-      }
-
-      footer small{
-        text-align:left;
-      }
+      footer .wrap{display:block}
+      .footer-brand{margin-bottom:1rem}
+      footer small{text-align:left}
     }
 
     @media(max-width:420px){
-      .brand small{
-        display:none;
-      }
-
-      h1{
-        font-size:2.15rem;
-      }
-
-      h2{
-        font-size:1.8rem;
-      }
+      .brand small{display:none}
+      h1{font-size:2.15rem}
+      h2{font-size:1.8rem}
     }
   </style>
 </head>
@@ -1049,7 +951,7 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#inicio" aria-label="THE MENTOR CLUB">
-        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-009" alt="Logo The Mentor Club">
+        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-010" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
           <small>Cuerpo, palabra y conciencia</small>
@@ -1087,7 +989,7 @@
         </div>
 
         <div class="hero-frame">
-          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-009" alt="The Mentor Club · umbral de autoconocimiento">
+          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-010" alt="The Mentor Club · umbral de autoconocimiento">
           <div class="hero-note">
             <p>Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.</p>
           </div>
@@ -1183,7 +1085,7 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <img class="workshop-img" src="assets/img/logo-haiku.png?v=thementorclub-009" alt="Logo taller Haiku" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <img class="workshop-img" src="assets/img/logo-haiku.png?v=thementorclub-010" alt="Logo taller Haiku" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <div class="fallback-logo">
                     <strong>HAIKU</strong>
                     <small>Contemplación · Naturaleza · Silencio</small>
@@ -1238,7 +1140,7 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <img class="workshop-img" src="assets/img/logo-haibun.png?v=thementorclub-009" alt="Logo taller Haibun" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <img class="workshop-img" src="assets/img/logo-haibun.png?v=thementorclub-010" alt="Logo taller Haibun" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <div class="fallback-logo">
                     <strong>HAIBUN</strong>
                     <small>Viaje · Profundidad · Resonancia</small>
@@ -1295,7 +1197,7 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <img class="workshop-img" src="assets/img/logo-microrrelato.png?v=thementorclub-009" alt="Logo taller Microrrelato" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <img class="workshop-img" src="assets/img/logo-microrrelato.png?v=thementorclub-010" alt="Logo taller Microrrelato" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <div class="fallback-logo">
                     <strong>MICRO</strong>
                     <small>Elipsis · Intensidad · Revelación</small>
@@ -1492,7 +1394,7 @@
           </div>
 
           <div class="taichi-image">
-            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-009" alt="Tai Chi Club · The Mentor Club">
+            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-010" alt="Tai Chi Club · The Mentor Club">
           </div>
         </div>
       </div>
@@ -1584,7 +1486,7 @@
   <footer>
     <div class="wrap">
       <div class="footer-brand">
-        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-009" alt="Logo The Mentor Club">
+        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-010" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
         </div>
