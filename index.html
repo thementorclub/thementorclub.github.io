@@ -946,23 +946,23 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#inicio" aria-label="THE MENTOR CLUB">
-        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-011" alt="Logo The Mentor Club">
+        <img class="brand-logo" src="assets/img/logo-tmc.png?v=thementorclub-012" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
-          <small>Cuerpo, palabra y conciencia</small>
+          <small data-i18n="brand_sub">Cuerpo, palabra y conciencia</small>
         </div>
       </a>
 
       <nav>
-        <a href="#homero">HOMERO CLUB</a>
-        <a href="#puerta">Puerta de entrada</a>
-        <a href="#precios">Precios</a>
-        <a href="#taichi">TAI CHI CLUB</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#homero" data-i18n="nav_homero">HOMERO CLUB</a>
+        <a href="#puerta" data-i18n="nav_door">Puerta de entrada</a>
+        <a href="#precios" data-i18n="nav_prices">Precios</a>
+        <a href="#taichi" data-i18n="nav_taichi">TAI CHI CLUB</a>
+        <a href="#contacto" data-i18n="nav_contact">Contacto</a>
 
         <div class="lang">
-          <button type="button" class="active">ES</button>
-          <button type="button">EN</button>
+          <button type="button" class="active" data-lang-btn="es" onclick="setLang('es')">ES</button>
+          <button type="button" data-lang-btn="en" onclick="setLang('en')">EN</button>
         </div>
       </nav>
     </div>
@@ -972,21 +972,21 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Cuerpo, palabra y conciencia</p>
-          <h1>THE MENTOR CLUB<br>Cuerpo, palabra y conciencia.</h1>
-          <p class="lead">The Mentor Club es una escuela de atención y transformación que integra cuerpo, palabra y conciencia para cultivar presencia, claridad y profundidad.</p>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Cuerpo, palabra y conciencia</p>
+          <h1 data-i18n-html="hero_title">THE MENTOR CLUB<br>Cuerpo, palabra y conciencia.</h1>
+          <p class="lead" data-i18n="hero_lead">The Mentor Club es una escuela de atención y transformación que integra cuerpo, palabra y conciencia para cultivar presencia, claridad y profundidad.</p>
 
           <div class="actions">
-            <a class="btn primary" href="#" onclick="openApp();return false;">APP HOMERO CLUB</a>
-            <a class="btn secondary" href="#" onclick="openApp();return false;">ESCUELA HOMERO CLUB</a>
-            <a class="btn dark" href="#puerta">La puerta de entrada</a>
+            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_app">APP HOMERO CLUB</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_school">ESCUELA HOMERO CLUB</a>
+            <a class="btn dark" href="#puerta" data-i18n="btn_door">La puerta de entrada</a>
           </div>
         </div>
 
         <div class="hero-frame">
-          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-011" alt="The Mentor Club · umbral de autoconocimiento">
+          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=thementorclub-012" alt="The Mentor Club · umbral de autoconocimiento">
           <div class="hero-note">
-            <p>Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.</p>
+            <p data-i18n="hero_note">Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.</p>
           </div>
         </div>
       </div>
@@ -996,30 +996,30 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">THE MENTOR CLUB</p>
-          <h2>Dos vías, una misma atención</h2>
-          <p class="muted">The Mentor Club reúne dos caminos complementarios: Homero Club, la vía de la palabra; Tai Chi Club, la vía del cuerpo.</p>
+          <h2 data-i18n="clubs_title">Dos vías, una misma atención</h2>
+          <p class="muted" data-i18n="clubs_text">The Mentor Club reúne dos caminos complementarios: Homero Club, la vía de la palabra; Tai Chi Club, la vía del cuerpo.</p>
         </div>
 
         <div class="grid2">
           <article class="card pad choice-card">
             <div>
               <p class="eyebrow">HOMERO CLUB</p>
-              <h3>La vía de la palabra</h3>
-              <p class="muted">Escritura, contemplación y autoconocimiento a través de la brevedad y la intensidad.</p>
+              <h3 data-i18n="homero_path_title">La vía de la palabra</h3>
+              <p class="muted" data-i18n="homero_path_text">Escritura, contemplación y autoconocimiento a través de la brevedad y la intensidad.</p>
             </div>
             <div class="actions">
-              <a class="btn primary" href="#homero">Ver las tres sendas</a>
+              <a class="btn primary" href="#homero" data-i18n="see_paths">Ver las tres sendas</a>
             </div>
           </article>
 
           <article class="card pad choice-card">
             <div>
               <p class="eyebrow">TAI CHI CLUB</p>
-              <h3>La vía del cuerpo</h3>
-              <p class="muted">Práctica presencial de Tai Chi en Cancelada–Estepona: Wuji, Song Gong, Formas Wudang y Formas Estilo Yang.</p>
+              <h3 data-i18n="taichi_path_title">La vía del cuerpo</h3>
+              <p class="muted" data-i18n="taichi_path_text">Práctica presencial de Tai Chi en Cancelada–Estepona: Wuji, Song Gong, Formas Wudang y Formas Estilo Yang.</p>
             </div>
             <div class="actions">
-              <a class="btn secondary" href="#taichi">Ver Tai Chi Club</a>
+              <a class="btn secondary" href="#taichi" data-i18n="see_taichi">Ver Tai Chi Club</a>
             </div>
           </article>
         </div>
@@ -1030,7 +1030,7 @@
       <div class="wrap">
         <div class="quote">
           <h2>Vita brevis, ars intensa.</h2>
-          <p>Trabajamos la brevedad porque ser conscientes de cada instante significa vivir con intensidad y poder experimentar y respetar cada gesto que nos ofrece la vida: en una brizna de hierba, está latiendo todo el Universo; en cada instante, toda la existencia está ocurriendo.</p>
+          <p data-i18n="latin_text">Trabajamos la brevedad porque ser conscientes de cada instante significa vivir con intensidad y poder experimentar y respetar cada gesto que nos ofrece la vida: en una brizna de hierba, está latiendo todo el Universo; en cada instante, toda la existencia está ocurriendo.</p>
         </div>
       </div>
     </section>
@@ -1038,27 +1038,27 @@
     <section id="puerta">
       <div class="wrap">
         <div class="card pad door">
-          <p class="eyebrow">La puerta de entrada</p>
-          <h2>Descubre por dónde empezar</h2>
-          <p class="muted">No todas las personas llegan a la escritura desde el mismo umbral. Algunas necesitan aprender a mirar. Otras, a narrar el instante. Otras, a condensar una verdad en pocas líneas.</p>
+          <p class="eyebrow" data-i18n="door_label">La puerta de entrada</p>
+          <h2 data-i18n="door_title">Descubre por dónde empezar</h2>
+          <p class="muted" data-i18n="door_text">No todas las personas llegan a la escritura desde el mismo umbral. Algunas necesitan aprender a mirar. Otras, a narrar el instante. Otras, a condensar una verdad en pocas líneas.</p>
 
           <div class="grid2" style="margin-top:1.2rem">
             <article class="card pad choice-card">
               <div>
                 <p class="eyebrow">APP HOMERO CLUB</p>
-                <h3>Práctica breve, diaria, introductoria.</h3>
-                <p class="muted">Si quieres dar tus primeros pasos en la escritura consciente.</p>
+                <h3 data-i18n="app_intro_title">Práctica breve, diaria, introductoria.</h3>
+                <p class="muted" data-i18n="app_intro_text">Si quieres dar tus primeros pasos en la escritura consciente.</p>
               </div>
-              <a class="btn primary" href="#" onclick="openApp();return false;">Entrar en la APP</a>
+              <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="enter_app">Entrar en la APP</a>
             </article>
 
             <article class="card pad choice-card">
               <div>
-                <p class="eyebrow">ESCUELA HOMERO CLUB</p>
-                <h3>Talleres completos por caminos específicos: Haiku, Haibun y Microrrelato.</h3>
-                <p class="muted">Si tu viaje ya ha comenzado. Incluye materiales, modelos, ejercicios y procesos de crítica y revisión para profundizar en una forma literaria concreta.</p>
+                <p class="eyebrow" data-i18n="school_label">ESCUELA HOMERO CLUB</p>
+                <h3 data-i18n="school_intro_title">Talleres completos por caminos específicos: Haiku, Haibun y Microrrelato.</h3>
+                <p class="muted" data-i18n="school_intro_text">Si tu viaje ya ha comenzado. Incluye materiales, modelos, ejercicios y procesos de crítica y revisión para profundizar en una forma literaria concreta.</p>
               </div>
-              <a class="btn secondary" href="#" onclick="openApp();return false;">Acceder a la escuela</a>
+              <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="access_school">Acceder a la escuela</a>
             </article>
           </div>
         </div>
@@ -1069,10 +1069,10 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">HOMERO CLUB</p>
-          <h2>Brevedad e intensidad</h2>
+          <h2 data-i18n="brevity_title">Brevedad e intensidad</h2>
           <p class="latin">Vita brevis, ars intensa.</p>
-          <p class="muted">Homero Club es la escuela de escritura consciente de The Mentor Club: un espacio para contemplar el mundo, observar la experiencia y transformar la existencia en palabras.</p>
-          <p class="muted">Las tres sendas de HOMERO CLUB son:</p>
+          <p class="muted" data-i18n="homero_intro">Homero Club es la escuela de escritura consciente de The Mentor Club: un espacio para contemplar el mundo, observar la experiencia y transformar la existencia en palabras.</p>
+          <p class="muted" data-i18n="three_paths">Las tres sendas de HOMERO CLUB son:</p>
         </div>
 
         <div class="grid3">
@@ -1080,53 +1080,53 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <img class="workshop-img" src="assets/img/logo-haiku.png?v=thementorclub-011" alt="Logo taller Haiku" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <img class="workshop-img" src="assets/img/logo-haiku.png?v=thementorclub-012" alt="Logo taller Haiku" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <div class="fallback-logo">
                     <strong>HAIKU</strong>
-                    <small>Contemplación · Naturaleza · Silencio</small>
+                    <small data-i18n="haiku_logo">Contemplación · Naturaleza · Silencio</small>
                   </div>
                 </div>
               </div>
 
               <div class="slide">
                 <div class="course-panel">
-                  <p class="eyebrow">Dentro del taller</p>
+                  <p class="eyebrow" data-i18n="inside_workshop">Dentro del taller</p>
                   <ul>
-                    <li>Qué es haiku.</li>
-                    <li>Qué no es haiku.</li>
-                    <li>Contemplación y Naturaleza.</li>
-                    <li>Conceptos del género: kigo, kire, ma, aware, yūgen, wabi, sabi, karumi, shasei..., entre otros.</li>
-                    <li>Errores frecuentes.</li>
-                    <li>Lectura de maestros.</li>
-                    <li>Ejercicios.</li>
-                    <li>Rúbrica.</li>
-                    <li>Proceso de revisión.</li>
+                    <li data-i18n="haiku_l1">Qué es haiku.</li>
+                    <li data-i18n="haiku_l2">Qué no es haiku.</li>
+                    <li data-i18n="haiku_l3">Contemplación y Naturaleza.</li>
+                    <li data-i18n="haiku_l4">Conceptos del género: kigo, kire, ma, aware, yūgen, wabi, sabi, karumi, shasei..., entre otros.</li>
+                    <li data-i18n="common_errors">Errores frecuentes.</li>
+                    <li data-i18n="masters_reading">Lectura de maestros.</li>
+                    <li data-i18n="exercises">Ejercicios.</li>
+                    <li data-i18n="rubric">Rúbrica.</li>
+                    <li data-i18n="revision_process">Proceso de revisión.</li>
                   </ul>
                 </div>
               </div>
 
-              <button class="slider-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
-              <button class="slider-arrow next" type="button" aria-label="Imagen siguiente">›</button>
+              <button class="slider-arrow prev" type="button">‹</button>
+              <button class="slider-arrow next" type="button">›</button>
               <div class="slider-dots">
-                <button class="slider-dot active" type="button" aria-label="Logo Haiku"></button>
-                <button class="slider-dot" type="button" aria-label="Descripción Haiku"></button>
+                <button class="slider-dot active" type="button"></button>
+                <button class="slider-dot" type="button"></button>
               </div>
             </div>
 
             <div class="pad">
               <span class="num">1</span>
               <p class="eyebrow">HAIKU</p>
-              <h3>Escribir sin apropiarse del mundo.</h3>
-              <p class="muted">El haiku es una práctica de atención. No busca explicar lo que sentimos, sino abrir una percepción ante la sacralidad del mundo. Su fuerza nace del instante, de la naturaleza cercana, del silencio y de una imagen que no necesita ser interpretada.</p>
+              <h3 data-i18n="haiku_title">Escribir sin apropiarse del mundo.</h3>
+              <p class="muted" data-i18n="haiku_desc">El haiku es una práctica de atención. No busca explicar lo que sentimos, sino abrir una percepción ante la sacralidad del mundo. Su fuerza nace del instante, de la naturaleza cercana, del silencio y de una imagen que no necesita ser interpretada.</p>
 
               <div class="faq">
-                <details><summary>¿Qué compro?</summary><p>Compras acceso al Taller de Haiku de HOMERO CLUB, un recorrido de escritura consciente centrado en la contemplación, el instante y la precisión verbal.</p></details>
-                <details><summary>¿Qué recibo exactamente?</summary><p>Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de observación, propuestas de escritura, rúbrica de revisión y una guía para corregir tus propios haikus.</p></details>
-                <details><summary>¿Cuánto dura?</summary><p>El acceso dura 6 meses. Puedes avanzar de forma progresiva y volver a los materiales siempre que lo necesites durante ese periodo.</p></details>
-                <details><summary>¿Qué pasa cuando entro?</summary><p>Encuentras el recorrido organizado por materiales y prácticas. Primero comprendes qué es y qué no es haiku; después lees modelos, realizas ejercicios de observación y escribes tus propias piezas.</p></details>
-                <details><summary>¿Hay corrección?</summary><p>El taller incluye criterios de revisión y rúbrica. La corrección se orienta hacia la precisión, la eliminación de explicación emocional, el uso del silencio, la imagen concreta y la resonancia del instante.</p></details>
-                <details><summary>¿Es autónomo o acompañado?</summary><p>Es un taller principalmente autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
-                <details><summary>¿Por qué elegir este método?</summary><p>Porque aquí el haiku no se enseña como una fórmula decorativa, sino como una práctica de atención. No se trata de escribir algo “bonito”, sino de aprender a mirar, callar, podar y dejar que el mundo aparezca sin apropiárselo.</p></details>
+                <details><summary data-i18n="q_buy">¿Qué compro?</summary><p data-i18n="haiku_buy">Compras acceso al Taller de Haiku de HOMERO CLUB, un recorrido de escritura consciente centrado en la contemplación, el instante y la precisión verbal.</p></details>
+                <details><summary data-i18n="q_receive">¿Qué recibo exactamente?</summary><p data-i18n="haiku_receive">Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de observación, propuestas de escritura, rúbrica de revisión y una guía para corregir tus propios haikus.</p></details>
+                <details><summary data-i18n="q_duration">¿Cuánto dura?</summary><p data-i18n="duration_6">El acceso dura 6 meses. Puedes avanzar de forma progresiva y volver a los materiales siempre que lo necesites durante ese periodo.</p></details>
+                <details><summary data-i18n="q_enter">¿Qué pasa cuando entro?</summary><p data-i18n="haiku_enter">Encuentras el recorrido organizado por materiales y prácticas. Primero comprendes qué es y qué no es haiku; después lees modelos, realizas ejercicios de observación y escribes tus propias piezas.</p></details>
+                <details><summary data-i18n="q_correction">¿Hay corrección?</summary><p data-i18n="haiku_correction">El taller incluye criterios de revisión y rúbrica. La corrección se orienta hacia la precisión, la eliminación de explicación emocional, el uso del silencio, la imagen concreta y la resonancia del instante.</p></details>
+                <details><summary data-i18n="q_mode">¿Es autónomo o acompañado?</summary><p data-i18n="guided_mode">Es un taller autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
+                <details><summary data-i18n="q_method">¿Por qué elegir este método?</summary><p data-i18n="haiku_method">Porque aquí el haiku no se enseña como una fórmula decorativa, sino como una práctica de atención. No se trata de escribir algo “bonito”, sino de aprender a mirar, callar, podar y dejar que el mundo aparezca sin apropiárselo.</p></details>
               </div>
             </div>
           </article>
@@ -1135,55 +1135,55 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <img class="workshop-img" src="assets/img/logo-haibun.png?v=thementorclub-011" alt="Logo taller Haibun" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <img class="workshop-img" src="assets/img/logo-haibun.png?v=thementorclub-012" alt="Logo taller Haibun" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <div class="fallback-logo">
                     <strong>HAIBUN</strong>
-                    <small>Viaje · Profundidad · Resonancia</small>
+                    <small data-i18n="haibun_logo">Viaje · Profundidad · Resonancia</small>
                   </div>
                 </div>
               </div>
 
               <div class="slide">
                 <div class="course-panel">
-                  <p class="eyebrow">Dentro del taller</p>
+                  <p class="eyebrow" data-i18n="inside_workshop">Dentro del taller</p>
                   <ul>
-                    <li>Qué es haibun.</li>
-                    <li>Qué no es haibun.</li>
-                    <li>Relación entre prosa y haiku.</li>
-                    <li>Escena, viaje y experiencia.</li>
-                    <li>Observación y memoria.</li>
-                    <li>Elipsis y sugerencia.</li>
-                    <li>El cierre en haiku.</li>
-                    <li>Lectura de modelos.</li>
-                    <li>Ejercicios de prosa breve.</li>
-                    <li>Rúbrica.</li>
-                    <li>Proceso de integración.</li>
+                    <li data-i18n="haibun_l1">Qué es haibun.</li>
+                    <li data-i18n="haibun_l2">Qué no es haibun.</li>
+                    <li data-i18n="haibun_l3">Relación entre prosa y haiku.</li>
+                    <li data-i18n="haibun_l4">Escena, viaje y experiencia.</li>
+                    <li data-i18n="haibun_l5">Observación y memoria.</li>
+                    <li data-i18n="haibun_l6">Elipsis y sugerencia.</li>
+                    <li data-i18n="haibun_l7">El cierre en haiku.</li>
+                    <li data-i18n="model_reading">Lectura de modelos.</li>
+                    <li data-i18n="prose_exercises">Ejercicios de prosa breve.</li>
+                    <li data-i18n="rubric">Rúbrica.</li>
+                    <li data-i18n="integration_process">Proceso de integración.</li>
                   </ul>
                 </div>
               </div>
 
-              <button class="slider-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
-              <button class="slider-arrow next" type="button" aria-label="Imagen siguiente">›</button>
+              <button class="slider-arrow prev" type="button">‹</button>
+              <button class="slider-arrow next" type="button">›</button>
               <div class="slider-dots">
-                <button class="slider-dot active" type="button" aria-label="Logo Haibun"></button>
-                <button class="slider-dot" type="button" aria-label="Descripción Haibun"></button>
+                <button class="slider-dot active" type="button"></button>
+                <button class="slider-dot" type="button"></button>
               </div>
             </div>
 
             <div class="pad">
               <span class="num">2</span>
               <p class="eyebrow">HAIBUN</p>
-              <h3>Narrar el instante.</h3>
-              <p class="muted">El haibun une prosa breve y haiku. No es una simple anécdota con un poema al final: es una forma de narrar una experiencia sin cerrarla, dejando que el instante conserve su misterio.</p>
+              <h3 data-i18n="haibun_title">Narrar el instante.</h3>
+              <p class="muted" data-i18n="haibun_desc">El haibun une prosa breve y haiku. No es una simple anécdota con un poema al final: es una forma de narrar una experiencia sin cerrarla, dejando que el instante conserve su misterio.</p>
 
               <div class="faq">
-                <details><summary>¿Qué compro?</summary><p>Compras acceso al Taller de Haibun de HOMERO CLUB, un recorrido dedicado a transformar una experiencia vivida en una pieza breve donde la prosa y el haiku dialogan.</p></details>
-                <details><summary>¿Qué recibo exactamente?</summary><p>Acceso al aula digital durante 6 meses, materiales de estudio, modelos comentados, ejercicios de observación y memoria, propuestas de escritura, rúbrica de revisión y una guía para construir haibun completos.</p></details>
-                <details><summary>¿Cuánto dura?</summary><p>El acceso dura 6 meses. Puedes realizar el taller de manera autónoma, con tiempo suficiente para escribir, dejar reposar, revisar y volver a tus textos.</p></details>
-                <details><summary>¿Qué pasa cuando entro?</summary><p>El recorrido te lleva desde la comprensión de la forma hasta la escritura de tus propios haibun. Aprendes a construir una prosa breve, evitar la explicación excesiva y cerrar con un haiku que no repita, sino que abra.</p></details>
-                <details><summary>¿Hay corrección?</summary><p>El taller incluye criterios de revisión y rúbrica. La corrección observa la relación entre prosa y haiku, la economía verbal, el tono, la escena, el silencio, la elipsis y la resonancia final.</p></details>
-                <details><summary>¿Es autónomo o acompañado?</summary><p>Es un taller autónomo y guiado. La estructura está diseñada para que puedas avanzar con claridad, revisar tus textos y reconocer qué necesita cada pieza. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
-                <details><summary>¿Por qué elegir este método?</summary><p>Porque el haibun se trabaja aquí como una forma de contemplación narrativa. No se busca contar demasiado, sino encontrar la forma justa para que una experiencia respire y deje una huella.</p></details>
+                <details><summary data-i18n="q_buy">¿Qué compro?</summary><p data-i18n="haibun_buy">Compras acceso al Taller de Haibun de HOMERO CLUB, un recorrido dedicado a transformar una experiencia vivida en una pieza breve donde la prosa y el haiku dialogan.</p></details>
+                <details><summary data-i18n="q_receive">¿Qué recibo exactamente?</summary><p data-i18n="haibun_receive">Acceso al aula digital durante 6 meses, materiales de estudio, modelos comentados, ejercicios de observación y memoria, propuestas de escritura, rúbrica de revisión y una guía para construir haibun completos.</p></details>
+                <details><summary data-i18n="q_duration">¿Cuánto dura?</summary><p data-i18n="duration_6b">El acceso dura 6 meses. Puedes realizar el taller de manera autónoma, con tiempo suficiente para escribir, dejar reposar, revisar y volver a tus textos.</p></details>
+                <details><summary data-i18n="q_enter">¿Qué pasa cuando entro?</summary><p data-i18n="haibun_enter">El recorrido te lleva desde la comprensión de la forma hasta la escritura de tus propios haibun. Aprendes a construir una prosa breve, evitar la explicación excesiva y cerrar con un haiku que no repita, sino que abra.</p></details>
+                <details><summary data-i18n="q_correction">¿Hay corrección?</summary><p data-i18n="haibun_correction">El taller incluye criterios de revisión y rúbrica. La corrección observa la relación entre prosa y haiku, la economía verbal, el tono, la escena, el silencio, la elipsis y la resonancia final.</p></details>
+                <details><summary data-i18n="q_mode">¿Es autónomo o acompañado?</summary><p data-i18n="guided_mode">Es un taller autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
+                <details><summary data-i18n="q_method">¿Por qué elegir este método?</summary><p data-i18n="haibun_method">Porque el haibun se trabaja aquí como una forma de contemplación narrativa. No se busca contar demasiado, sino encontrar la forma justa para que una experiencia respire y deje una huella.</p></details>
               </div>
             </div>
           </article>
@@ -1192,56 +1192,56 @@
             <div class="slider" data-slider>
               <div class="slide active">
                 <div class="workshop-logo">
-                  <img class="workshop-img" src="assets/img/logo-microrrelato.png?v=thementorclub-011" alt="Logo taller Microrrelato" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <img class="workshop-img" src="assets/img/logo-microrrelato.png?v=thementorclub-012" alt="Logo taller Microrrelato" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                   <div class="fallback-logo">
                     <strong>MICRO</strong>
-                    <small>Elipsis · Intensidad · Revelación</small>
+                    <small data-i18n="micro_logo">Elipsis · Intensidad · Revelación</small>
                   </div>
                 </div>
               </div>
 
               <div class="slide">
                 <div class="course-panel">
-                  <p class="eyebrow">Dentro del taller</p>
+                  <p class="eyebrow" data-i18n="inside_workshop">Dentro del taller</p>
                   <ul>
-                    <li>Qué es microrrelato.</li>
-                    <li>Qué no es microrrelato.</li>
-                    <li>Brevedad significativa.</li>
-                    <li>Título activo.</li>
-                    <li>Elipsis narrativa.</li>
-                    <li>Tensión y conflicto.</li>
-                    <li>Giro y resonancia.</li>
-                    <li>Final abierto o revelador.</li>
-                    <li>Lectura de modelos.</li>
-                    <li>Ejercicios de condensación.</li>
-                    <li>Rúbrica.</li>
-                    <li>Proceso de poda verbal.</li>
+                    <li data-i18n="micro_l1">Qué es microrrelato.</li>
+                    <li data-i18n="micro_l2">Qué no es microrrelato.</li>
+                    <li data-i18n="micro_l3">Brevedad significativa.</li>
+                    <li data-i18n="micro_l4">Título activo.</li>
+                    <li data-i18n="micro_l5">Elipsis narrativa.</li>
+                    <li data-i18n="micro_l6">Tensión y conflicto.</li>
+                    <li data-i18n="micro_l7">Giro y resonancia.</li>
+                    <li data-i18n="micro_l8">Final abierto o revelador.</li>
+                    <li data-i18n="model_reading">Lectura de modelos.</li>
+                    <li data-i18n="condensation_exercises">Ejercicios de condensación.</li>
+                    <li data-i18n="rubric">Rúbrica.</li>
+                    <li data-i18n="verbal_pruning">Proceso de poda verbal.</li>
                   </ul>
                 </div>
               </div>
 
-              <button class="slider-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
-              <button class="slider-arrow next" type="button" aria-label="Imagen siguiente">›</button>
+              <button class="slider-arrow prev" type="button">‹</button>
+              <button class="slider-arrow next" type="button">›</button>
               <div class="slider-dots">
-                <button class="slider-dot active" type="button" aria-label="Logo Microrrelato"></button>
-                <button class="slider-dot" type="button" aria-label="Descripción Microrrelato"></button>
+                <button class="slider-dot active" type="button"></button>
+                <button class="slider-dot" type="button"></button>
               </div>
             </div>
 
             <div class="pad">
               <span class="num">3</span>
-              <p class="eyebrow">MICRORRELATO</p>
-              <h3>Brevedad e intensidad.</h3>
-              <p class="muted">El microrrelato no es un cuento pequeño. Es una forma narrativa de alta concentración: tensión, elipsis, precisión y un final que no explica, sino que expande.</p>
+              <p class="eyebrow" data-i18n="micro_label">MICRORRELATO</p>
+              <h3 data-i18n="micro_title">Brevedad e intensidad.</h3>
+              <p class="muted" data-i18n="micro_desc">El microrrelato no es un cuento pequeño. Es una forma narrativa de alta concentración: tensión, elipsis, precisión y un final que no explica, sino que expande.</p>
 
               <div class="faq">
-                <details><summary>¿Qué compro?</summary><p>Compras acceso al Taller de Microrrelato de HOMERO CLUB, un recorrido centrado en la intensidad narrativa, la síntesis y la construcción de textos breves con potencia literaria.</p></details>
-                <details><summary>¿Qué recibo exactamente?</summary><p>Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de condensación, propuestas de escritura, rúbrica de revisión y una guía para trabajar título, tensión, elipsis y final.</p></details>
-                <details><summary>¿Cuánto dura?</summary><p>El acceso dura 6 meses. El taller puede realizarse a tu ritmo, con tiempo para escribir varias versiones y comprender cómo cambia un texto cuando se poda con intención.</p></details>
-                <details><summary>¿Qué pasa cuando entro?</summary><p>Encuentras un recorrido organizado para pasar de la idea inicial a una forma breve y eficaz. Aprendes a detectar lo que sobra, activar el título, construir tensión y cerrar sin explicar demasiado.</p></details>
-                <details><summary>¿Hay corrección?</summary><p>El taller incluye criterios de revisión y rúbrica. La corrección atiende a estructura, precisión verbal, conflicto, economía, elipsis, ritmo, final y resonancia.</p></details>
-                <details><summary>¿Es autónomo o acompañado?</summary><p>Es un taller autónomo y guiado. El alumno avanza con materiales, modelos, ejercicios y herramientas de revisión para mejorar cada versión de su texto. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
-                <details><summary>¿Por qué elegir este método?</summary><p>Porque aquí el microrrelato no se trabaja como ocurrencia breve, sino como forma literaria exigente. Aprendes a concentrar sentido, crear tensión y dejar que lo no dicho participe en la historia.</p></details>
+                <details><summary data-i18n="q_buy">¿Qué compro?</summary><p data-i18n="micro_buy">Compras acceso al Taller de Microrrelato de HOMERO CLUB, un recorrido centrado en la intensidad narrativa, la síntesis y la construcción de textos breves con potencia literaria.</p></details>
+                <details><summary data-i18n="q_receive">¿Qué recibo exactamente?</summary><p data-i18n="micro_receive">Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de condensación, propuestas de escritura, rúbrica de revisión y una guía para trabajar título, tensión, elipsis y final.</p></details>
+                <details><summary data-i18n="q_duration">¿Cuánto dura?</summary><p data-i18n="micro_duration">El acceso dura 6 meses. El taller puede realizarse a tu ritmo, con tiempo para escribir varias versiones y comprender cómo cambia un texto cuando se poda con intención.</p></details>
+                <details><summary data-i18n="q_enter">¿Qué pasa cuando entro?</summary><p data-i18n="micro_enter">Encuentras un recorrido organizado para pasar de la idea inicial a una forma breve y eficaz. Aprendes a detectar lo que sobra, activar el título, construir tensión y cerrar sin explicar demasiado.</p></details>
+                <details><summary data-i18n="q_correction">¿Hay corrección?</summary><p data-i18n="micro_correction">El taller incluye criterios de revisión y rúbrica. La corrección atiende a estructura, precisión verbal, conflicto, economía, elipsis, ritmo, final y resonancia.</p></details>
+                <details><summary data-i18n="q_mode">¿Es autónomo o acompañado?</summary><p data-i18n="guided_mode">Es un taller autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
+                <details><summary data-i18n="q_method">¿Por qué elegir este método?</summary><p data-i18n="micro_method">Porque aquí el microrrelato no se trabaja como ocurrencia breve, sino como forma literaria exigente. Aprendes a concentrar sentido, crear tensión y dejar que lo no dicho participe en la historia.</p></details>
               </div>
             </div>
           </article>
@@ -1252,33 +1252,33 @@
     <section id="para-quien">
       <div class="wrap">
         <div class="section-head audience-title">
-          <p class="eyebrow">Filtro de entrada</p>
-          <h2>Para quién es HOMERO CLUB</h2>
-          <p class="muted">Y para quiénes no es este camino de escritura consciente.</p>
+          <p class="eyebrow" data-i18n="filter_label">Filtro de entrada</p>
+          <h2 data-i18n="audience_title">Para quién es HOMERO CLUB</h2>
+          <p class="muted" data-i18n="audience_subtitle">Y para quiénes no es este camino de escritura consciente.</p>
         </div>
 
         <div class="audience-grid">
           <article class="card pad list-card audience-card">
-            <p class="eyebrow">HOMERO CLUB es para ti si…</p>
-            <h3>Buscas una escritura con atención y profundidad.</h3>
+            <p class="eyebrow" data-i18n="for_you_label">HOMERO CLUB es para ti si…</p>
+            <h3 data-i18n="for_you_title">Buscas una escritura con atención y profundidad.</h3>
             <ul>
-              <li>Buscas escribir con atención y profundidad.</li>
-              <li>Sientes que el verdadero viaje es interior.</li>
-              <li>Quieres practicar una escritura más consciente, más precisa y más honesta.</li>
-              <li>Te interesa revisar, podar y transformar tus textos.</li>
-              <li>No buscas solo producir textos, sino comprender mejor desde dónde escribes.</li>
+              <li data-i18n="for_you_1">Buscas escribir con atención y profundidad.</li>
+              <li data-i18n="for_you_2">Sientes que el verdadero viaje es interior.</li>
+              <li data-i18n="for_you_3">Quieres practicar una escritura más consciente, más precisa y más honesta.</li>
+              <li data-i18n="for_you_4">Te interesa revisar, podar y transformar tus textos.</li>
+              <li data-i18n="for_you_5">No buscas solo producir textos, sino comprender mejor desde dónde escribes.</li>
             </ul>
           </article>
 
           <article class="card pad list-card audience-card">
-            <p class="eyebrow">HOMERO CLUB no es para ti si…</p>
-            <h3>Buscas fórmulas rápidas sin trabajo interior.</h3>
+            <p class="eyebrow" data-i18n="not_for_you_label">HOMERO CLUB no es para ti si…</p>
+            <h3 data-i18n="not_for_you_title">Buscas fórmulas rápidas sin trabajo interior.</h3>
             <ul>
-              <li>Buscas fórmulas rápidas.</li>
-              <li>Quieres escritura automática sin revisión.</li>
-              <li>Solo te interesan textos decorativos sin trabajo interior.</li>
-              <li>No deseas leer, corregir ni profundizar.</li>
-              <li>Quieres escribir dentro del género de moda sin detenerte a mirar y comprender cómo está resonando tu propia voz interior.</li>
+              <li data-i18n="not_for_you_1">Buscas fórmulas rápidas.</li>
+              <li data-i18n="not_for_you_2">Quieres escritura automática sin revisión.</li>
+              <li data-i18n="not_for_you_3">Solo te interesan textos decorativos sin trabajo interior.</li>
+              <li data-i18n="not_for_you_4">No deseas leer, corregir ni profundizar.</li>
+              <li data-i18n="not_for_you_5">Quieres escribir dentro del género de moda sin detenerte a mirar y comprender cómo está resonando tu propia voz interior.</li>
             </ul>
           </article>
         </div>
@@ -1288,70 +1288,70 @@
     <section id="precios">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Precios y acceso</p>
-          <h2>Elige tu vía de entrada</h2>
-          <p class="muted">Todos los accesos de HOMERO CLUB tienen una duración de 6 meses desde el alta.</p>
+          <p class="eyebrow" data-i18n="prices_label">Precios y acceso</p>
+          <h2 data-i18n="prices_title">Elige tu vía de entrada</h2>
+          <p class="muted" data-i18n="prices_subtitle">Todos los accesos de HOMERO CLUB tienen una duración de 6 meses desde el alta.</p>
         </div>
 
         <div class="grid3">
           <article class="card price-card">
             <div>
               <p class="eyebrow">APP HOMERO CLUB</p>
-              <h3>APP 21 días</h3>
+              <h3 data-i18n="price_app_title">APP 21 días</h3>
               <div class="price">30€</div>
-              <p class="muted">Práctica breve, diaria e introductoria para comenzar tu camino de escritura consciente.</p>
+              <p class="muted" data-i18n="price_app_text">Práctica breve, diaria e introductoria para comenzar tu camino de escritura consciente.</p>
             </div>
-            <a class="btn primary" href="#" onclick="openApp();return false;">Entrar en la APP</a>
+            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="enter_app">Entrar en la APP</a>
           </article>
 
           <article class="card price-card">
             <div>
-              <p class="eyebrow">ESCUELA HOMERO CLUB</p>
-              <h3>Escuela de Haiku</h3>
+              <p class="eyebrow" data-i18n="school_label">ESCUELA HOMERO CLUB</p>
+              <h3 data-i18n="price_haiku_title">Escuela de Haiku</h3>
               <div class="price">60€</div>
-              <p class="muted">Taller completo de contemplación, instante, silencio y poda verbal.</p>
+              <p class="muted" data-i18n="price_haiku_text">Taller completo de contemplación, instante, silencio y poda verbal.</p>
             </div>
-            <a class="btn secondary" href="#" onclick="openApp();return false;">Acceder a la escuela</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="access_school">Acceder a la escuela</a>
           </article>
 
           <article class="card price-card">
             <div>
-              <p class="eyebrow">ESCUELA HOMERO CLUB</p>
-              <h3>Escuela de Haibun</h3>
+              <p class="eyebrow" data-i18n="school_label">ESCUELA HOMERO CLUB</p>
+              <h3 data-i18n="price_haibun_title">Escuela de Haibun</h3>
               <div class="price">60€</div>
-              <p class="muted">Taller completo de prosa breve, experiencia, observación y cierre en haiku.</p>
+              <p class="muted" data-i18n="price_haibun_text">Taller completo de prosa breve, experiencia, observación y cierre en haiku.</p>
             </div>
-            <a class="btn secondary" href="#" onclick="openApp();return false;">Acceder a la escuela</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="access_school">Acceder a la escuela</a>
           </article>
 
           <article class="card price-card">
             <div>
-              <p class="eyebrow">ESCUELA HOMERO CLUB</p>
-              <h3>Escuela de Microrrelato</h3>
+              <p class="eyebrow" data-i18n="school_label">ESCUELA HOMERO CLUB</p>
+              <h3 data-i18n="price_micro_title">Escuela de Microrrelato</h3>
               <div class="price">60€</div>
-              <p class="muted">Taller completo de brevedad narrativa, tensión, elipsis y resonancia.</p>
+              <p class="muted" data-i18n="price_micro_text">Taller completo de brevedad narrativa, tensión, elipsis y resonancia.</p>
             </div>
-            <a class="btn secondary" href="#" onclick="openApp();return false;">Acceder a la escuela</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="access_school">Acceder a la escuela</a>
           </article>
 
           <article class="card price-card">
             <div>
-              <p class="eyebrow">Pack completo</p>
-              <h3>Pack Homero Club Completo</h3>
+              <p class="eyebrow" data-i18n="pack_label">Pack completo</p>
+              <h3 data-i18n="pack_title">Pack Homero Club Completo</h3>
               <div class="price">99€</div>
-              <p class="muted">La opción recomendada para recorrer la vía completa, con los caminos esenciales de brevedad e intensidad.</p>
+              <p class="muted" data-i18n="pack_text">La opción recomendada para recorrer la vía completa, con los caminos esenciales de brevedad e intensidad.</p>
             </div>
-            <a class="btn primary" href="#" onclick="openApp();return false;">Acceder al pack</a>
+            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="access_pack">Acceder al pack</a>
           </article>
 
           <article class="card price-card">
             <div>
-              <p class="eyebrow">Duración</p>
-              <h3>Acceso durante 6 meses</h3>
-              <div class="price"><small>6 meses</small></div>
-              <p class="muted">Tiempo suficiente para practicar, revisar, volver a los materiales y consolidar una escritura más consciente.</p>
+              <p class="eyebrow" data-i18n="duration_label">Duración</p>
+              <h3 data-i18n="duration_title">Acceso durante 6 meses</h3>
+              <div class="price"><small data-i18n="six_months">6 meses</small></div>
+              <p class="muted" data-i18n="duration_text">Tiempo suficiente para practicar, revisar, volver a los materiales y consolidar una escritura más consciente.</p>
             </div>
-            <a class="btn secondary" href="#contacto">Resolver dudas</a>
+            <a class="btn secondary" href="#contacto" data-i18n="solve_questions">Resolver dudas</a>
           </article>
         </div>
       </div>
@@ -1362,34 +1362,34 @@
         <div class="taichi-block">
           <div class="taichi-copy">
             <p class="eyebrow">TAI CHI CLUB</p>
-            <h2>Tai Chi presencial en Cancelada–Estepona</h2>
+            <h2 data-i18n="taichi_title">Tai Chi presencial en Cancelada–Estepona</h2>
 
-            <p class="muted">Tai Chi Club es la vía corporal de The Mentor Club: una práctica presencial para cultivar arraigo, respiración, movimiento y presencia.</p>
+            <p class="muted" data-i18n="taichi_desc">Tai Chi Club es la vía corporal de The Mentor Club: una práctica presencial para cultivar arraigo, respiración, movimiento y presencia.</p>
 
-            <p class="muted">Trabajamos Wuji, Song Gong, Formas Wudang y Formas Estilo Yang.</p>
+            <p class="muted" data-i18n="taichi_content">Trabajamos Wuji, Song Gong, Formas Wudang y Formas Estilo Yang.</p>
 
             <div class="taichi-offers">
               <div class="taichi-offer">
-                <p class="eyebrow">Clases grupales</p>
-                <h3>60€ al mes</h3>
-                <p class="muted">Martes y jueves.</p>
+                <p class="eyebrow" data-i18n="group_classes">Clases grupales</p>
+                <h3 data-i18n="group_price">60€ al mes</h3>
+                <p class="muted" data-i18n="group_days">Martes y jueves.</p>
               </div>
 
               <div class="taichi-offer">
-                <p class="eyebrow">Clases privadas</p>
-                <h3>Consultar disponibilidad</h3>
-                <p class="muted">Puedes proponer días y horarios. No es una reserva automática: la confirmación dependerá de la disponibilidad de agenda.</p>
+                <p class="eyebrow" data-i18n="private_classes">Clases privadas</p>
+                <h3 data-i18n="private_availability">Consultar disponibilidad</h3>
+                <p class="muted" data-i18n="private_text">Puedes proponer días y horarios. No es una reserva automática: la confirmación dependerá de la disponibilidad de agenda.</p>
               </div>
             </div>
 
             <div class="actions">
-              <a class="btn primary" href="#contacto-tai-chi">Solicitar clase privada</a>
-              <a class="btn secondary" href="#contacto">Contacto general</a>
+              <a class="btn primary" href="#contacto-tai-chi" data-i18n="request_private">Solicitar clase privada</a>
+              <a class="btn secondary" href="#contacto" data-i18n="general_contact">Contacto general</a>
             </div>
           </div>
 
           <div class="taichi-image">
-            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-011" alt="Tai Chi Club · The Mentor Club">
+            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=thementorclub-012" alt="Tai Chi Club · The Mentor Club">
           </div>
         </div>
       </div>
@@ -1398,19 +1398,19 @@
     <section id="contacto-tai-chi">
       <div class="wrap">
         <form class="card pad contact-card" onsubmit="sendTaiChi(event)">
-          <p class="eyebrow">Consulta Tai Chi Club</p>
-          <h2>Solicitud de clase privada</h2>
-          <p class="muted">Indica tus preferencias. Esta solicitud no supone una reserva automática; la confirmación dependerá de la disponibilidad de agenda.</p>
+          <p class="eyebrow" data-i18n="taichi_contact_label">Consulta Tai Chi Club</p>
+          <h2 data-i18n="private_request_title">Solicitud de clase privada</h2>
+          <p class="muted" data-i18n="private_request_text">Indica tus preferencias. Esta solicitud no supone una reserva automática; la confirmación dependerá de la disponibilidad de agenda.</p>
 
-          <label for="taiName">Nombre</label>
+          <label for="taiName" data-i18n="name_label">Nombre</label>
           <input id="taiName" type="text" placeholder="Tu nombre">
 
-          <label for="taiEmail">Correo</label>
+          <label for="taiEmail" data-i18n="email_label">Correo</label>
           <input id="taiEmail" type="email" placeholder="tu@email.com">
 
-          <label for="taiDay">Día preferente</label>
+          <label for="taiDay" data-i18n="day_label">Día preferente</label>
           <select id="taiDay">
-            <option value="">Selecciona una opción</option>
+            <option value="" data-i18n="select_option">Selecciona una opción</option>
             <option>Lunes</option>
             <option>Martes</option>
             <option>Miércoles</option>
@@ -1419,20 +1419,20 @@
             <option>Sábado</option>
           </select>
 
-          <label for="taiTime">Horario preferente</label>
+          <label for="taiTime" data-i18n="time_label">Horario preferente</label>
           <select id="taiTime">
-            <option value="">Selecciona una opción</option>
-            <option>Mañana</option>
-            <option>Mediodía</option>
-            <option>Tarde</option>
-            <option>Última hora de la tarde</option>
+            <option value="" data-i18n="select_option">Selecciona una opción</option>
+            <option data-i18n="morning">Mañana</option>
+            <option data-i18n="midday">Mediodía</option>
+            <option data-i18n="afternoon">Tarde</option>
+            <option data-i18n="late_afternoon">Última hora de la tarde</option>
           </select>
 
-          <label for="taiMessage">Mensaje</label>
-          <textarea id="taiMessage" placeholder="Cuéntanos tu experiencia previa, objetivo o disponibilidad concreta..."></textarea>
+          <label for="taiMessage" data-i18n="message_label">Mensaje</label>
+          <textarea id="taiMessage" data-i18n-placeholder="taichi_message_placeholder" placeholder="Cuéntanos tu experiencia previa, objetivo o disponibilidad concreta..."></textarea>
 
           <div class="actions">
-            <button class="btn primary" type="submit">Enviar consulta Tai Chi</button>
+            <button class="btn primary" type="submit" data-i18n="send_taichi">Enviar consulta Tai Chi</button>
             <a class="email-link" href="mailto:thementorclub@proton.me">thementorclub@proton.me</a>
           </div>
         </form>
@@ -1442,20 +1442,20 @@
     <section id="contacto">
       <div class="wrap">
         <form class="card pad contact-card" onsubmit="sendContact(event)">
-          <p class="eyebrow">Contacto</p>
-          <h2>Formulario de contacto</h2>
+          <p class="eyebrow" data-i18n="contact_label">Contacto</p>
+          <h2 data-i18n="contact_title">Formulario de contacto</h2>
 
-          <label for="contactName">Nombre</label>
+          <label for="contactName" data-i18n="name_label">Nombre</label>
           <input id="contactName" type="text" placeholder="Tu nombre">
 
-          <label for="contactEmail">Correo</label>
+          <label for="contactEmail" data-i18n="email_label">Correo</label>
           <input id="contactEmail" type="email" placeholder="tu@email.com">
 
-          <label for="contactMessage">Mensaje</label>
-          <textarea id="contactMessage" placeholder="Escribe aquí tu duda..."></textarea>
+          <label for="contactMessage" data-i18n="message_label">Mensaje</label>
+          <textarea id="contactMessage" data-i18n-placeholder="contact_placeholder" placeholder="Escribe aquí tu duda..."></textarea>
 
           <div class="actions">
-            <button class="btn primary" type="submit">Enviar consulta</button>
+            <button class="btn primary" type="submit" data-i18n="send_question">Enviar consulta</button>
             <a class="email-link" href="mailto:thementorclub@proton.me">thementorclub@proton.me</a>
           </div>
         </form>
@@ -1466,12 +1466,12 @@
       <div class="wrap">
         <div class="card">
           <p class="eyebrow">The Mentor Club</p>
-          <h2>Un camino interior hacia la conciencia, la libertad y el autoconocimiento.</h2>
-          <p class="muted">Si quieres comenzar tu camino de expresión creativa consciente, empieza por la APP. Si buscas un proceso completo que recorra caminos, técnicas y enfoques conscientes para una transformación personal y literaria, accede a nuestra ESCUELA.</p>
+          <h2 data-i18n="cta_title">Un camino interior hacia la conciencia, la libertad y el autoconocimiento.</h2>
+          <p class="muted" data-i18n="cta_text">Si quieres comenzar tu camino de expresión creativa consciente, empieza por la APP. Si buscas un proceso completo que recorra caminos, técnicas y enfoques conscientes para una transformación personal y literaria, accede a nuestra ESCUELA.</p>
 
           <div class="actions" style="justify-content:center">
-            <a class="btn primary" href="#" onclick="openApp();return false;">APP HOMERO CLUB</a>
-            <a class="btn secondary" href="#" onclick="openApp();return false;">ESCUELA HOMERO CLUB</a>
+            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="btn_app">APP HOMERO CLUB</a>
+            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="btn_school">ESCUELA HOMERO CLUB</a>
           </div>
         </div>
       </div>
@@ -1481,18 +1481,436 @@
   <footer>
     <div class="wrap">
       <div class="footer-brand">
-        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-011" alt="Logo The Mentor Club">
+        <img class="footer-logo" src="assets/img/logo-tmc.png?v=thementorclub-012" alt="Logo The Mentor Club">
         <div>
           <strong>THE MENTOR CLUB</strong>
         </div>
       </div>
-      <small>Cuerpo, palabra y conciencia · HOMERO CLUB · TAI CHI CLUB.</small>
+      <small data-i18n="footer_text">Cuerpo, palabra y conciencia · HOMERO CLUB · TAI CHI CLUB.</small>
     </div>
   </footer>
 
   <script>
     const APP_URL = "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec";
     const CONTACT_EMAIL = "thementorclub@proton.me";
+
+    const I18N = {
+      es:{
+        brand_sub:"Cuerpo, palabra y conciencia",
+        nav_homero:"HOMERO CLUB",
+        nav_door:"Puerta de entrada",
+        nav_prices:"Precios",
+        nav_taichi:"TAI CHI CLUB",
+        nav_contact:"Contacto",
+
+        hero_eyebrow:"Cuerpo, palabra y conciencia",
+        hero_title:"THE MENTOR CLUB<br>Cuerpo, palabra y conciencia.",
+        hero_lead:"The Mentor Club es una escuela de atención y transformación que integra cuerpo, palabra y conciencia para cultivar presencia, claridad y profundidad.",
+        hero_note:"Un espacio donde el cuerpo aprende a escuchar y la palabra aprende a revelar.",
+
+        btn_app:"APP HOMERO CLUB",
+        btn_school:"ESCUELA HOMERO CLUB",
+        btn_door:"La puerta de entrada",
+
+        clubs_title:"Dos vías, una misma atención",
+        clubs_text:"The Mentor Club reúne dos caminos complementarios: Homero Club, la vía de la palabra; Tai Chi Club, la vía del cuerpo.",
+        homero_path_title:"La vía de la palabra",
+        homero_path_text:"Escritura, contemplación y autoconocimiento a través de la brevedad y la intensidad.",
+        taichi_path_title:"La vía del cuerpo",
+        taichi_path_text:"Práctica presencial de Tai Chi en Cancelada–Estepona: Wuji, Song Gong, Formas Wudang y Formas Estilo Yang.",
+        see_paths:"Ver las tres sendas",
+        see_taichi:"Ver Tai Chi Club",
+
+        latin_text:"Trabajamos la brevedad porque ser conscientes de cada instante significa vivir con intensidad y poder experimentar y respetar cada gesto que nos ofrece la vida: en una brizna de hierba, está latiendo todo el Universo; en cada instante, toda la existencia está ocurriendo.",
+
+        door_label:"La puerta de entrada",
+        door_title:"Descubre por dónde empezar",
+        door_text:"No todas las personas llegan a la escritura desde el mismo umbral. Algunas necesitan aprender a mirar. Otras, a narrar el instante. Otras, a condensar una verdad en pocas líneas.",
+        app_intro_title:"Práctica breve, diaria, introductoria.",
+        app_intro_text:"Si quieres dar tus primeros pasos en la escritura consciente.",
+        enter_app:"Entrar en la APP",
+        school_label:"ESCUELA HOMERO CLUB",
+        school_intro_title:"Talleres completos por caminos específicos: Haiku, Haibun y Microrrelato.",
+        school_intro_text:"Si tu viaje ya ha comenzado. Incluye materiales, modelos, ejercicios y procesos de crítica y revisión para profundizar en una forma literaria concreta.",
+        access_school:"Acceder a la escuela",
+
+        brevity_title:"Brevedad e intensidad",
+        homero_intro:"Homero Club es la escuela de escritura consciente de The Mentor Club: un espacio para contemplar el mundo, observar la experiencia y transformar la existencia en palabras.",
+        three_paths:"Las tres sendas de HOMERO CLUB son:",
+
+        inside_workshop:"Dentro del taller",
+        haiku_logo:"Contemplación · Naturaleza · Silencio",
+        haiku_l1:"Qué es haiku.",
+        haiku_l2:"Qué no es haiku.",
+        haiku_l3:"Contemplación y Naturaleza.",
+        haiku_l4:"Conceptos del género: kigo, kire, ma, aware, yūgen, wabi, sabi, karumi, shasei..., entre otros.",
+        common_errors:"Errores frecuentes.",
+        masters_reading:"Lectura de maestros.",
+        exercises:"Ejercicios.",
+        rubric:"Rúbrica.",
+        revision_process:"Proceso de revisión.",
+        haiku_title:"Escribir sin apropiarse del mundo.",
+        haiku_desc:"El haiku es una práctica de atención. No busca explicar lo que sentimos, sino abrir una percepción ante la sacralidad del mundo. Su fuerza nace del instante, de la naturaleza cercana, del silencio y de una imagen que no necesita ser interpretada.",
+
+        haibun_logo:"Viaje · Profundidad · Resonancia",
+        haibun_l1:"Qué es haibun.",
+        haibun_l2:"Qué no es haibun.",
+        haibun_l3:"Relación entre prosa y haiku.",
+        haibun_l4:"Escena, viaje y experiencia.",
+        haibun_l5:"Observación y memoria.",
+        haibun_l6:"Elipsis y sugerencia.",
+        haibun_l7:"El cierre en haiku.",
+        model_reading:"Lectura de modelos.",
+        prose_exercises:"Ejercicios de prosa breve.",
+        integration_process:"Proceso de integración.",
+        haibun_title:"Narrar el instante.",
+        haibun_desc:"El haibun une prosa breve y haiku. No es una simple anécdota con un poema al final: es una forma de narrar una experiencia sin cerrarla, dejando que el instante conserve su misterio.",
+
+        micro_logo:"Elipsis · Intensidad · Revelación",
+        micro_label:"MICRORRELATO",
+        micro_l1:"Qué es microrrelato.",
+        micro_l2:"Qué no es microrrelato.",
+        micro_l3:"Brevedad significativa.",
+        micro_l4:"Título activo.",
+        micro_l5:"Elipsis narrativa.",
+        micro_l6:"Tensión y conflicto.",
+        micro_l7:"Giro y resonancia.",
+        micro_l8:"Final abierto o revelador.",
+        condensation_exercises:"Ejercicios de condensación.",
+        verbal_pruning:"Proceso de poda verbal.",
+        micro_title:"Brevedad e intensidad.",
+        micro_desc:"El microrrelato no es un cuento pequeño. Es una forma narrativa de alta concentración: tensión, elipsis, precisión y un final que no explica, sino que expande.",
+
+        q_buy:"¿Qué compro?",
+        q_receive:"¿Qué recibo exactamente?",
+        q_duration:"¿Cuánto dura?",
+        q_enter:"¿Qué pasa cuando entro?",
+        q_correction:"¿Hay corrección?",
+        q_mode:"¿Es autónomo o acompañado?",
+        q_method:"¿Por qué elegir este método?",
+
+        haiku_buy:"Compras acceso al Taller de Haiku de HOMERO CLUB, un recorrido de escritura consciente centrado en la contemplación, el instante y la precisión verbal.",
+        haiku_receive:"Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de observación, propuestas de escritura, rúbrica de revisión y una guía para corregir tus propios haikus.",
+        duration_6:"El acceso dura 6 meses. Puedes avanzar de forma progresiva y volver a los materiales siempre que lo necesites durante ese periodo.",
+        haiku_enter:"Encuentras el recorrido organizado por materiales y prácticas. Primero comprendes qué es y qué no es haiku; después lees modelos, realizas ejercicios de observación y escribes tus propias piezas.",
+        haiku_correction:"El taller incluye criterios de revisión y rúbrica. La corrección se orienta hacia la precisión, la eliminación de explicación emocional, el uso del silencio, la imagen concreta y la resonancia del instante.",
+        guided_mode:"Es un taller autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.",
+        haiku_method:"Porque aquí el haiku no se enseña como una fórmula decorativa, sino como una práctica de atención. No se trata de escribir algo “bonito”, sino de aprender a mirar, callar, podar y dejar que el mundo aparezca sin apropiárselo.",
+
+        haibun_buy:"Compras acceso al Taller de Haibun de HOMERO CLUB, un recorrido dedicado a transformar una experiencia vivida en una pieza breve donde la prosa y el haiku dialogan.",
+        haibun_receive:"Acceso al aula digital durante 6 meses, materiales de estudio, modelos comentados, ejercicios de observación y memoria, propuestas de escritura, rúbrica de revisión y una guía para construir haibun completos.",
+        duration_6b:"El acceso dura 6 meses. Puedes realizar el taller de manera autónoma, con tiempo suficiente para escribir, dejar reposar, revisar y volver a tus textos.",
+        haibun_enter:"El recorrido te lleva desde la comprensión de la forma hasta la escritura de tus propios haibun. Aprendes a construir una prosa breve, evitar la explicación excesiva y cerrar con un haiku que no repita, sino que abra.",
+        haibun_correction:"El taller incluye criterios de revisión y rúbrica. La corrección observa la relación entre prosa y haiku, la economía verbal, el tono, la escena, el silencio, la elipsis y la resonancia final.",
+        haibun_method:"Porque el haibun se trabaja aquí como una forma de contemplación narrativa. No se busca contar demasiado, sino encontrar la forma justa para que una experiencia respire y deje una huella.",
+
+        micro_buy:"Compras acceso al Taller de Microrrelato de HOMERO CLUB, un recorrido centrado en la intensidad narrativa, la síntesis y la construcción de textos breves con potencia literaria.",
+        micro_receive:"Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de condensación, propuestas de escritura, rúbrica de revisión y una guía para trabajar título, tensión, elipsis y final.",
+        micro_duration:"El acceso dura 6 meses. El taller puede realizarse a tu ritmo, con tiempo para escribir varias versiones y comprender cómo cambia un texto cuando se poda con intención.",
+        micro_enter:"Encuentras un recorrido organizado para pasar de la idea inicial a una forma breve y eficaz. Aprendes a detectar lo que sobra, activar el título, construir tensión y cerrar sin explicar demasiado.",
+        micro_correction:"El taller incluye criterios de revisión y rúbrica. La corrección atiende a estructura, precisión verbal, conflicto, economía, elipsis, ritmo, final y resonancia.",
+        micro_method:"Porque aquí el microrrelato no se trabaja como ocurrencia breve, sino como forma literaria exigente. Aprendes a concentrar sentido, crear tensión y dejar que lo no dicho participe en la historia.",
+
+        filter_label:"Filtro de entrada",
+        audience_title:"Para quién es HOMERO CLUB",
+        audience_subtitle:"Y para quiénes no es este camino de escritura consciente.",
+        for_you_label:"HOMERO CLUB es para ti si…",
+        for_you_title:"Buscas una escritura con atención y profundidad.",
+        for_you_1:"Buscas escribir con atención y profundidad.",
+        for_you_2:"Sientes que el verdadero viaje es interior.",
+        for_you_3:"Quieres practicar una escritura más consciente, más precisa y más honesta.",
+        for_you_4:"Te interesa revisar, podar y transformar tus textos.",
+        for_you_5:"No buscas solo producir textos, sino comprender mejor desde dónde escribes.",
+        not_for_you_label:"HOMERO CLUB no es para ti si…",
+        not_for_you_title:"Buscas fórmulas rápidas sin trabajo interior.",
+        not_for_you_1:"Buscas fórmulas rápidas.",
+        not_for_you_2:"Quieres escritura automática sin revisión.",
+        not_for_you_3:"Solo te interesan textos decorativos sin trabajo interior.",
+        not_for_you_4:"No deseas leer, corregir ni profundizar.",
+        not_for_you_5:"Quieres escribir dentro del género de moda sin detenerte a mirar y comprender cómo está resonando tu propia voz interior.",
+
+        prices_label:"Precios y acceso",
+        prices_title:"Elige tu vía de entrada",
+        prices_subtitle:"Todos los accesos de HOMERO CLUB tienen una duración de 6 meses desde el alta.",
+        price_app_title:"APP 21 días",
+        price_app_text:"Práctica breve, diaria e introductoria para comenzar tu camino de escritura consciente.",
+        price_haiku_title:"Escuela de Haiku",
+        price_haiku_text:"Taller completo de contemplación, instante, silencio y poda verbal.",
+        price_haibun_title:"Escuela de Haibun",
+        price_haibun_text:"Taller completo de prosa breve, experiencia, observación y cierre en haiku.",
+        price_micro_title:"Escuela de Microrrelato",
+        price_micro_text:"Taller completo de brevedad narrativa, tensión, elipsis y resonancia.",
+        pack_label:"Pack completo",
+        pack_title:"Pack Homero Club Completo",
+        pack_text:"La opción recomendada para recorrer la vía completa, con los caminos esenciales de brevedad e intensidad.",
+        access_pack:"Acceder al pack",
+        duration_label:"Duración",
+        duration_title:"Acceso durante 6 meses",
+        six_months:"6 meses",
+        duration_text:"Tiempo suficiente para practicar, revisar, volver a los materiales y consolidar una escritura más consciente.",
+        solve_questions:"Resolver dudas",
+
+        taichi_title:"Tai Chi presencial en Cancelada–Estepona",
+        taichi_desc:"Tai Chi Club es la vía corporal de The Mentor Club: una práctica presencial para cultivar arraigo, respiración, movimiento y presencia.",
+        taichi_content:"Trabajamos Wuji, Song Gong, Formas Wudang y Formas Estilo Yang.",
+        group_classes:"Clases grupales",
+        group_price:"60€ al mes",
+        group_days:"Martes y jueves.",
+        private_classes:"Clases privadas",
+        private_availability:"Consultar disponibilidad",
+        private_text:"Puedes proponer días y horarios. No es una reserva automática: la confirmación dependerá de la disponibilidad de agenda.",
+        request_private:"Solicitar clase privada",
+        general_contact:"Contacto general",
+
+        taichi_contact_label:"Consulta Tai Chi Club",
+        private_request_title:"Solicitud de clase privada",
+        private_request_text:"Indica tus preferencias. Esta solicitud no supone una reserva automática; la confirmación dependerá de la disponibilidad de agenda.",
+        name_label:"Nombre",
+        email_label:"Correo",
+        day_label:"Día preferente",
+        time_label:"Horario preferente",
+        message_label:"Mensaje",
+        select_option:"Selecciona una opción",
+        morning:"Mañana",
+        midday:"Mediodía",
+        afternoon:"Tarde",
+        late_afternoon:"Última hora de la tarde",
+        taichi_message_placeholder:"Cuéntanos tu experiencia previa, objetivo o disponibilidad concreta...",
+        send_taichi:"Enviar consulta Tai Chi",
+
+        contact_label:"Contacto",
+        contact_title:"Formulario de contacto",
+        contact_placeholder:"Escribe aquí tu duda...",
+        send_question:"Enviar consulta",
+
+        cta_title:"Un camino interior hacia la conciencia, la libertad y el autoconocimiento.",
+        cta_text:"Si quieres comenzar tu camino de expresión creativa consciente, empieza por la APP. Si buscas un proceso completo que recorra caminos, técnicas y enfoques conscientes para una transformación personal y literaria, accede a nuestra ESCUELA.",
+        footer_text:"Cuerpo, palabra y conciencia · HOMERO CLUB · TAI CHI CLUB."
+      },
+
+      en:{
+        brand_sub:"Body, word and consciousness",
+        nav_homero:"HOMERO CLUB",
+        nav_door:"Entry door",
+        nav_prices:"Prices",
+        nav_taichi:"TAI CHI CLUB",
+        nav_contact:"Contact",
+
+        hero_eyebrow:"Body, word and consciousness",
+        hero_title:"THE MENTOR CLUB<br>Body, word and consciousness.",
+        hero_lead:"The Mentor Club is a school of attention and transformation that integrates body, word and consciousness to cultivate presence, clarity and depth.",
+        hero_note:"A space where the body learns to listen and the word learns to reveal.",
+
+        btn_app:"HOMERO CLUB APP",
+        btn_school:"HOMERO CLUB SCHOOL",
+        btn_door:"The entry door",
+
+        clubs_title:"Two paths, one attention",
+        clubs_text:"The Mentor Club brings together two complementary paths: Homero Club, the path of the word; Tai Chi Club, the path of the body.",
+        homero_path_title:"The path of the word",
+        homero_path_text:"Writing, contemplation and self-knowledge through brevity and intensity.",
+        taichi_path_title:"The path of the body",
+        taichi_path_text:"In-person Tai Chi practice in Cancelada–Estepona: Wuji, Song Gong, Wudang Forms and Yang Style Forms.",
+        see_paths:"View the three paths",
+        see_taichi:"View Tai Chi Club",
+
+        latin_text:"We work with brevity because being conscious of each instant means living with intensity and being able to experience and respect every gesture life offers us: in a blade of grass, the whole Universe is beating; in every instant, all existence is taking place.",
+
+        door_label:"The entry door",
+        door_title:"Discover where to begin",
+        door_text:"Not everyone arrives at writing from the same threshold. Some need to learn how to look. Others, how to narrate the instant. Others, how to condense a truth into a few lines.",
+        app_intro_title:"Brief, daily, introductory practice.",
+        app_intro_text:"If you want to take your first steps in conscious writing.",
+        enter_app:"Enter the APP",
+        school_label:"HOMERO CLUB SCHOOL",
+        school_intro_title:"Complete workshops through specific paths: Haiku, Haibun and Microfiction.",
+        school_intro_text:"If your journey has already begun. Includes materials, models, exercises and processes of critique and revision to deepen a specific literary form.",
+        access_school:"Access the school",
+
+        brevity_title:"Brevity and intensity",
+        homero_intro:"Homero Club is The Mentor Club’s school of conscious writing: a space to contemplate the world, observe experience and transform existence into words.",
+        three_paths:"The three paths of HOMERO CLUB are:",
+
+        inside_workshop:"Inside the workshop",
+        haiku_logo:"Contemplation · Nature · Silence",
+        haiku_l1:"What haiku is.",
+        haiku_l2:"What haiku is not.",
+        haiku_l3:"Contemplation and Nature.",
+        haiku_l4:"Concepts of the genre: kigo, kire, ma, aware, yūgen, wabi, sabi, karumi, shasei..., among others.",
+        common_errors:"Frequent mistakes.",
+        masters_reading:"Reading the masters.",
+        exercises:"Exercises.",
+        rubric:"Rubric.",
+        revision_process:"Revision process.",
+        haiku_title:"Writing without possessing the world.",
+        haiku_desc:"Haiku is a practice of attention. It does not seek to explain what we feel, but to open perception before the sacredness of the world. Its strength is born from the instant, nearby nature, silence and an image that does not need to be interpreted.",
+
+        haibun_logo:"Journey · Depth · Resonance",
+        haibun_l1:"What haibun is.",
+        haibun_l2:"What haibun is not.",
+        haibun_l3:"The relationship between prose and haiku.",
+        haibun_l4:"Scene, journey and experience.",
+        haibun_l5:"Observation and memory.",
+        haibun_l6:"Ellipsis and suggestion.",
+        haibun_l7:"The closing haiku.",
+        model_reading:"Reading models.",
+        prose_exercises:"Brief prose exercises.",
+        integration_process:"Integration process.",
+        haibun_title:"Narrating the instant.",
+        haibun_desc:"Haibun brings together brief prose and haiku. It is not simply an anecdote with a poem at the end: it is a way of narrating an experience without closing it, allowing the instant to keep its mystery.",
+
+        micro_logo:"Ellipsis · Intensity · Revelation",
+        micro_label:"MICROFICTION",
+        micro_l1:"What microfiction is.",
+        micro_l2:"What microfiction is not.",
+        micro_l3:"Meaningful brevity.",
+        micro_l4:"Active title.",
+        micro_l5:"Narrative ellipsis.",
+        micro_l6:"Tension and conflict.",
+        micro_l7:"Turn and resonance.",
+        micro_l8:"Open or revealing ending.",
+        condensation_exercises:"Condensation exercises.",
+        verbal_pruning:"Verbal pruning process.",
+        micro_title:"Brevity and intensity.",
+        micro_desc:"Microfiction is not a small story. It is a highly concentrated narrative form: tension, ellipsis, precision and an ending that does not explain, but expands.",
+
+        q_buy:"What am I buying?",
+        q_receive:"What exactly do I receive?",
+        q_duration:"How long does it last?",
+        q_enter:"What happens when I enter?",
+        q_correction:"Is there correction?",
+        q_mode:"Is it autonomous or guided?",
+        q_method:"Why choose this method?",
+
+        haiku_buy:"You buy access to the HOMERO CLUB Haiku Workshop, a conscious writing journey focused on contemplation, the instant and verbal precision.",
+        haiku_receive:"Access to the digital classroom for 6 months, theoretical materials, commented models, observation exercises, writing prompts, revision rubric and a guide to correct your own haiku.",
+        duration_6:"Access lasts 6 months. You can progress gradually and return to the materials whenever you need during that period.",
+        haiku_enter:"You find the path organized into materials and practices. First you understand what haiku is and is not; then you read models, carry out observation exercises and write your own pieces.",
+        haiku_correction:"The workshop includes revision criteria and a rubric. Correction focuses on precision, eliminating emotional explanation, silence, concrete image and resonance of the instant.",
+        guided_mode:"It is an autonomous and guided workshop: you can progress at your own pace, with a clear structure. Revision is supported by rubrics, models and correction questions. If you are interested in accompanied mentoring, you can request it when enrolling.",
+        haiku_method:"Because here haiku is not taught as a decorative formula, but as a practice of attention. It is not about writing something “beautiful”, but about learning to look, remain silent, prune and allow the world to appear without possessing it.",
+
+        haibun_buy:"You buy access to the HOMERO CLUB Haibun Workshop, a path dedicated to transforming lived experience into a brief piece where prose and haiku converse.",
+        haibun_receive:"Access to the digital classroom for 6 months, study materials, commented models, observation and memory exercises, writing prompts, revision rubric and a guide to build complete haibun.",
+        duration_6b:"Access lasts 6 months. You can complete the workshop autonomously, with enough time to write, let the text rest, revise and return to your pieces.",
+        haibun_enter:"The path takes you from understanding the form to writing your own haibun. You learn to build brief prose, avoid excessive explanation and close with a haiku that does not repeat, but opens.",
+        haibun_correction:"The workshop includes revision criteria and a rubric. Correction observes the relationship between prose and haiku, verbal economy, tone, scene, silence, ellipsis and final resonance.",
+        haibun_method:"Because haibun is approached here as a form of contemplative narration. The aim is not to tell too much, but to find the right form so an experience can breathe and leave a trace.",
+
+        micro_buy:"You buy access to the HOMERO CLUB Microfiction Workshop, a path focused on narrative intensity, synthesis and the construction of brief texts with literary power.",
+        micro_receive:"Access to the digital classroom for 6 months, theoretical materials, commented models, condensation exercises, writing prompts, revision rubric and a guide to work on title, tension, ellipsis and ending.",
+        micro_duration:"Access lasts 6 months. The workshop can be completed at your own pace, with time to write several versions and understand how a text changes when it is pruned with intention.",
+        micro_enter:"You find a path organized to move from the initial idea to a brief and effective form. You learn to detect what is unnecessary, activate the title, build tension and close without overexplaining.",
+        micro_correction:"The workshop includes revision criteria and a rubric. Correction focuses on structure, verbal precision, conflict, economy, ellipsis, rhythm, ending and resonance.",
+        micro_method:"Because here microfiction is not treated as a brief occurrence, but as a demanding literary form. You learn to concentrate meaning, create tension and allow the unsaid to participate in the story.",
+
+        filter_label:"Entry filter",
+        audience_title:"Who HOMERO CLUB is for",
+        audience_subtitle:"And who this path of conscious writing is not for.",
+        for_you_label:"HOMERO CLUB is for you if…",
+        for_you_title:"You seek writing with attention and depth.",
+        for_you_1:"You seek to write with attention and depth.",
+        for_you_2:"You feel that the true journey is inward.",
+        for_you_3:"You want to practice a more conscious, precise and honest form of writing.",
+        for_you_4:"You are interested in revising, pruning and transforming your texts.",
+        for_you_5:"You are not only trying to produce texts, but to better understand where you write from.",
+        not_for_you_label:"HOMERO CLUB is not for you if…",
+        not_for_you_title:"You seek quick formulas without inner work.",
+        not_for_you_1:"You seek quick formulas.",
+        not_for_you_2:"You want automatic writing without revision.",
+        not_for_you_3:"You are only interested in decorative texts without inner work.",
+        not_for_you_4:"You do not wish to read, correct or deepen.",
+        not_for_you_5:"You want to write within a fashionable genre without stopping to observe and understand how your own inner voice is resonating.",
+
+        prices_label:"Prices and access",
+        prices_title:"Choose your entry path",
+        prices_subtitle:"All HOMERO CLUB accesses last 6 months from enrolment.",
+        price_app_title:"21-day APP",
+        price_app_text:"Brief, daily and introductory practice to begin your path of conscious writing.",
+        price_haiku_title:"Haiku School",
+        price_haiku_text:"Complete workshop on contemplation, instant, silence and verbal pruning.",
+        price_haibun_title:"Haibun School",
+        price_haibun_text:"Complete workshop on brief prose, experience, observation and closing haiku.",
+        price_micro_title:"Microfiction School",
+        price_micro_text:"Complete workshop on narrative brevity, tension, ellipsis and resonance.",
+        pack_label:"Complete pack",
+        pack_title:"Complete Homero Club Pack",
+        pack_text:"The recommended option to travel the complete path, with the essential ways of brevity and intensity.",
+        access_pack:"Access the pack",
+        duration_label:"Duration",
+        duration_title:"6-month access",
+        six_months:"6 months",
+        duration_text:"Enough time to practice, revise, return to the materials and consolidate a more conscious writing practice.",
+        solve_questions:"Ask questions",
+
+        taichi_title:"In-person Tai Chi in Cancelada–Estepona",
+        taichi_desc:"Tai Chi Club is the bodily path of The Mentor Club: an in-person practice to cultivate grounding, breathing, movement and presence.",
+        taichi_content:"We work with Wuji, Song Gong, Wudang Forms and Yang Style Forms.",
+        group_classes:"Group classes",
+        group_price:"€60 per month",
+        group_days:"Tuesdays and Thursdays.",
+        private_classes:"Private classes",
+        private_availability:"Check availability",
+        private_text:"You can propose preferred days and times. This is not an automatic booking: confirmation depends on schedule availability.",
+        request_private:"Request a private class",
+        general_contact:"General contact",
+
+        taichi_contact_label:"Tai Chi Club inquiry",
+        private_request_title:"Private class request",
+        private_request_text:"Indicate your preferences. This request is not an automatic booking; confirmation depends on schedule availability.",
+        name_label:"Name",
+        email_label:"Email",
+        day_label:"Preferred day",
+        time_label:"Preferred time",
+        message_label:"Message",
+        select_option:"Select an option",
+        morning:"Morning",
+        midday:"Midday",
+        afternoon:"Afternoon",
+        late_afternoon:"Late afternoon",
+        taichi_message_placeholder:"Tell us about your previous experience, goal or specific availability...",
+        send_taichi:"Send Tai Chi inquiry",
+
+        contact_label:"Contact",
+        contact_title:"Contact form",
+        contact_placeholder:"Write your question here...",
+        send_question:"Send inquiry",
+
+        cta_title:"An inner path toward consciousness, freedom and self-knowledge.",
+        cta_text:"If you want to begin your path of conscious creative expression, start with the APP. If you are looking for a complete process that travels through paths, techniques and conscious approaches for personal and literary transformation, access our SCHOOL.",
+        footer_text:"Body, word and consciousness · HOMERO CLUB · TAI CHI CLUB."
+      }
+    };
+
+    function setLang(lang){
+      localStorage.setItem("tmc_lang", lang);
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-lang-btn]").forEach(function(btn){
+        btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
+      });
+
+      document.querySelectorAll("[data-i18n]").forEach(function(el){
+        const key = el.getAttribute("data-i18n");
+        if(I18N[lang] && I18N[lang][key]){
+          el.textContent = I18N[lang][key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+        const key = el.getAttribute("data-i18n-html");
+        if(I18N[lang] && I18N[lang][key]){
+          el.innerHTML = I18N[lang][key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(function(el){
+        const key = el.getAttribute("data-i18n-placeholder");
+        if(I18N[lang] && I18N[lang][key]){
+          el.setAttribute("placeholder", I18N[lang][key]);
+        }
+      });
+    }
 
     function openApp(){
       window.open(APP_URL, "_blank");
@@ -1570,6 +1988,8 @@
         });
       });
     });
+
+    setLang(localStorage.getItem("tmc_lang") || "es");
   </script>
 </body>
 </html>
