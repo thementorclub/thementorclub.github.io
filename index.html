@@ -618,6 +618,136 @@
       font-weight:900;
     }
 
+
+    .hc-intro-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1rem;
+      margin:1.2rem 0 1.4rem;
+    }
+
+    .hc-status{
+      margin:1.2rem 0;
+      color:var(--soft);
+      font-family:Arial,sans-serif;
+      font-weight:900;
+    }
+
+    .hc-products-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:1rem;
+      align-items:stretch;
+      margin-top:1.2rem;
+    }
+
+    .hc-product-card{
+      padding:1.25rem;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:310px;
+    }
+
+    .hc-product-card h3{
+      font-size:clamp(1.18rem,1.6vw,1.52rem);
+      line-height:1.08;
+      margin-top:.45rem;
+    }
+
+    .hc-chip{
+      display:inline-flex;
+      width:max-content;
+      max-width:100%;
+      border-radius:999px;
+      padding:.32rem .62rem;
+      background:rgba(197,155,75,.13);
+      color:var(--gold2);
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      font-size:.72rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .hc-meta{
+      margin:.75rem 0;
+      padding-top:.75rem;
+      border-top:1px solid rgba(17,20,38,.10);
+      color:var(--soft);
+      font-size:.94rem;
+    }
+
+    .hc-product-card .price{
+      font-size:2.15rem;
+      margin:.55rem 0 1rem;
+    }
+
+    .hc-payment-panel{
+      margin-top:1.4rem;
+      scroll-margin-top:100px;
+    }
+
+    .hc-concepto{
+      display:block;
+      margin:.35rem 0 1rem;
+      padding:.85rem 1rem;
+      border-radius:16px;
+      background:rgba(23,24,39,.95);
+      color:#fff;
+      overflow-wrap:anywhere;
+      font-family:Arial,sans-serif;
+      font-weight:900;
+    }
+
+    .hc-payment-methods{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:1rem;
+      margin-top:1rem;
+    }
+
+    .hc-payment-card{
+      border:1px solid rgba(17,20,38,.11);
+      border-radius:22px;
+      padding:1rem;
+      background:rgba(255,255,255,.62);
+    }
+
+    .hc-payment-card h4{
+      margin:.1rem 0 .45rem;
+      font-size:1.2rem;
+      line-height:1.08;
+    }
+
+    .hc-payment-card p{
+      font-size:.94rem;
+    }
+
+    .hc-payment-data{
+      display:block;
+      padding:.75rem .85rem;
+      border-radius:14px;
+      background:rgba(197,155,75,.12);
+      color:var(--ink);
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      overflow-wrap:anywhere;
+    }
+
+    .hc-payment-note{
+      margin-top:1rem;
+      padding-top:1rem;
+      border-top:1px solid rgba(17,20,38,.10);
+    }
+
+    .small{
+      font-family:Arial,sans-serif;
+      font-size:.88rem;
+      color:var(--soft);
+      font-weight:800;
+    }
+
     .taichi-section{padding-top:4rem}
 
     .taichi-block{
@@ -777,6 +907,12 @@
 
       .taichi-copy{order:1}
       .taichi-image{order:2}
+
+      .hc-intro-grid,
+      .hc-products-grid,
+      .hc-payment-methods{
+        grid-template-columns:1fr;
+      }
     }
 
     @media(max-width:760px){
@@ -1288,71 +1424,76 @@
     <section id="precios">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow" data-i18n="prices_label">Precios y acceso</p>
-          <h2 data-i18n="prices_title">Elige tu vía de entrada</h2>
-          <p class="muted" data-i18n="prices_subtitle">Todos los accesos de HOMERO CLUB tienen una duración de 6 meses desde el alta.</p>
+          <p class="eyebrow">HOMERO CLUB · SENDA DEL HAIKU</p>
+          <h2>Senda del Haiku</h2>
+          <p class="muted">
+            Formación progresiva en poesía japonesa, percepción literaria y escritura breve.
+            Una puerta de entrada, tres cursos breves y cuatro ciclos semestrales para aprender
+            a mirar, cortar, callar, retirar y dejar que una escena respire.
+          </p>
         </div>
 
-        <div class="grid3">
-          <article class="card price-card">
-            <div>
-              <p class="eyebrow">APP HOMERO CLUB</p>
-              <h3 data-i18n="price_app_title">APP 21 días</h3>
-              <div class="price">30€</div>
-              <p class="muted" data-i18n="price_app_text">Práctica breve, diaria e introductoria para comenzar tu camino de escritura consciente.</p>
-            </div>
-            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="enter_app">Entrar en la APP</a>
+        <div class="hc-intro-grid">
+          <article class="card pad">
+            <p class="eyebrow">Puerta de entrada</p>
+            <h3>App 7 días de haiku</h3>
+            <p class="muted">
+              Práctica breve, diaria y accesible para probar el método antes de entrar en cursos o ciclos.
+            </p>
           </article>
 
-          <article class="card price-card">
-            <div>
-              <p class="eyebrow" data-i18n="school_label">ESCUELA HOMERO CLUB</p>
-              <h3 data-i18n="price_haiku_title">Escuela de Haiku</h3>
-              <div class="price">60€</div>
-              <p class="muted" data-i18n="price_haiku_text">Taller completo de contemplación, instante, silencio y poda verbal.</p>
-            </div>
-            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="access_school">Acceder a la escuela</a>
+          <article class="card pad">
+            <p class="eyebrow">Acceso flexible</p>
+            <h3>Completo o mensual</h3>
+            <p class="muted">
+              Si se paga el producto completo, se accede al producto completo. Si se paga mes a mes,
+              se desbloquean 4 semanas por cada pago.
+            </p>
           </article>
 
-          <article class="card price-card">
-            <div>
-              <p class="eyebrow" data-i18n="school_label">ESCUELA HOMERO CLUB</p>
-              <h3 data-i18n="price_haibun_title">Escuela de Haibun</h3>
-              <div class="price">60€</div>
-              <p class="muted" data-i18n="price_haibun_text">Taller completo de prosa breve, experiencia, observación y cierre en haiku.</p>
-            </div>
-            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="access_school">Acceder a la escuela</a>
+          <article class="card pad">
+            <p class="eyebrow">Acreditación</p>
+            <h3>Proyectos por ciclo</h3>
+            <p class="muted">
+              Cada ciclo termina con un proyecto y una acreditación privada de aprovechamiento
+              con nivel, contenidos y duración alcanzados.
+            </p>
           </article>
+        </div>
 
-          <article class="card price-card">
-            <div>
-              <p class="eyebrow" data-i18n="school_label">ESCUELA HOMERO CLUB</p>
-              <h3 data-i18n="price_micro_title">Escuela de Microrrelato</h3>
-              <div class="price">60€</div>
-              <p class="muted" data-i18n="price_micro_text">Taller completo de brevedad narrativa, tensión, elipsis y resonancia.</p>
-            </div>
-            <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="access_school">Acceder a la escuela</a>
-          </article>
+        <div id="hc-landing-status" class="hc-status">
+          Cargando recorridos de la Senda del Haiku...
+        </div>
 
-          <article class="card price-card">
-            <div>
-              <p class="eyebrow" data-i18n="pack_label">Pack completo</p>
-              <h3 data-i18n="pack_title">Pack Homero Club Completo</h3>
-              <div class="price">99€</div>
-              <p class="muted" data-i18n="pack_text">La opción recomendada para recorrer la vía completa, con los caminos esenciales de brevedad e intensidad.</p>
-            </div>
-            <a class="btn primary" href="#" onclick="openApp();return false;" data-i18n="access_pack">Acceder al pack</a>
-          </article>
+        <div id="hc-productos" class="hc-products-grid"></div>
 
-          <article class="card price-card">
-            <div>
-              <p class="eyebrow" data-i18n="duration_label">Duración</p>
-              <h3 data-i18n="duration_title">Acceso durante 6 meses</h3>
-              <div class="price"><small data-i18n="six_months">6 meses</small></div>
-              <p class="muted" data-i18n="duration_text">Tiempo suficiente para practicar, revisar, volver a los materiales y consolidar una escritura más consciente.</p>
+        <div id="hc-pago-panel" class="card pad hc-payment-panel" hidden>
+          <p class="eyebrow">Inscripción y pago</p>
+          <h3>Forma de pago</h3>
+
+          <p id="hc-producto-elegido" class="muted"></p>
+
+          <label for="hc-email-pago">Correo del alumno</label>
+          <input id="hc-email-pago" type="email" placeholder="tu@email.com">
+
+          <p class="small">
+            Usa este concepto al pagar:
+          </p>
+
+          <code id="hc-concepto-pago" class="hc-concepto">HOMERO-ID_PRODUCTO-EMAIL</code>
+
+          <div id="hc-metodos-pago" class="hc-payment-methods"></div>
+
+          <div class="hc-payment-note">
+            <p>
+              Después del pago, envía el justificante o responde al formulario de inscripción.
+              El acceso se activará tras verificación.
+            </p>
+            <div class="actions">
+              <a class="btn secondary" href="#contacto">Enviar consulta</a>
+              <a class="btn dark" href="#" onclick="openApp();return false;">Entrar al aula</a>
             </div>
-            <a class="btn secondary" href="#contacto" data-i18n="solve_questions">Resolver dudas</a>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1493,6 +1634,17 @@
   <script>
     const APP_URL = "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec";
     const CONTACT_EMAIL = "thementorclub@proton.me";
+
+    /*
+      IMPORTANTE:
+      Sustituye el texto PEGA_AQUI_TU_URL_NUEVA_DE_APPS_SCRIPT por la URL original de tu implementación web,
+      con este formato:
+      https://script.google.com/macros/s/AKfycbx.../exec
+
+      No uses la URL que empieza por:
+      https://script.googleusercontent.com/macros/echo...
+    */
+    const HOMERO_API_URL = "https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec";
 
     const I18N = {
       es:{
@@ -1954,6 +2106,188 @@
 
       window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
     }
+
+
+    let HOMERO_PRODUCTOS = [];
+    let HOMERO_PAGOS = [];
+    let HOMERO_PRODUCTO_ACTUAL = null;
+
+    function hcEscape(text) {
+      return String(text ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function hcPrecio(producto) {
+      const precio = producto.PRECIO_EUR;
+      if (!precio || precio === "POR_DEFINIR") return "Consultar";
+      return precio + "€";
+    }
+
+    function hcRenderProductos(productos) {
+      const contenedor = document.getElementById("hc-productos");
+      const status = document.getElementById("hc-landing-status");
+
+      if (!contenedor) return;
+
+      const publicados = productos
+        .filter(function(p){ return p.ESTADO === "PUBLICADA"; })
+        .sort(function(a, b){ return Number(a.ORDEN || 0) - Number(b.ORDEN || 0); });
+
+      if (!publicados.length) {
+        contenedor.innerHTML = "";
+        if (status) status.textContent = "Todavía no hay recorridos publicados. Escríbenos para solicitar información.";
+        return;
+      }
+
+      contenedor.innerHTML = publicados.map(function(producto){
+        return `
+          <article class="card hc-product-card">
+            <div>
+              <span class="hc-chip">${hcEscape(producto.LINEA)}</span>
+              <h3>${hcEscape(producto.NOMBRE_PUBLICO)}</h3>
+              <p class="muted">${hcEscape(producto.DESCRIPCION)}</p>
+              <div class="hc-meta">
+                <p><strong>Duración:</strong> ${hcEscape(producto.DURACION_SEMANAS)} semanas</p>
+                <p><strong>Acceso:</strong> ${hcEscape(producto.ACCESO_COMPLETO)}</p>
+              </div>
+            </div>
+            <div>
+              <div class="price">${hcEscape(hcPrecio(producto))}</div>
+              <button type="button" class="btn primary" data-producto="${hcEscape(producto.ID_PRODUCTO)}">
+                Elegir este recorrido
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      contenedor.querySelectorAll("[data-producto]").forEach(function(btn){
+        btn.addEventListener("click", function(){
+          const id = btn.getAttribute("data-producto");
+          const producto = HOMERO_PRODUCTOS.find(function(p){ return p.ID_PRODUCTO === id; });
+          hcSeleccionarProducto(producto);
+        });
+      });
+
+      if (status) status.textContent = "";
+    }
+
+    function hcSeleccionarProducto(producto) {
+      if (!producto) return;
+
+      HOMERO_PRODUCTO_ACTUAL = producto;
+
+      const panel = document.getElementById("hc-pago-panel");
+      const elegido = document.getElementById("hc-producto-elegido");
+
+      if (elegido) {
+        elegido.innerHTML = `
+          Has elegido: <strong>${hcEscape(producto.NOMBRE_PUBLICO)}</strong>
+          · ${hcEscape(hcPrecio(producto))}
+        `;
+      }
+
+      hcActualizarConcepto();
+      hcRenderPagos();
+
+      if (panel) {
+        panel.hidden = false;
+        panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    function hcActualizarConcepto() {
+      const emailInput = document.getElementById("hc-email-pago");
+      const concepto = document.getElementById("hc-concepto-pago");
+
+      if (!concepto || !HOMERO_PRODUCTO_ACTUAL) return;
+
+      const email = emailInput && emailInput.value.trim() ? emailInput.value.trim() : "EMAIL";
+      concepto.textContent = "HOMERO-" + HOMERO_PRODUCTO_ACTUAL.ID_PRODUCTO + "-" + email;
+    }
+
+    function hcRenderPagos() {
+      const contenedor = document.getElementById("hc-metodos-pago");
+      const emailInput = document.getElementById("hc-email-pago");
+
+      if (!contenedor || !HOMERO_PRODUCTO_ACTUAL) return;
+
+      const email = emailInput && emailInput.value.trim() ? emailInput.value.trim() : "EMAIL";
+
+      contenedor.innerHTML = HOMERO_PAGOS
+        .filter(function(m){ return m.ESTADO === "PUBLICADA"; })
+        .sort(function(a, b){ return Number(a.ORDEN || 0) - Number(b.ORDEN || 0); })
+        .map(function(metodo){
+          const dato = metodo.URL_BASE_O_DATO || "";
+          const esUrl = dato.startsWith("http");
+
+          const instrucciones = String(metodo.INSTRUCCIONES || "")
+            .replaceAll("{ID_PRODUCTO}", HOMERO_PRODUCTO_ACTUAL.ID_PRODUCTO)
+            .replaceAll("{EMAIL}", email);
+
+          return `
+            <article class="hc-payment-card">
+              <h4>${hcEscape(metodo.NOMBRE_PUBLICO)}</h4>
+              <p class="muted">${hcEscape(metodo.IDEAL_PARA)}</p>
+              <p class="small">${hcEscape(instrucciones)}</p>
+              ${
+                esUrl
+                  ? `<a class="btn secondary" href="${hcEscape(dato)}" target="_blank" rel="noopener">${hcEscape(metodo.CTA_LABEL)}</a>`
+                  : `<span class="hc-payment-data">${hcEscape(dato)}</span>`
+              }
+            </article>
+          `;
+        }).join("");
+    }
+
+    async function hcCargarLanding() {
+      const status = document.getElementById("hc-landing-status");
+
+      if (!HOMERO_API_URL || HOMERO_API_URL.includes("PEGA_AQUI")) {
+        if (status) {
+          status.textContent = "Falta pegar la URL de Apps Script en la constante HOMERO_API_URL.";
+        }
+        return;
+      }
+
+      try {
+        const response = await fetch(HOMERO_API_URL + "?action=landing");
+        const data = await response.json();
+
+        if (!data.ok) {
+          throw new Error("La API no respondió correctamente.");
+        }
+
+        HOMERO_PRODUCTOS = data.productos || [];
+        HOMERO_PAGOS = data.pagosP2P || [];
+
+        hcRenderProductos(HOMERO_PRODUCTOS);
+      } catch (error) {
+        console.error(error);
+        if (status) {
+          status.textContent = "No se pudieron cargar los recorridos. Escríbenos para solicitar acceso.";
+        }
+      }
+    }
+
+    function hcInitLanding() {
+      const emailInput = document.getElementById("hc-email-pago");
+
+      if (emailInput) {
+        emailInput.addEventListener("input", function(){
+          hcActualizarConcepto();
+          hcRenderPagos();
+        });
+      }
+
+      hcCargarLanding();
+    }
+
+    hcInitLanding();
 
     document.querySelectorAll("[data-slider]").forEach(function(slider){
       const slides = Array.from(slider.querySelectorAll(".slide"));
