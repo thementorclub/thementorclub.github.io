@@ -619,12 +619,6 @@
     }
 
 
-    .hc-intro-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:1rem;
-      margin:1.2rem 0 1.4rem;
-    }
 
     .hc-status{
       margin:1.2rem 0;
@@ -633,59 +627,134 @@
       font-weight:900;
     }
 
-    .hc-products-grid{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:1rem;
-      align-items:stretch;
-      margin-top:1.2rem;
+    .hc-sendas-shell{
+      margin-top:1.4rem;
     }
 
-    .hc-product-card{
-      padding:1.25rem;
+    .hc-senda-nav{
       display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:310px;
+      flex-wrap:wrap;
+      gap:.65rem;
+      margin:1.2rem 0 1.5rem;
     }
 
-    .hc-product-card h3{
-      font-size:clamp(1.18rem,1.6vw,1.52rem);
-      line-height:1.08;
-      margin-top:.45rem;
-    }
-
-    .hc-chip{
-      display:inline-flex;
-      width:max-content;
-      max-width:100%;
+    .hc-senda-tab{
       border-radius:999px;
-      padding:.32rem .62rem;
-      background:rgba(197,155,75,.13);
-      color:var(--gold2);
+      padding:.78rem 1rem;
+      border:1px solid rgba(17,20,38,.14);
+      background:rgba(255,252,246,.94);
+      color:var(--ink);
       font-family:Arial,sans-serif;
       font-weight:900;
-      font-size:.72rem;
-      letter-spacing:.04em;
-      text-transform:uppercase;
+      cursor:pointer;
+      transition:.18s ease;
     }
 
-    .hc-meta{
-      margin:.75rem 0;
-      padding-top:.75rem;
+    .hc-senda-tab.active{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#fff;
+      border-color:transparent;
+      box-shadow:0 14px 28px rgba(148,112,35,.20);
+    }
+
+    .hc-senda-panel{display:none}
+    .hc-senda-panel.active{display:block}
+
+    .hc-level{
+      margin-top:1.35rem;
+      padding-top:1.35rem;
+      border-top:1px solid rgba(17,20,38,.10);
+    }
+
+    .hc-level-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:1rem;
+      margin-bottom:1rem;
+    }
+
+    .hc-level-head h3{
+      margin-bottom:.25rem;
+    }
+
+    .hc-horizontal-scroll{
+      display:grid;
+      grid-auto-flow:column;
+      grid-auto-columns:minmax(305px, 360px);
+      gap:1rem;
+      overflow-x:auto;
+      overscroll-behavior-inline:contain;
+      scroll-snap-type:x mandatory;
+      padding:.2rem .2rem 1rem;
+      scrollbar-color:var(--gold2) rgba(17,20,38,.10);
+    }
+
+    .hc-horizontal-scroll::-webkit-scrollbar{height:10px}
+    .hc-horizontal-scroll::-webkit-scrollbar-track{
+      background:rgba(17,20,38,.08);
+      border-radius:999px;
+    }
+    .hc-horizontal-scroll::-webkit-scrollbar-thumb{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      border-radius:999px;
+    }
+
+    .hc-single{
+      width:min(390px,100%);
+    }
+
+    .hc-course-card{
+      scroll-snap-align:start;
+      min-width:0;
+      height:100%;
+    }
+
+    .hc-course-card .slider{
+      min-height:300px;
+    }
+
+    .hc-course-card .workshop-logo,
+    .hc-course-card .course-panel{
+      min-height:250px;
+    }
+
+    .hc-product-meta{
+      margin:.7rem 0;
+      padding-top:.7rem;
       border-top:1px solid rgba(17,20,38,.10);
       color:var(--soft);
       font-size:.94rem;
     }
 
-    .hc-product-card .price{
-      font-size:2.15rem;
-      margin:.55rem 0 1rem;
+    .hc-course-card .price{
+      font-size:2.25rem;
+      margin:.5rem 0 1rem;
+    }
+
+    .hc-coming{
+      padding:1.4rem;
+      background:rgba(255,252,246,.86);
+      border:1px dashed rgba(197,155,75,.45);
+      border-radius:var(--radius);
+    }
+
+    .hc-access-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1rem;
+      margin:1.2rem 0 1.4rem;
     }
 
     .hc-payment-panel{
       margin-top:1.4rem;
       scroll-margin-top:100px;
+    }
+
+    .hc-payment-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:1rem;
     }
 
     .hc-concepto{
@@ -733,12 +802,23 @@
       font-family:Arial,sans-serif;
       font-weight:900;
       overflow-wrap:anywhere;
+      margin:.65rem 0;
     }
 
-    .hc-payment-note{
-      margin-top:1rem;
-      padding-top:1rem;
-      border-top:1px solid rgba(17,20,38,.10);
+    .hc-copy-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.55rem;
+      align-items:center;
+      margin-top:.7rem;
+    }
+
+    .hc-copy-feedback{
+      font-family:Arial,sans-serif;
+      font-weight:900;
+      font-size:.82rem;
+      color:var(--gold2);
+      min-height:1.2em;
     }
 
     .small{
@@ -908,8 +988,8 @@
       .taichi-copy{order:1}
       .taichi-image{order:2}
 
-      .hc-intro-grid,
-      .hc-products-grid,
+      .hc-access-grid,
+      .hc-payment-grid,
       .hc-payment-methods{
         grid-template-columns:1fr;
       }
@@ -1065,6 +1145,33 @@
 
       .taichi-copy{padding:1.3rem}
 
+
+      .hc-senda-nav{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .hc-level-head{
+        display:block;
+      }
+
+      .hc-horizontal-scroll{
+        grid-auto-columns:minmax(280px, 88vw);
+      }
+
+      .hc-single{
+        width:100%;
+      }
+
+      .hc-course-card .slider{
+        min-height:330px;
+      }
+
+      .hc-payment-panel{
+        margin-left:-2px;
+        margin-right:-2px;
+      }
+
       footer .wrap{display:block}
       .footer-brand{margin-bottom:1rem}
       footer small{text-align:left}
@@ -1192,7 +1299,7 @@
               <div>
                 <p class="eyebrow" data-i18n="school_label">ESCUELA HOMERO CLUB</p>
                 <h3 data-i18n="school_intro_title">Talleres completos por caminos específicos: Haiku, Haibun y Microrrelato.</h3>
-                <p class="muted" data-i18n="school_intro_text">Si tu viaje ya ha comenzado. Incluye materiales, modelos, ejercicios y procesos de crítica y revisión para profundizar en una forma literaria concreta.</p>
+                <p class="muted" data-i18n="school_intro_text">Si tu viaje ya ha comenzado. Descubre materiales, modelos, ejercicios y procesos de crítica y revisión para profundizar en una forma literaria concreta.</p>
               </div>
               <a class="btn secondary" href="#" onclick="openApp();return false;" data-i18n="access_school">Acceder a la escuela</a>
             </article>
@@ -1253,16 +1360,16 @@
               <span class="num">1</span>
               <p class="eyebrow">HAIKU</p>
               <h3 data-i18n="haiku_title">Escribir sin apropiarse del mundo.</h3>
-              <p class="muted" data-i18n="haiku_desc">El haiku es una práctica de atención. No busca explicar lo que sentimos, sino abrir una percepción ante la sacralidad del mundo. Su fuerza nace del instante, de la naturaleza cercana, del silencio y de una imagen que no necesita ser interpretada.</p>
+              <p class="muted" data-i18n="haiku_desc">El haiku es una práctica de atención que nace de la poesía japonesa. No es solo “aquello que está pasando aquí y ahora”, no busca explicar lo que sentimos, sino abrir una percepción ante la sacralidad del mundo y a la interrelación de los seres que pueblan cada momento. Su fuerza nace del instante, de la naturaleza cercana, del silencio y de una imagen que no necesita ser interpretada, sino vivida.</p>
 
               <div class="faq">
                 <details><summary data-i18n="q_buy">¿Qué compro?</summary><p data-i18n="haiku_buy">Compras acceso al Taller de Haiku de HOMERO CLUB, un recorrido de escritura consciente centrado en la contemplación, el instante y la precisión verbal.</p></details>
-                <details><summary data-i18n="q_receive">¿Qué recibo exactamente?</summary><p data-i18n="haiku_receive">Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de observación, propuestas de escritura, rúbrica de revisión y una guía para corregir tus propios haikus.</p></details>
+                <details><summary data-i18n="q_receive">¿Qué recibo exactamente?</summary><p data-i18n="haiku_receive">Acceso al aula digital durante 6 meses, sea cual sea el formato que elijas, para que puedas recorrerlo a tu ritmo, así como materiales teóricos, modelos comentados, ejercicios de observación, propuestas de escritura, rúbrica de revisión y una guía para corregir tus propios haikus.</p></details>
                 <details><summary data-i18n="q_duration">¿Cuánto dura?</summary><p data-i18n="duration_6">El acceso dura 6 meses. Puedes avanzar de forma progresiva y volver a los materiales siempre que lo necesites durante ese periodo.</p></details>
                 <details><summary data-i18n="q_enter">¿Qué pasa cuando entro?</summary><p data-i18n="haiku_enter">Encuentras el recorrido organizado por materiales y prácticas. Primero comprendes qué es y qué no es haiku; después lees modelos, realizas ejercicios de observación y escribes tus propias piezas.</p></details>
                 <details><summary data-i18n="q_correction">¿Hay corrección?</summary><p data-i18n="haiku_correction">El taller incluye criterios de revisión y rúbrica. La corrección se orienta hacia la precisión, la eliminación de explicación emocional, el uso del silencio, la imagen concreta y la resonancia del instante.</p></details>
                 <details><summary data-i18n="q_mode">¿Es autónomo o acompañado?</summary><p data-i18n="guided_mode">Es un taller autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
-                <details><summary data-i18n="q_method">¿Por qué elegir este método?</summary><p data-i18n="haiku_method">Porque aquí el haiku no se enseña como una fórmula decorativa, sino como una práctica de atención. No se trata de escribir algo “bonito”, sino de aprender a mirar, callar, podar y dejar que el mundo aparezca sin apropiárselo.</p></details>
+                <details><summary data-i18n="q_method">¿Por qué elegir este método?</summary><p data-i18n="haiku_method">Porque aquí el haiku no se enseña como una fórmula decorativa, sino como una práctica de atención. No se trata de escribir un poema breve y bonito, sino de aprender a mirar, callar, podar y dejar que el mundo aparezca sin apropiárselo.</p></details>
               </div>
             </div>
           </article>
@@ -1310,13 +1417,13 @@
               <span class="num">2</span>
               <p class="eyebrow">HAIBUN</p>
               <h3 data-i18n="haibun_title">Narrar el instante.</h3>
-              <p class="muted" data-i18n="haibun_desc">El haibun une prosa breve y haiku. No es una simple anécdota con un poema al final: es una forma de narrar una experiencia sin cerrarla, dejando que el instante conserve su misterio.</p>
+              <p class="muted" data-i18n="haibun_desc">El haibun une prosa breve y haiku. No es una simple anécdota con un poema al final: es la expresión del equilibrio que surge entre nuestro recorrido por la vida y el viaje espiritual interior que está latiendo a cada paso.</p>
 
               <div class="faq">
                 <details><summary data-i18n="q_buy">¿Qué compro?</summary><p data-i18n="haibun_buy">Compras acceso al Taller de Haibun de HOMERO CLUB, un recorrido dedicado a transformar una experiencia vivida en una pieza breve donde la prosa y el haiku dialogan.</p></details>
-                <details><summary data-i18n="q_receive">¿Qué recibo exactamente?</summary><p data-i18n="haibun_receive">Acceso al aula digital durante 6 meses, materiales de estudio, modelos comentados, ejercicios de observación y memoria, propuestas de escritura, rúbrica de revisión y una guía para construir haibun completos.</p></details>
+                <details><summary data-i18n="q_receive">¿Qué recibo exactamente?</summary><p data-i18n="haibun_receive">Acceso al aula digital durante 6 meses, sea cual sea el formato que elijas, para que puedas recorrerlo a tu ritmo, así como materiales teóricos, modelos comentados, ejercicios de observación y memoria, propuestas de escritura, rúbrica de revisión y una guía para construir tus propios haibun.</p></details>
                 <details><summary data-i18n="q_duration">¿Cuánto dura?</summary><p data-i18n="duration_6b">El acceso dura 6 meses. Puedes realizar el taller de manera autónoma, con tiempo suficiente para escribir, dejar reposar, revisar y volver a tus textos.</p></details>
-                <details><summary data-i18n="q_enter">¿Qué pasa cuando entro?</summary><p data-i18n="haibun_enter">El recorrido te lleva desde la comprensión de la forma hasta la escritura de tus propios haibun. Aprendes a construir una prosa breve, evitar la explicación excesiva y cerrar con un haiku que no repita, sino que abra.</p></details>
+                <details><summary data-i18n="q_enter">¿Qué pasa cuando entro?</summary><p data-i18n="haibun_enter">El recorrido te lleva desde la comprensión de la forma hasta la escritura de tus propios haibun. Poco a poco, los adornos caen y la ligereza y lo esencial permiten ver el mundo y el sello interior que nos va imprimiendo.</p></details>
                 <details><summary data-i18n="q_correction">¿Hay corrección?</summary><p data-i18n="haibun_correction">El taller incluye criterios de revisión y rúbrica. La corrección observa la relación entre prosa y haiku, la economía verbal, el tono, la escena, el silencio, la elipsis y la resonancia final.</p></details>
                 <details><summary data-i18n="q_mode">¿Es autónomo o acompañado?</summary><p data-i18n="guided_mode">Es un taller autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
                 <details><summary data-i18n="q_method">¿Por qué elegir este método?</summary><p data-i18n="haibun_method">Porque el haibun se trabaja aquí como una forma de contemplación narrativa. No se busca contar demasiado, sino encontrar la forma justa para que una experiencia respire y deje una huella.</p></details>
@@ -1367,17 +1474,17 @@
             <div class="pad">
               <span class="num">3</span>
               <p class="eyebrow" data-i18n="micro_label">MICRORRELATO</p>
-              <h3 data-i18n="micro_title">Brevedad e intensidad.</h3>
-              <p class="muted" data-i18n="micro_desc">El microrrelato no es un cuento pequeño. Es una forma narrativa de alta concentración: tensión, elipsis, precisión y un final que no explica, sino que expande.</p>
+              <h3 data-i18n="micro_title">Brevedad, intensidad, claridad.</h3>
+              <p class="muted" data-i18n="micro_desc">El microrrelato no es una fantasía ni un trauma pequeño. Es una forma narrativa de alta concentración psíquica, que vincula condensación y catarsis. Un recorrido a través de la tensión existencial, la elipsis del dolor, la precisión simbólica y un final que expande nuestra mirada interior.</p>
 
               <div class="faq">
-                <details><summary data-i18n="q_buy">¿Qué compro?</summary><p data-i18n="micro_buy">Compras acceso al Taller de Microrrelato de HOMERO CLUB, un recorrido centrado en la intensidad narrativa, la síntesis y la construcción de textos breves con potencia literaria.</p></details>
-                <details><summary data-i18n="q_receive">¿Qué recibo exactamente?</summary><p data-i18n="micro_receive">Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de condensación, propuestas de escritura, rúbrica de revisión y una guía para trabajar título, tensión, elipsis y final.</p></details>
+                <details><summary data-i18n="q_buy">¿Qué compro?</summary><p data-i18n="micro_buy">Compras acceso al Taller de Microrrelato de HOMERO CLUB, un recorrido centrado en la intensidad vivencial, la síntesis y la deconstrucción y catarsis de procesos vitales y artísticos.</p></details>
+                <details><summary data-i18n="q_receive">¿Qué recibo exactamente?</summary><p data-i18n="micro_receive">Acceso al aula digital durante 6 meses, sea cual sea el formato que elijas, para que puedas recorrerlo a tu ritmo, así como materiales teóricos, modelos comentados, ejercicios de condensación, propuestas de escritura, rúbrica de revisión y una guía para trabajar tus propios microrrelatos.</p></details>
                 <details><summary data-i18n="q_duration">¿Cuánto dura?</summary><p data-i18n="micro_duration">El acceso dura 6 meses. El taller puede realizarse a tu ritmo, con tiempo para escribir varias versiones y comprender cómo cambia un texto cuando se poda con intención.</p></details>
-                <details><summary data-i18n="q_enter">¿Qué pasa cuando entro?</summary><p data-i18n="micro_enter">Encuentras un recorrido organizado para pasar de la idea inicial a una forma breve y eficaz. Aprendes a detectar lo que sobra, activar el título, construir tensión y cerrar sin explicar demasiado.</p></details>
+                <details><summary data-i18n="q_enter">¿Qué pasa cuando entro?</summary><p data-i18n="micro_enter">Encuentras un recorrido organizado para pasar de la mirada inconsciente a una ventana de claridad y autoconocimiento breve y eficaz. Aprendes a detectar el sesgo, activar el arquetipo, construir tensión existencial y cerrar sin racionalizar en demasía.</p></details>
                 <details><summary data-i18n="q_correction">¿Hay corrección?</summary><p data-i18n="micro_correction">El taller incluye criterios de revisión y rúbrica. La corrección atiende a estructura, precisión verbal, conflicto, economía, elipsis, ritmo, final y resonancia.</p></details>
                 <details><summary data-i18n="q_mode">¿Es autónomo o acompañado?</summary><p data-i18n="guided_mode">Es un taller autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.</p></details>
-                <details><summary data-i18n="q_method">¿Por qué elegir este método?</summary><p data-i18n="micro_method">Porque aquí el microrrelato no se trabaja como ocurrencia breve, sino como forma literaria exigente. Aprendes a concentrar sentido, crear tensión y dejar que lo no dicho participe en la historia.</p></details>
+                <details><summary data-i18n="q_method">¿Por qué elegir este método?</summary><p data-i18n="micro_method">Porque aquí el microrrelato no se trabaja como catarsis improvisada, sino como un laboratorio psíquico exigente. Aprendes a concentrar sentido existencial, crear tensión dramática y dejar que lo reprimido participe en la historia.</p></details>
               </div>
             </div>
           </article>
@@ -1424,74 +1531,147 @@
     <section id="precios">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">HOMERO CLUB · SENDA DEL HAIKU</p>
-          <h2>Senda del Haiku</h2>
+          <p class="eyebrow">HOMERO CLUB · SENDAS</p>
+          <h2>Recorridos de escritura consciente</h2>
           <p class="muted">
-            Formación progresiva en poesía japonesa, percepción literaria y escritura breve.
-            Una puerta de entrada, tres cursos breves y cuatro ciclos semestrales para aprender
-            a mirar, cortar, callar, retirar y dejar que una escena respire.
+            Elige una senda y accede a sus productos sin convertir la página en un catálogo interminable:
+            app de entrada, cursos breves y ciclos completos, cada uno con su propio ritmo de acceso.
           </p>
         </div>
 
-        <div class="hc-intro-grid">
-          <article class="card pad">
-            <p class="eyebrow">Puerta de entrada</p>
-            <h3>App 7 días de haiku</h3>
-            <p class="muted">
-              Práctica breve, diaria y accesible para probar el método antes de entrar en cursos o ciclos.
-            </p>
-          </article>
+        <div class="hc-sendas-shell">
+          <div class="hc-senda-nav" role="tablist" aria-label="Sendas de HOMERO CLUB">
+            <button type="button" class="hc-senda-tab active" data-senda-tab="haiku">HOMERO CLUB · SENDA DEL HAIKU</button>
+            <button type="button" class="hc-senda-tab" data-senda-tab="haibun">HOMERO CLUB · SENDA DEL HAIBUN</button>
+            <button type="button" class="hc-senda-tab" data-senda-tab="micro">HOMERO CLUB · SENDA DEL MICRORRELATO</button>
+          </div>
 
-          <article class="card pad">
-            <p class="eyebrow">Acceso flexible</p>
-            <h3>Completo o mensual</h3>
-            <p class="muted">
-              Si se paga el producto completo, se accede al producto completo. Si se paga mes a mes,
-              se desbloquean 4 semanas por cada pago.
-            </p>
-          </article>
+          <div class="hc-senda-panel active" data-senda-panel="haiku">
+            <div class="section-head">
+              <p class="eyebrow">HOMERO CLUB · SENDA DEL HAIKU</p>
+              <h2>Senda del Haiku</h2>
+              <p class="muted">
+                Formación progresiva en poesía japonesa, percepción literaria y escritura breve.
+                Una puerta de entrada, tres cursos breves y cuatro ciclos semestrales para aprender
+                a mirar, cortar, callar, retirar y dejar que una escena respire.
+              </p>
+            </div>
 
-          <article class="card pad">
-            <p class="eyebrow">Acreditación</p>
-            <h3>Proyectos por ciclo</h3>
-            <p class="muted">
-              Cada ciclo termina con un proyecto y una acreditación privada de aprovechamiento
-              con nivel, contenidos y duración alcanzados.
-            </p>
-          </article>
-        </div>
+            <div class="hc-access-grid">
+              <article class="card pad">
+                <p class="eyebrow">Puerta de entrada</p>
+                <h3>App 7 días de haiku</h3>
+                <p class="muted">
+                  Práctica focalizada de atención, percepción, estética y escritura inicial.
+                </p>
+              </article>
 
-        <div id="hc-landing-status" class="hc-status">
-          Cargando recorridos de la Senda del Haiku...
-        </div>
+              <article class="card pad">
+                <p class="eyebrow">Acceso flexible</p>
+                <h3>Mensual o completo</h3>
+                <p class="muted">
+                  Elige si quieres acceder al recorrido mes a mes o si prefieres encontrar toda la estructura
+                  disponible desde el principio. Solicítalo al formalizar tu matriculación.
+                </p>
+              </article>
 
-        <div id="hc-productos" class="hc-products-grid"></div>
+              <article class="card pad">
+                <p class="eyebrow">Acreditación</p>
+                <h3>Proyectos por ciclo</h3>
+                <p class="muted">
+                  Cada ciclo termina con un proyecto y una acreditación privada de aprovechamiento
+                  con nivel, contenidos y duración alcanzados.
+                </p>
+              </article>
+            </div>
 
-        <div id="hc-pago-panel" class="card pad hc-payment-panel" hidden>
-          <p class="eyebrow">Inscripción y pago</p>
-          <h3>Forma de pago</h3>
+            <div id="hc-landing-status" class="hc-status">
+              Cargando recorridos de la Senda del Haiku...
+            </div>
 
-          <p id="hc-producto-elegido" class="muted"></p>
+            <div id="hc-app-level" class="hc-level">
+              <div class="hc-level-head">
+                <div>
+                  <p class="eyebrow">Primer nivel</p>
+                  <h3>App 7 días de haiku</h3>
+                  <p class="muted">Puerta de entrada. Práctica focalizada de atención, percepción, estética y escritura inicial.</p>
+                </div>
+              </div>
+              <div id="hc-app-producto" class="hc-single"></div>
+            </div>
 
-          <label for="hc-email-pago">Correo del alumno</label>
-          <input id="hc-email-pago" type="email" placeholder="tu@email.com">
+            <div id="hc-cursos-level" class="hc-level">
+              <div class="hc-level-head">
+                <div>
+                  <p class="eyebrow">Segundo nivel</p>
+                  <h3>Cursos breves</h3>
+                  <p class="muted">Recorridos de 1, 2 o 3 meses para entrar con rigor sin comprometer todavía la Senda completa.</p>
+                </div>
+              </div>
+              <div id="hc-cursos-productos" class="hc-horizontal-scroll" aria-label="Cursos breves de haiku"></div>
+            </div>
 
-          <p class="small">
-            Usa este concepto al pagar:
-          </p>
+            <div id="hc-ciclos-level" class="hc-level">
+              <div class="hc-level-head">
+                <div>
+                  <p class="eyebrow">Tercer nivel</p>
+                  <h3>Senda completa</h3>
+                  <p class="muted">Cuatro ciclos semestrales con proyecto, evaluación y acreditación progresiva.</p>
+                </div>
+              </div>
+              <div id="hc-ciclos-productos" class="hc-horizontal-scroll" aria-label="Ciclos de la Senda del Haiku"></div>
+            </div>
 
-          <code id="hc-concepto-pago" class="hc-concepto">HOMERO-ID_PRODUCTO-EMAIL</code>
+            <div id="hc-pago-panel" class="card pad hc-payment-panel" hidden>
+              <p class="eyebrow">Inscripción y pago</p>
+              <h3>Forma de pago</h3>
 
-          <div id="hc-metodos-pago" class="hc-payment-methods"></div>
+              <p id="hc-producto-elegido" class="muted"></p>
 
-          <div class="hc-payment-note">
-            <p>
-              Después del pago, envía el justificante o responde al formulario de inscripción.
-              El acceso se activará tras verificación.
-            </p>
-            <div class="actions">
-              <a class="btn secondary" href="#contacto">Enviar consulta</a>
-              <a class="btn dark" href="#" onclick="openApp();return false;">Entrar al aula</a>
+              <div class="hc-payment-grid">
+                <div>
+                  <label for="hc-email-pago">Correo del alumno</label>
+                  <input id="hc-email-pago" type="email" placeholder="tu@email.com">
+                </div>
+
+                <div>
+                  <label for="hc-modalidad-pago">Tipo de acceso</label>
+                  <select id="hc-modalidad-pago">
+                    <option value="COMPLETO">Pago completo</option>
+                    <option value="MENSUAL">Pago mensual</option>
+                  </select>
+                </div>
+              </div>
+
+              <p class="small">
+                Usa este concepto al pagar:
+              </p>
+
+              <code id="hc-concepto-pago" class="hc-concepto">HOMERO-ID_PRODUCTO-EMAIL</code>
+
+              <div id="hc-metodos-pago" class="hc-payment-methods"></div>
+            </div>
+          </div>
+
+          <div class="hc-senda-panel" data-senda-panel="haibun">
+            <div class="hc-coming">
+              <p class="eyebrow">HOMERO CLUB · SENDA DEL HAIBUN</p>
+              <h2>Senda del Haibun</h2>
+              <p class="muted">
+                Próxima estructura: app de entrada, cursos breves y ciclos de haibun.
+                Esta sección queda preparada para recibir los productos cuando estén en Sheet y Apps Script.
+              </p>
+            </div>
+          </div>
+
+          <div class="hc-senda-panel" data-senda-panel="micro">
+            <div class="hc-coming">
+              <p class="eyebrow">HOMERO CLUB · SENDA DEL MICRORRELATO</p>
+              <h2>Senda del Microrrelato</h2>
+              <p class="muted">
+                Próxima estructura: app de entrada, cursos breves y ciclos de microrrelato consciente.
+                Esta sección queda preparada para recibir los productos cuando estén en Sheet y Apps Script.
+              </p>
             </div>
           </div>
         </div>
@@ -1683,7 +1863,7 @@
         enter_app:"Entrar en la APP",
         school_label:"ESCUELA HOMERO CLUB",
         school_intro_title:"Talleres completos por caminos específicos: Haiku, Haibun y Microrrelato.",
-        school_intro_text:"Si tu viaje ya ha comenzado. Incluye materiales, modelos, ejercicios y procesos de crítica y revisión para profundizar en una forma literaria concreta.",
+        school_intro_text:"Si tu viaje ya ha comenzado. Descubre materiales, modelos, ejercicios y procesos de crítica y revisión para profundizar en una forma literaria concreta.",
         access_school:"Acceder a la escuela",
 
         brevity_title:"Brevedad e intensidad",
@@ -1702,7 +1882,7 @@
         rubric:"Rúbrica.",
         revision_process:"Proceso de revisión.",
         haiku_title:"Escribir sin apropiarse del mundo.",
-        haiku_desc:"El haiku es una práctica de atención. No busca explicar lo que sentimos, sino abrir una percepción ante la sacralidad del mundo. Su fuerza nace del instante, de la naturaleza cercana, del silencio y de una imagen que no necesita ser interpretada.",
+        haiku_desc:"El haiku es una práctica de atención que nace de la poesía japonesa. No es solo “aquello que está pasando aquí y ahora”, no busca explicar lo que sentimos, sino abrir una percepción ante la sacralidad del mundo y a la interrelación de los seres que pueblan cada momento. Su fuerza nace del instante, de la naturaleza cercana, del silencio y de una imagen que no necesita ser interpretada, sino vivida.",
 
         haibun_logo:"Viaje · Profundidad · Resonancia",
         haibun_l1:"Qué es haibun.",
@@ -1716,7 +1896,7 @@
         prose_exercises:"Ejercicios de prosa breve.",
         integration_process:"Proceso de integración.",
         haibun_title:"Narrar el instante.",
-        haibun_desc:"El haibun une prosa breve y haiku. No es una simple anécdota con un poema al final: es una forma de narrar una experiencia sin cerrarla, dejando que el instante conserve su misterio.",
+        haibun_desc:"El haibun une prosa breve y haiku. No es una simple anécdota con un poema al final: es la expresión del equilibrio que surge entre nuestro recorrido por la vida y el viaje espiritual interior que está latiendo a cada paso.",
 
         micro_logo:"Elipsis · Intensidad · Revelación",
         micro_label:"MICRORRELATO",
@@ -1730,8 +1910,8 @@
         micro_l8:"Final abierto o revelador.",
         condensation_exercises:"Ejercicios de condensación.",
         verbal_pruning:"Proceso de poda verbal.",
-        micro_title:"Brevedad e intensidad.",
-        micro_desc:"El microrrelato no es un cuento pequeño. Es una forma narrativa de alta concentración: tensión, elipsis, precisión y un final que no explica, sino que expande.",
+        micro_title:"Brevedad, intensidad, claridad.",
+        micro_desc:"El microrrelato no es una fantasía ni un trauma pequeño. Es una forma narrativa de alta concentración psíquica, que vincula condensación y catarsis. Un recorrido a través de la tensión existencial, la elipsis del dolor, la precisión simbólica y un final que expande nuestra mirada interior.",
 
         q_buy:"¿Qué compro?",
         q_receive:"¿Qué recibo exactamente?",
@@ -1742,26 +1922,26 @@
         q_method:"¿Por qué elegir este método?",
 
         haiku_buy:"Compras acceso al Taller de Haiku de HOMERO CLUB, un recorrido de escritura consciente centrado en la contemplación, el instante y la precisión verbal.",
-        haiku_receive:"Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de observación, propuestas de escritura, rúbrica de revisión y una guía para corregir tus propios haikus.",
+        haiku_receive:"Acceso al aula digital durante 6 meses, sea cual sea el formato que elijas, para que puedas recorrerlo a tu ritmo, así como materiales teóricos, modelos comentados, ejercicios de observación, propuestas de escritura, rúbrica de revisión y una guía para corregir tus propios haikus.",
         duration_6:"El acceso dura 6 meses. Puedes avanzar de forma progresiva y volver a los materiales siempre que lo necesites durante ese periodo.",
         haiku_enter:"Encuentras el recorrido organizado por materiales y prácticas. Primero comprendes qué es y qué no es haiku; después lees modelos, realizas ejercicios de observación y escribes tus propias piezas.",
         haiku_correction:"El taller incluye criterios de revisión y rúbrica. La corrección se orienta hacia la precisión, la eliminación de explicación emocional, el uso del silencio, la imagen concreta y la resonancia del instante.",
         guided_mode:"Es un taller autónomo y guiado: puedes avanzar a tu ritmo, con una estructura clara. La revisión se apoya en rúbricas, modelos y preguntas de corrección. Si tienes interés en una mentoría acompañada, puedes solicitarla al matricularte.",
-        haiku_method:"Porque aquí el haiku no se enseña como una fórmula decorativa, sino como una práctica de atención. No se trata de escribir algo “bonito”, sino de aprender a mirar, callar, podar y dejar que el mundo aparezca sin apropiárselo.",
+        haiku_method:"Porque aquí el haiku no se enseña como una fórmula decorativa, sino como una práctica de atención. No se trata de escribir un poema breve y bonito, sino de aprender a mirar, callar, podar y dejar que el mundo aparezca sin apropiárselo.",
 
         haibun_buy:"Compras acceso al Taller de Haibun de HOMERO CLUB, un recorrido dedicado a transformar una experiencia vivida en una pieza breve donde la prosa y el haiku dialogan.",
-        haibun_receive:"Acceso al aula digital durante 6 meses, materiales de estudio, modelos comentados, ejercicios de observación y memoria, propuestas de escritura, rúbrica de revisión y una guía para construir haibun completos.",
+        haibun_receive:"Acceso al aula digital durante 6 meses, sea cual sea el formato que elijas, para que puedas recorrerlo a tu ritmo, así como materiales teóricos, modelos comentados, ejercicios de observación y memoria, propuestas de escritura, rúbrica de revisión y una guía para construir tus propios haibun.",
         duration_6b:"El acceso dura 6 meses. Puedes realizar el taller de manera autónoma, con tiempo suficiente para escribir, dejar reposar, revisar y volver a tus textos.",
-        haibun_enter:"El recorrido te lleva desde la comprensión de la forma hasta la escritura de tus propios haibun. Aprendes a construir una prosa breve, evitar la explicación excesiva y cerrar con un haiku que no repita, sino que abra.",
+        haibun_enter:"El recorrido te lleva desde la comprensión de la forma hasta la escritura de tus propios haibun. Poco a poco, los adornos caen y la ligereza y lo esencial permiten ver el mundo y el sello interior que nos va imprimiendo.",
         haibun_correction:"El taller incluye criterios de revisión y rúbrica. La corrección observa la relación entre prosa y haiku, la economía verbal, el tono, la escena, el silencio, la elipsis y la resonancia final.",
         haibun_method:"Porque el haibun se trabaja aquí como una forma de contemplación narrativa. No se busca contar demasiado, sino encontrar la forma justa para que una experiencia respire y deje una huella.",
 
-        micro_buy:"Compras acceso al Taller de Microrrelato de HOMERO CLUB, un recorrido centrado en la intensidad narrativa, la síntesis y la construcción de textos breves con potencia literaria.",
-        micro_receive:"Acceso al aula digital durante 6 meses, materiales teóricos, modelos comentados, ejercicios de condensación, propuestas de escritura, rúbrica de revisión y una guía para trabajar título, tensión, elipsis y final.",
+        micro_buy:"Compras acceso al Taller de Microrrelato de HOMERO CLUB, un recorrido centrado en la intensidad vivencial, la síntesis y la deconstrucción y catarsis de procesos vitales y artísticos.",
+        micro_receive:"Acceso al aula digital durante 6 meses, sea cual sea el formato que elijas, para que puedas recorrerlo a tu ritmo, así como materiales teóricos, modelos comentados, ejercicios de condensación, propuestas de escritura, rúbrica de revisión y una guía para trabajar tus propios microrrelatos.",
         micro_duration:"El acceso dura 6 meses. El taller puede realizarse a tu ritmo, con tiempo para escribir varias versiones y comprender cómo cambia un texto cuando se poda con intención.",
-        micro_enter:"Encuentras un recorrido organizado para pasar de la idea inicial a una forma breve y eficaz. Aprendes a detectar lo que sobra, activar el título, construir tensión y cerrar sin explicar demasiado.",
+        micro_enter:"Encuentras un recorrido organizado para pasar de la mirada inconsciente a una ventana de claridad y autoconocimiento breve y eficaz. Aprendes a detectar el sesgo, activar el arquetipo, construir tensión existencial y cerrar sin racionalizar en demasía.",
         micro_correction:"El taller incluye criterios de revisión y rúbrica. La corrección atiende a estructura, precisión verbal, conflicto, economía, elipsis, ritmo, final y resonancia.",
-        micro_method:"Porque aquí el microrrelato no se trabaja como ocurrencia breve, sino como forma literaria exigente. Aprendes a concentrar sentido, crear tensión y dejar que lo no dicho participe en la historia.",
+        micro_method:"Porque aquí el microrrelato no se trabaja como catarsis improvisada, sino como un laboratorio psíquico exigente. Aprendes a concentrar sentido existencial, crear tensión dramática y dejar que lo reprimido participe en la historia.",
 
         filter_label:"Filtro de entrada",
         audience_title:"Para quién es HOMERO CLUB",
@@ -2127,43 +2307,81 @@
       return precio + "€";
     }
 
-    function hcRenderProductos(productos) {
-      const contenedor = document.getElementById("hc-productos");
-      const status = document.getElementById("hc-landing-status");
+    const HC_PRODUCT_COPY = {
+      APP_7D_HAIKU: {
+        descripcion: "Puerta de entrada. Práctica focalizada de atención, percepción, estética y escritura inicial."
+      }
+    };
 
+    function hcProductoTexto(producto, campo) {
+      const override = HC_PRODUCT_COPY[producto.ID_PRODUCTO] || {};
+      if (campo === "descripcion" && override.descripcion) return override.descripcion;
+      return producto.DESCRIPCION || "";
+    }
+
+    function hcLogoProducto(producto) {
+      if (String(producto.ESCUELA || "").toUpperCase() === "HAIKU") {
+        return "assets/img/logo-haiku.png?v=thementorclub-012";
+      }
+      return "assets/img/logo-tmc.png?v=thementorclub-012";
+    }
+
+    function hcCardProducto(producto) {
+      const logo = hcLogoProducto(producto);
+      return `
+        <article class="card path-card hc-course-card">
+          <div class="slider" data-slider>
+            <div class="slide active">
+              <div class="workshop-logo">
+                <img class="workshop-img" src="${hcEscape(logo)}" alt="${hcEscape(producto.NOMBRE_PUBLICO)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="fallback-logo">
+                  <strong>HAIKU</strong>
+                  <small>${hcEscape(producto.NOMBRE_PUBLICO)}</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide">
+              <div class="course-panel">
+                <p class="eyebrow">Dentro del taller</p>
+                <h3>${hcEscape(producto.NOMBRE_PUBLICO)}</h3>
+                <p class="muted">${hcEscape(hcProductoTexto(producto, "descripcion"))}</p>
+                <div class="hc-product-meta">
+                  <p><strong>Duración:</strong> ${hcEscape(producto.DURACION_SEMANAS)} semanas</p>
+                  <p><strong>Acceso:</strong> ${hcEscape(producto.ACCESO_COMPLETO)}</p>
+                </div>
+                <div class="price">${hcEscape(hcPrecio(producto))}</div>
+                <button type="button" class="btn primary" data-producto="${hcEscape(producto.ID_PRODUCTO)}">
+                  Elegir este recorrido
+                </button>
+              </div>
+            </div>
+
+            <button class="slider-arrow prev" type="button">‹</button>
+            <button class="slider-arrow next" type="button">›</button>
+            <div class="slider-dots">
+              <button class="slider-dot active" type="button"></button>
+              <button class="slider-dot" type="button"></button>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function hcRenderGrupo(productos, ids, contenedorId, fallback) {
+      const contenedor = document.getElementById(contenedorId);
       if (!contenedor) return;
 
-      const publicados = productos
-        .filter(function(p){ return p.ESTADO === "PUBLICADA"; })
-        .sort(function(a, b){ return Number(a.ORDEN || 0) - Number(b.ORDEN || 0); });
+      const ordenados = ids
+        .map(function(id){ return productos.find(function(p){ return p.ID_PRODUCTO === id; }); })
+        .filter(Boolean);
 
-      if (!publicados.length) {
-        contenedor.innerHTML = "";
-        if (status) status.textContent = "Todavía no hay recorridos publicados. Escríbenos para solicitar información.";
+      if (!ordenados.length) {
+        contenedor.innerHTML = `<div class="hc-coming"><p class="muted">${hcEscape(fallback)}</p></div>`;
         return;
       }
 
-      contenedor.innerHTML = publicados.map(function(producto){
-        return `
-          <article class="card hc-product-card">
-            <div>
-              <span class="hc-chip">${hcEscape(producto.LINEA)}</span>
-              <h3>${hcEscape(producto.NOMBRE_PUBLICO)}</h3>
-              <p class="muted">${hcEscape(producto.DESCRIPCION)}</p>
-              <div class="hc-meta">
-                <p><strong>Duración:</strong> ${hcEscape(producto.DURACION_SEMANAS)} semanas</p>
-                <p><strong>Acceso:</strong> ${hcEscape(producto.ACCESO_COMPLETO)}</p>
-              </div>
-            </div>
-            <div>
-              <div class="price">${hcEscape(hcPrecio(producto))}</div>
-              <button type="button" class="btn primary" data-producto="${hcEscape(producto.ID_PRODUCTO)}">
-                Elegir este recorrido
-              </button>
-            </div>
-          </article>
-        `;
-      }).join("");
+      contenedor.innerHTML = ordenados.map(hcCardProducto).join("");
 
       contenedor.querySelectorAll("[data-producto]").forEach(function(btn){
         btn.addEventListener("click", function(){
@@ -2172,6 +2390,42 @@
           hcSeleccionarProducto(producto);
         });
       });
+
+      hcInitSliders(contenedor);
+    }
+
+    function hcRenderProductos(productos) {
+      const status = document.getElementById("hc-landing-status");
+
+      const publicados = productos
+        .filter(function(p){ return p.ESTADO === "PUBLICADA"; })
+        .sort(function(a, b){ return Number(a.ORDEN || 0) - Number(b.ORDEN || 0); });
+
+      if (!publicados.length) {
+        if (status) status.textContent = "Todavía no hay recorridos publicados. Escríbenos para solicitar información.";
+        return;
+      }
+
+      hcRenderGrupo(
+        publicados,
+        ["APP_7D_HAIKU"],
+        "hc-app-producto",
+        "La App 7 días de haiku estará disponible próximamente."
+      );
+
+      hcRenderGrupo(
+        publicados,
+        ["CURSO_HAIKU_INTRO", "CURSO_HAIKU_BASICO", "CURSO_HAIKU_INICIAL"],
+        "hc-cursos-productos",
+        "Los cursos breves estarán disponibles próximamente."
+      );
+
+      hcRenderGrupo(
+        publicados,
+        ["SENDA_HAIKU_C01", "SENDA_HAIKU_C02", "SENDA_HAIKU_C03", "SENDA_HAIKU_C04"],
+        "hc-ciclos-productos",
+        "Los ciclos de la Senda completa estarán disponibles próximamente."
+      );
 
       if (status) status.textContent = "";
     }
@@ -2210,38 +2464,110 @@
       concepto.textContent = "HOMERO-" + HOMERO_PRODUCTO_ACTUAL.ID_PRODUCTO + "-" + email;
     }
 
+    function hcPaymentInstruction(metodo, concepto) {
+      if (metodo.ID_METODO === "P2P_BIZUM") {
+        return "Enviar el importe exacto con el concepto " + concepto + ".";
+      }
+
+      if (metodo.ID_METODO === "P2P_PAYPALME") {
+        return "Abrir el enlace, introducir importe exacto y utiliza el concepto " + concepto + ". Envía tu justificante a nuestro correo si no llega el aviso automático en 24/48 horas.";
+      }
+
+      return "";
+    }
+
     function hcRenderPagos() {
       const contenedor = document.getElementById("hc-metodos-pago");
-      const emailInput = document.getElementById("hc-email-pago");
+      const concepto = document.getElementById("hc-concepto-pago");
 
       if (!contenedor || !HOMERO_PRODUCTO_ACTUAL) return;
 
-      const email = emailInput && emailInput.value.trim() ? emailInput.value.trim() : "EMAIL";
+      const conceptoTexto = concepto ? concepto.textContent : "HOMERO-" + HOMERO_PRODUCTO_ACTUAL.ID_PRODUCTO + "-EMAIL";
 
-      contenedor.innerHTML = HOMERO_PAGOS
-        .filter(function(m){ return m.ESTADO === "PUBLICADA"; })
-        .sort(function(a, b){ return Number(a.ORDEN || 0) - Number(b.ORDEN || 0); })
-        .map(function(metodo){
-          const dato = metodo.URL_BASE_O_DATO || "";
-          const esUrl = dato.startsWith("http");
+      const metodosVisibles = HOMERO_PAGOS
+        .filter(function(m){
+          return m.ESTADO === "PUBLICADA" &&
+            (m.ID_METODO === "P2P_BIZUM" || m.ID_METODO === "P2P_PAYPALME");
+        })
+        .sort(function(a, b){ return Number(a.ORDEN || 0) - Number(b.ORDEN || 0); });
 
-          const instrucciones = String(metodo.INSTRUCCIONES || "")
-            .replaceAll("{ID_PRODUCTO}", HOMERO_PRODUCTO_ACTUAL.ID_PRODUCTO)
-            .replaceAll("{EMAIL}", email);
+      contenedor.innerHTML = metodosVisibles.map(function(metodo){
+        const dato = metodo.URL_BASE_O_DATO || "";
+        const esUrl = dato.startsWith("http");
+        const instrucciones = hcPaymentInstruction(metodo, conceptoTexto);
 
+        if (metodo.ID_METODO === "P2P_BIZUM") {
           return `
             <article class="hc-payment-card">
-              <h4>${hcEscape(metodo.NOMBRE_PUBLICO)}</h4>
-              <p class="muted">${hcEscape(metodo.IDEAL_PARA)}</p>
+              <h4>Bizum</h4>
+              <p class="small">${hcEscape(instrucciones)}</p>
+              <span class="hc-payment-data">${hcEscape(dato || "Número Bizum pendiente de publicar")}</span>
+              <div class="hc-copy-row">
+                <button type="button" class="btn secondary" data-copy="${hcEscape(dato)}" data-copy-label="Bizum copiado">
+                  Copiar Bizum
+                </button>
+                <span class="hc-copy-feedback" aria-live="polite"></span>
+              </div>
+            </article>
+          `;
+        }
+
+        if (metodo.ID_METODO === "P2P_PAYPALME") {
+          return `
+            <article class="hc-payment-card">
+              <h4>PayPal.Me</h4>
               <p class="small">${hcEscape(instrucciones)}</p>
               ${
                 esUrl
-                  ? `<a class="btn secondary" href="${hcEscape(dato)}" target="_blank" rel="noopener">${hcEscape(metodo.CTA_LABEL)}</a>`
-                  : `<span class="hc-payment-data">${hcEscape(dato)}</span>`
+                  ? `<a class="btn secondary" href="${hcEscape(dato)}" target="_blank" rel="noopener">Pagar con PayPal.Me</a>`
+                  : `<span class="hc-payment-data">${hcEscape(dato || "PayPal.Me pendiente de publicar")}</span>`
               }
+              <div class="hc-copy-row">
+                <button type="button" class="btn secondary" data-copy="${hcEscape(CONTACT_EMAIL)}" data-copy-label="Correo copiado">
+                  Correo THE MENTOR CLUB
+                </button>
+                <span class="hc-copy-feedback" aria-live="polite"></span>
+              </div>
             </article>
           `;
-        }).join("");
+        }
+
+        return "";
+      }).join("");
+
+      contenedor.querySelectorAll("[data-copy]").forEach(function(btn){
+        btn.addEventListener("click", function(){
+          const value = btn.getAttribute("data-copy") || "";
+          const label = btn.getAttribute("data-copy-label") || "Copiado";
+          const feedback = btn.parentElement.querySelector(".hc-copy-feedback");
+
+          if (!value) {
+            if (feedback) feedback.textContent = "Dato pendiente";
+            return;
+          }
+
+          hcCopyToClipboard(value).then(function(){
+            if (feedback) feedback.textContent = label;
+          });
+        });
+      });
+    }
+
+    function hcCopyToClipboard(value) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(value);
+      }
+
+      const temp = document.createElement("textarea");
+      temp.value = value;
+      temp.style.position = "fixed";
+      temp.style.left = "-9999px";
+      document.body.appendChild(temp);
+      temp.focus();
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+      return Promise.resolve();
     }
 
     async function hcCargarLanding() {
@@ -2274,8 +2600,74 @@
       }
     }
 
+    function hcInitSendaTabs() {
+      const tabs = Array.from(document.querySelectorAll("[data-senda-tab]"));
+      const panels = Array.from(document.querySelectorAll("[data-senda-panel]"));
+
+      tabs.forEach(function(tab){
+        tab.addEventListener("click", function(){
+          const target = tab.getAttribute("data-senda-tab");
+
+          tabs.forEach(function(item){
+            item.classList.toggle("active", item === tab);
+          });
+
+          panels.forEach(function(panel){
+            panel.classList.toggle("active", panel.getAttribute("data-senda-panel") === target);
+          });
+        });
+      });
+    }
+
+    function hcInitSliders(root) {
+      const scope = root || document;
+
+      scope.querySelectorAll("[data-slider]").forEach(function(slider){
+        if (slider.dataset.sliderReady === "true") return;
+
+        const slides = Array.from(slider.querySelectorAll(".slide"));
+        const dots = Array.from(slider.querySelectorAll(".slider-dot"));
+        const prev = slider.querySelector(".prev");
+        const next = slider.querySelector(".next");
+        let index = 0;
+
+        function showSlide(nextIndex){
+          index = (nextIndex + slides.length) % slides.length;
+
+          slides.forEach(function(slide, i){
+            slide.classList.toggle("active", i === index);
+          });
+
+          dots.forEach(function(dot, i){
+            dot.classList.toggle("active", i === index);
+          });
+        }
+
+        if (prev) {
+          prev.addEventListener("click", function(){
+            showSlide(index - 1);
+          });
+        }
+
+        if (next) {
+          next.addEventListener("click", function(){
+            showSlide(index + 1);
+          });
+        }
+
+        dots.forEach(function(dot, i){
+          dot.addEventListener("click", function(){
+            showSlide(i);
+          });
+        });
+
+        slider.dataset.sliderReady = "true";
+      });
+    }
+
     function hcInitLanding() {
       const emailInput = document.getElementById("hc-email-pago");
+      const modalidadInput = document.getElementById("hc-modalidad-pago");
 
       if (emailInput) {
         emailInput.addEventListener("input", function(){
@@ -2284,44 +2676,19 @@
         });
       }
 
+      if (modalidadInput) {
+        modalidadInput.addEventListener("change", function(){
+          hcRenderPagos();
+        });
+      }
+
+      hcInitSendaTabs();
       hcCargarLanding();
     }
 
     hcInitLanding();
 
-    document.querySelectorAll("[data-slider]").forEach(function(slider){
-      const slides = Array.from(slider.querySelectorAll(".slide"));
-      const dots = Array.from(slider.querySelectorAll(".slider-dot"));
-      const prev = slider.querySelector(".prev");
-      const next = slider.querySelector(".next");
-      let index = 0;
-
-      function showSlide(nextIndex){
-        index = (nextIndex + slides.length) % slides.length;
-
-        slides.forEach(function(slide, i){
-          slide.classList.toggle("active", i === index);
-        });
-
-        dots.forEach(function(dot, i){
-          dot.classList.toggle("active", i === index);
-        });
-      }
-
-      prev.addEventListener("click", function(){
-        showSlide(index - 1);
-      });
-
-      next.addEventListener("click", function(){
-        showSlide(index + 1);
-      });
-
-      dots.forEach(function(dot, i){
-        dot.addEventListener("click", function(){
-          showSlide(i);
-        });
-      });
-    });
+    hcInitSliders(document);
 
     setLang(localStorage.getItem("tmc_lang") || "es");
   </script>
