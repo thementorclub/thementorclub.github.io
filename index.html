@@ -708,15 +708,72 @@
       scroll-snap-align:start;
       min-width:0;
       height:100%;
+      display:flex;
+      flex-direction:column;
     }
 
-    .hc-course-card .slider{
-      min-height:300px;
+    .hc-product-card{
+      overflow:hidden;
+      min-height:100%;
     }
 
-    .hc-course-card .workshop-logo,
-    .hc-course-card .course-panel{
-      min-height:250px;
+    .hc-product-card-inner{
+      display:grid;
+      grid-template-rows:220px auto;
+      min-height:100%;
+    }
+
+    .hc-product-logo-panel{
+      min-height:220px;
+      background:
+        radial-gradient(circle at 50% 32%, rgba(197,155,75,.22), transparent 28%),
+        linear-gradient(135deg,#171827,#2b2c3e);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:1.35rem;
+      overflow:hidden;
+    }
+
+    .hc-product-logo-panel .workshop-img{
+      width:min(210px,78%);
+      max-height:190px;
+      object-fit:contain;
+      filter:drop-shadow(0 16px 28px rgba(0,0,0,.18));
+    }
+
+    .hc-product-logo-panel .fallback-logo{
+      display:none;
+    }
+
+    .hc-product-info-panel{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      padding:1.25rem;
+      background:rgba(255,252,246,.97);
+      min-height:360px;
+    }
+
+    .hc-product-info-panel h3{
+      font-size:clamp(1.22rem,1.8vw,1.55rem);
+      line-height:1.08;
+      margin:.2rem 0 .65rem;
+    }
+
+    .hc-product-info-panel .muted{
+      font-size:.96rem;
+      line-height:1.45;
+    }
+
+    .hc-product-actions{
+      margin-top:auto;
+    }
+
+    .hc-product-actions .btn{
+      width:100%;
     }
 
     .hc-product-meta{
@@ -1163,8 +1220,23 @@
         width:100%;
       }
 
-      .hc-course-card .slider{
-        min-height:330px;
+      .hc-product-card-inner{
+        grid-template-rows:180px auto;
+      }
+
+      .hc-product-logo-panel{
+        min-height:180px;
+        padding:1rem;
+      }
+
+      .hc-product-logo-panel .workshop-img{
+        width:min(180px,75%);
+        max-height:160px;
+      }
+
+      .hc-product-info-panel{
+        min-height:340px;
+        padding:1rem;
       }
 
       .hc-payment-panel{
@@ -1824,7 +1896,7 @@
       No uses la URL que empieza por:
       https://script.googleusercontent.com/macros/echo...
     */
-    const HOMERO_API_URL = "https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec";
+    const HOMERO_API_URL = "PEGA_AQUI_TU_URL_NUEVA_DE_APPS_SCRIPT";
 
     const I18N = {
       es:{
@@ -2329,39 +2401,35 @@
     function hcCardProducto(producto) {
       const logo = hcLogoProducto(producto);
       return `
-        <article class="card path-card hc-course-card">
-          <div class="slider" data-slider>
-            <div class="slide active">
-              <div class="workshop-logo">
-                <img class="workshop-img" src="${hcEscape(logo)}" alt="${hcEscape(producto.NOMBRE_PUBLICO)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="fallback-logo">
-                  <strong>HAIKU</strong>
-                  <small>${hcEscape(producto.NOMBRE_PUBLICO)}</small>
-                </div>
+        <article class="card hc-course-card hc-product-card">
+          <div class="hc-product-card-inner">
+            <div class="hc-product-logo-panel">
+              <img class="workshop-img" src="${hcEscape(logo)}" alt="${hcEscape(producto.NOMBRE_PUBLICO)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="fallback-logo">
+                <strong>HAIKU</strong>
+                <small>${hcEscape(producto.NOMBRE_PUBLICO)}</small>
               </div>
             </div>
 
-            <div class="slide">
-              <div class="course-panel">
+            <div class="hc-product-info-panel">
+              <div>
                 <p class="eyebrow">Dentro del taller</p>
                 <h3>${hcEscape(producto.NOMBRE_PUBLICO)}</h3>
                 <p class="muted">${hcEscape(hcProductoTexto(producto, "descripcion"))}</p>
+
                 <div class="hc-product-meta">
                   <p><strong>Duración:</strong> ${hcEscape(producto.DURACION_SEMANAS)} semanas</p>
                   <p><strong>Acceso:</strong> ${hcEscape(producto.ACCESO_COMPLETO)}</p>
                 </div>
+
                 <div class="price">${hcEscape(hcPrecio(producto))}</div>
+              </div>
+
+              <div class="hc-product-actions">
                 <button type="button" class="btn primary" data-producto="${hcEscape(producto.ID_PRODUCTO)}">
                   Elegir este recorrido
                 </button>
               </div>
-            </div>
-
-            <button class="slider-arrow prev" type="button">‹</button>
-            <button class="slider-arrow next" type="button">›</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" type="button"></button>
-              <button class="slider-dot" type="button"></button>
             </div>
           </div>
         </article>
@@ -2391,7 +2459,6 @@
         });
       });
 
-      hcInitSliders(contenedor);
     }
 
     function hcRenderProductos(productos) {
