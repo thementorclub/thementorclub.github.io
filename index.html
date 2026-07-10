@@ -1292,8 +1292,8 @@
           <p class="lead" data-i18n="hero_lead">The Mentor Club es una escuela de atención y transformación que integra cuerpo, palabra y conciencia para cultivar presencia, claridad y profundidad.</p>
 
           <div class="actions">
-            <a class="btn primary" href="#precios" onclick="openApp();return false;" data-i18n="btn_app">APP HOMERO CLUB</a>
-            <a class="btn secondary" href="#precios" onclick="openSchool();return false;" data-i18n="btn_school">ESCUELA HOMERO CLUB</a>
+            <a class="btn primary" href="https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec?action=app" onclick="openApp();return false;" data-i18n="btn_app">APP HOMERO CLUB</a>
+            <a class="btn secondary" href="https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec?action=escuela" onclick="openSchool();return false;" data-i18n="btn_school">ESCUELA HOMERO CLUB</a>
             <a class="btn dark" href="#puerta" data-i18n="btn_door">La puerta de entrada</a>
           </div>
         </div>
@@ -1364,7 +1364,7 @@
                 <h3 data-i18n="app_intro_title">Práctica breve, diaria, introductoria.</h3>
                 <p class="muted" data-i18n="app_intro_text">Si quieres dar tus primeros pasos en la escritura consciente.</p>
               </div>
-              <a class="btn primary" href="#precios" onclick="openApp();return false;" data-i18n="enter_app">Entrar en la APP</a>
+              <a class="btn primary" href="https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec?action=app" onclick="openApp();return false;" data-i18n="enter_app">Entrar en la APP</a>
             </article>
 
             <article class="card pad choice-card">
@@ -1373,7 +1373,7 @@
                 <h3 data-i18n="school_intro_title">Talleres completos por caminos específicos: Haiku, Haibun y Microrrelato.</h3>
                 <p class="muted" data-i18n="school_intro_text">Si tu viaje ya ha comenzado. Descubre materiales, modelos, ejercicios y procesos de crítica y revisión para profundizar en una forma literaria concreta.</p>
               </div>
-              <a class="btn secondary" href="#precios" onclick="openSchool();return false;" data-i18n="access_school">Acceder a la escuela</a>
+              <a class="btn secondary" href="https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec?action=escuela" onclick="openSchool();return false;" data-i18n="access_school">Acceder a la escuela</a>
             </article>
           </div>
         </div>
@@ -1863,8 +1863,8 @@
           <p class="muted" data-i18n="cta_text">Si quieres comenzar tu camino de expresión creativa consciente, empieza por la APP. Si buscas un proceso completo que recorra caminos, técnicas y enfoques conscientes para una transformación personal y literaria, accede a nuestra ESCUELA.</p>
 
           <div class="actions" style="justify-content:center">
-            <a class="btn primary" href="#precios" onclick="openApp();return false;" data-i18n="btn_app">APP HOMERO CLUB</a>
-            <a class="btn secondary" href="#precios" onclick="openSchool();return false;" data-i18n="btn_school">ESCUELA HOMERO CLUB</a>
+            <a class="btn primary" href="https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec?action=app" onclick="openApp();return false;" data-i18n="btn_app">APP HOMERO CLUB</a>
+            <a class="btn secondary" href="https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec?action=escuela" onclick="openSchool();return false;" data-i18n="btn_school">ESCUELA HOMERO CLUB</a>
           </div>
         </div>
       </div>
@@ -2333,36 +2333,20 @@
     }
 
     /*
-      IMPORTANTE:
-      Estos botones ya no abren la URL base de Apps Script, porque esa URL devuelve
-      datos JSON cuando se consulta sin acción de aula o sin credenciales.
-      Ahora llevan al alumno a la Senda del Haiku dentro de la landing:
-      - APP HOMERO CLUB selecciona el producto APP_7D_HAIKU.
-      - ESCUELA HOMERO CLUB muestra todos los recorridos activos.
+      Plataforma de aprendizaje:
+      - APP HOMERO CLUB abre Apps Script con action=app.
+      - ESCUELA HOMERO CLUB abre Apps Script con action=escuela.
+      La URL puede redirigir visualmente a script.googleusercontent.com; es normal en Google Apps Script.
     */
+    const APP_PLATFORM_URL = APP_URL + "?action=app";
+    const SCHOOL_PLATFORM_URL = APP_URL + "?action=escuela";
+
     function openApp(){
-      hcIrAOfertas();
-
-      window.setTimeout(function(){
-        const producto =
-          HOMERO_PRODUCTOS.find(function(p){ return p.ID_PRODUCTO === "APP_7D_HAIKU"; }) ||
-          HC_STATIC_PRODUCTOS_HAIKU.find(function(p){ return p.ID_PRODUCTO === "APP_7D_HAIKU"; });
-
-        if (producto) {
-          hcSeleccionarProducto(producto);
-        }
-      }, 450);
+      window.location.href = APP_PLATFORM_URL;
     }
 
     function openSchool(){
-      hcIrAOfertas();
-
-      window.setTimeout(function(){
-        const cursos = document.getElementById("hc-cursos-level");
-        if (cursos) {
-          cursos.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 450);
+      window.location.href = SCHOOL_PLATFORM_URL;
     }
 
     function sendContact(event){
