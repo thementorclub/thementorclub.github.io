@@ -1884,19 +1884,19 @@
   </footer>
 
   <script>
-    const APP_URL = "https://script.google.com/macros/s/AKfycbxXmtH3i81HsKcEOvzcY1xMeB8T-B94LlXLcIIkklgY3wuPhkfYKZlHBsMkb6xJ4iqpJg/exec";
+    const APP_URL = "https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec";
     const CONTACT_EMAIL = "thementorclub@proton.me";
 
     /*
       IMPORTANTE:
-      Sustituye el texto PEGA_AQUI_TU_URL_NUEVA_DE_APPS_SCRIPT por la URL original de tu implementación web,
+      Sustituye el texto https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec por la URL original de tu implementación web,
       con este formato:
-      https://script.google.com/macros/s/AKfycbx.../exec
+      https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec
 
       No uses la URL que empieza por:
       https://script.googleusercontent.com/macros/echo...
     */
-    const HOMERO_API_URL = "PEGA_AQUI_TU_URL_NUEVA_DE_APPS_SCRIPT";
+    const HOMERO_API_URL = "https://script.google.com/macros/s/AKfycbznDhzWEHJdUP_2cN5kqhprivxvOLG_BTyGcSliYFcuzsVnIyQ-ovS6ugBtsSuTG3Uang/exec";
 
     const I18N = {
       es:{
@@ -2364,6 +2364,164 @@
     let HOMERO_PAGOS = [];
     let HOMERO_PRODUCTO_ACTUAL = null;
 
+    const HC_STATIC_PRODUCTOS_HAIKU = [
+      {
+        ID_PRODUCTO: "APP_7D_HAIKU",
+        ESCUELA: "HAIKU",
+        NOMBRE_PUBLICO: "App 7 días de haiku",
+        TIPO_PRODUCTO: "APP",
+        DURACION_SEMANAS: 1,
+        DURACION_MESES: 0.25,
+        LINEA: "Entrada",
+        CICLO_RELACIONADO: "ENTRADA",
+        BLOQUES_RELACIONADOS: "Preparación sensible",
+        ACCESO_COMPLETO: "Completo al inscribirse",
+        ACCESO_MENSUAL: "No aplica",
+        PRECIO_EUR: "10",
+        ESTADO: "PUBLICADA",
+        ORDEN: 1,
+        DESCRIPCION: "Puerta de entrada. Práctica focalizada de atención, percepción, estética y escritura inicial."
+      },
+      {
+        ID_PRODUCTO: "CURSO_HAIKU_INTRO",
+        ESCUELA: "HAIKU",
+        NOMBRE_PUBLICO: "Curso Introductorio a la Poesía Japonesa: Haiku",
+        TIPO_PRODUCTO: "CURSO_BREVE",
+        DURACION_SEMANAS: 4,
+        DURACION_MESES: 1,
+        LINEA: "Cursos breves",
+        CICLO_RELACIONADO: "Resumen 12 bloques",
+        BLOQUES_RELACIONADOS: "Síntesis transversal",
+        ACCESO_COMPLETO: "Acceso a 4 semanas",
+        ACCESO_MENSUAL: "No aplica o 1 mensualidad",
+        PRECIO_EUR: "59",
+        ESTADO: "PUBLICADA",
+        ORDEN: 2,
+        DESCRIPCION: "Curso de 1 mes para curiosos y nuevos alumnos: una visión clara y practicable del haiku."
+      },
+      {
+        ID_PRODUCTO: "CURSO_HAIKU_BASICO",
+        ESCUELA: "HAIKU",
+        NOMBRE_PUBLICO: "Curso Básico de Poesía Japonesa: Haiku",
+        TIPO_PRODUCTO: "CURSO_BREVE",
+        DURACION_SEMANAS: 8,
+        DURACION_MESES: 2,
+        LINEA: "Cursos breves",
+        CICLO_RELACIONADO: "Resumen 12 bloques",
+        BLOQUES_RELACIONADOS: "Síntesis transversal",
+        ACCESO_COMPLETO: "Acceso a 8 semanas",
+        ACCESO_MENSUAL: "4 semanas por pago",
+        PRECIO_EUR: "115",
+        ESTADO: "PUBLICADA",
+        ORDEN: 3,
+        DESCRIPCION: "Curso de 2 meses con base real de práctica y conceptos esenciales."
+      },
+      {
+        ID_PRODUCTO: "CURSO_HAIKU_INICIAL",
+        ESCUELA: "HAIKU",
+        NOMBRE_PUBLICO: "Curso Inicial de Poesía Japonesa: Haiku",
+        TIPO_PRODUCTO: "CURSO_BREVE",
+        DURACION_SEMANAS: 12,
+        DURACION_MESES: 3,
+        LINEA: "Cursos breves",
+        CICLO_RELACIONADO: "Resumen 12 bloques",
+        BLOQUES_RELACIONADOS: "Bloques 1-12 en síntesis",
+        ACCESO_COMPLETO: "Acceso a 12 semanas",
+        ACCESO_MENSUAL: "4 semanas por pago",
+        PRECIO_EUR: "160",
+        ESTADO: "PUBLICADA",
+        ORDEN: 4,
+        DESCRIPCION: "Curso de 3 meses: una semana por cada bloque de la Escuela de Haiku."
+      },
+      {
+        ID_PRODUCTO: "SENDA_HAIKU_C01",
+        ESCUELA: "HAIKU",
+        NOMBRE_PUBLICO: "Ciclo I — Mirar, retirar, contener",
+        TIPO_PRODUCTO: "CICLO_SEMESTRAL",
+        DURACION_SEMANAS: 16,
+        DURACION_MESES: 4,
+        LINEA: "Senda completa",
+        CICLO_RELACIONADO: "CICLO_I",
+        BLOQUES_RELACIONADOS: "Bloques 1, 2 y 3",
+        ACCESO_COMPLETO: "Acceso a 16 semanas",
+        ACCESO_MENSUAL: "4 semanas por pago",
+        PRECIO_EUR: "330",
+        ESTADO: "PUBLICADA",
+        ORDEN: 5,
+        DESCRIPCION: "Primer ciclo de la Senda del Haiku: shasei, muga y aware."
+      },
+      {
+        ID_PRODUCTO: "SENDA_HAIKU_C02",
+        ESCUELA: "HAIKU",
+        NOMBRE_PUBLICO: "Ciclo II — Silencio, pobreza y ligereza",
+        TIPO_PRODUCTO: "CICLO_SEMESTRAL",
+        DURACION_SEMANAS: 16,
+        DURACION_MESES: 4,
+        LINEA: "Senda completa",
+        CICLO_RELACIONADO: "CICLO_II",
+        BLOQUES_RELACIONADOS: "Bloques 4, 5 y 6",
+        ACCESO_COMPLETO: "Acceso a 16 semanas",
+        ACCESO_MENSUAL: "4 semanas por pago",
+        PRECIO_EUR: "330",
+        ESTADO: "PUBLICADA",
+        ORDEN: 6,
+        DESCRIPCION: "Segundo ciclo: ma, yūgen, sabi, wabi y karumi."
+      },
+      {
+        ID_PRODUCTO: "SENDA_HAIKU_C03",
+        ESCUELA: "HAIKU",
+        NOMBRE_PUBLICO: "Ciclo III — Estación, corte y respiración",
+        TIPO_PRODUCTO: "CICLO_SEMESTRAL",
+        DURACION_SEMANAS: 16,
+        DURACION_MESES: 4,
+        LINEA: "Senda completa",
+        CICLO_RELACIONADO: "CICLO_III",
+        BLOQUES_RELACIONADOS: "Bloques 7, 8 y 9",
+        ACCESO_COMPLETO: "Acceso a 16 semanas",
+        ACCESO_MENSUAL: "4 semanas por pago",
+        PRECIO_EUR: "330",
+        ESTADO: "PUBLICADA",
+        ORDEN: 7,
+        DESCRIPCION: "Tercer ciclo: kigo, kire, ritmo, respiración y forma breve."
+      },
+      {
+        ID_PRODUCTO: "SENDA_HAIKU_C04",
+        ESCUELA: "HAIKU",
+        NOMBRE_PUBLICO: "Ciclo IV — Mundo cercano, convivencia y revisión",
+        TIPO_PRODUCTO: "CICLO_SEMESTRAL",
+        DURACION_SEMANAS: 16,
+        DURACION_MESES: 4,
+        LINEA: "Senda completa",
+        CICLO_RELACIONADO: "CICLO_IV",
+        BLOQUES_RELACIONADOS: "Bloques 10, 11 y 12",
+        ACCESO_COMPLETO: "Acceso a 16 semanas",
+        ACCESO_MENSUAL: "4 semanas por pago",
+        PRECIO_EUR: "330",
+        ESTADO: "PUBLICADA",
+        ORDEN: 8,
+        DESCRIPCION: "Cuarto ciclo: naturaleza cercana, convivencia con lo no humano y revisión por eliminación."
+      }
+    ];
+
+    const HC_STATIC_PAGOS_P2P = [
+      {
+        ID_METODO: "P2P_BIZUM",
+        NOMBRE_PUBLICO: "Bizum",
+        URL_BASE_O_DATO: "637341417",
+        CTA_LABEL: "Copiar Bizum",
+        ORDEN: 1,
+        ESTADO: "PUBLICADA"
+      },
+      {
+        ID_METODO: "P2P_PAYPALME",
+        NOMBRE_PUBLICO: "PayPal.Me",
+        URL_BASE_O_DATO: "https://paypal.me/homeroclub",
+        CTA_LABEL: "Pagar con PayPal.Me",
+        ORDEN: 2,
+        ESTADO: "PUBLICADA"
+      }
+    ];
+
     function hcEscape(text) {
       return String(text ?? "")
         .replaceAll("&", "&amp;")
@@ -2640,29 +2798,48 @@
     async function hcCargarLanding() {
       const status = document.getElementById("hc-landing-status");
 
-      if (!HOMERO_API_URL || HOMERO_API_URL.includes("PEGA_AQUI")) {
-        if (status) {
-          status.textContent = "Falta pegar la URL de Apps Script en la constante HOMERO_API_URL.";
-        }
-        return;
+      /*
+        Primero renderizamos una copia local de seguridad.
+        Así los tres niveles de la Senda del Haiku aparecen siempre:
+        1. App 7 días de haiku.
+        2. Cursos breves.
+        3. Senda completa.
+        Después intentamos actualizar desde Sheet/AppScript.
+      */
+      HOMERO_PRODUCTOS = HC_STATIC_PRODUCTOS_HAIKU.slice();
+      HOMERO_PAGOS = HC_STATIC_PAGOS_P2P.slice();
+      hcRenderProductos(HOMERO_PRODUCTOS);
+
+      if (status) {
+        status.textContent = "";
       }
 
       try {
-        const response = await fetch(HOMERO_API_URL + "?action=landing");
+        const response = await fetch(HOMERO_API_URL + "?action=landing", { cache: "no-store" });
         const data = await response.json();
 
         if (!data.ok) {
           throw new Error("La API no respondió correctamente.");
         }
 
-        HOMERO_PRODUCTOS = data.productos || [];
-        HOMERO_PAGOS = data.pagosP2P || [];
+        const productosApi = Array.isArray(data.productos) ? data.productos : [];
+        const pagosApi = Array.isArray(data.pagosP2P) ? data.pagosP2P : [];
 
-        hcRenderProductos(HOMERO_PRODUCTOS);
+        if (productosApi.length) {
+          HOMERO_PRODUCTOS = productosApi;
+          hcRenderProductos(HOMERO_PRODUCTOS);
+        }
+
+        if (pagosApi.length) {
+          HOMERO_PAGOS = pagosApi
+            .filter(function(m){
+              return m.ID_METODO === "P2P_BIZUM" || m.ID_METODO === "P2P_PAYPALME";
+            });
+        }
       } catch (error) {
-        console.error(error);
+        console.warn("No se pudo actualizar desde Apps Script. Se mantiene la copia local de productos.", error);
         if (status) {
-          status.textContent = "No se pudieron cargar los recorridos. Escríbenos para solicitar acceso.";
+          status.textContent = "";
         }
       }
     }
